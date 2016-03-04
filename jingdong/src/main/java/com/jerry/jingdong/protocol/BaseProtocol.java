@@ -26,7 +26,7 @@ import java.util.Map;
 
 
 /**
- * @des 根据接口文档的参数来获取数据，详细看HomeProtocal
+ * @des 根据接口文档的参数来获取数据，详细看{@link HomeProtocal}
  * @param <T>
  */
 public abstract class BaseProtocol<T> {
@@ -44,7 +44,6 @@ public abstract class BaseProtocol<T> {
 		Map<String, String> protocolMap = app.getProtocolMap();
 		String memJsonString = protocolMap.get(key);
 		if (!TextUtils.isEmpty(memJsonString)) {
-			// LogUtils.i("###从内存加载数据-->" + key);
 			// 解析返回即可
 			return parseJsonString(memJsonString);
 		}
@@ -52,7 +51,6 @@ public abstract class BaseProtocol<T> {
 		// 2.再磁盘-->存内存,返回
 		T t = loadDataFromLocal(key);
 		if (t != null) {
-			// LogUtils.i("###磁盘加载数据-->" + getCacheFile(key).getAbsolutePath());
 			return t;
 		}
 		// 3.最后网络-->存内存,存磁盘,返回
@@ -142,8 +140,6 @@ public abstract class BaseProtocol<T> {
 	 * 从网络加载数据
 	 */
 	private T loadDataFromNet(HttpMethod method, HashMap<String, String> params, String header) throws IOException {
-		// LogUtils.i("###存内存,存本地");
-
 		ResponseParser responseStream = null;
 		String result = null;
 		RequestParams rparams = null;
@@ -179,7 +175,7 @@ public abstract class BaseProtocol<T> {
 					rparams.addHeader("userid", header);
 					responseStream = x.http().postSync(rparams, ResponseParser.class);
 				} else if (method == HttpMethod.POST && header != null) {
-					// 改了这里
+
 					rparams = new RequestParams();
 					rparams.addHeader("userid", header);
 					responseStream = x.http().postSync(rparams, ResponseParser.class);
@@ -192,7 +188,7 @@ public abstract class BaseProtocol<T> {
 				} else if (method == HttpMethod.POST && header == null) {
 					responseStream = x.http().postSync(rparams, ResponseParser.class);
 				} else if (method == HttpMethod.GET && header != null) {
-					// 改了这里
+
 					// rparams = new RequestParams();
 					rparams.addHeader("userid", header);
 					responseStream = x.http().getSync(rparams, ResponseParser.class);
@@ -228,8 +224,6 @@ public abstract class BaseProtocol<T> {
 		} finally {
 			IOUtils.close(writer);
 		}
-
-		// LogUtils.i("resultJsonString:" + resultJsonString);
 
 		/* =============== 2.接续网络请求回来的数据 =============== */
 		// 解析json
