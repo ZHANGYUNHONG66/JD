@@ -8,6 +8,7 @@
 
     <ImageView
         android:id="@+id/splash_iv_welcome"
+        android:scaleType="fitXY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/welcome"/>
