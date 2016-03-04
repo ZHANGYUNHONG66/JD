@@ -26,7 +26,7 @@ import java.util.Map;
 
 
 /**
- * @des 根据接口文档的参数来获取数据，详细看
+ * @des 根据接口文档的参数来获取数据，详细看HomeProtocal
  * @param <T>
  */
 public abstract class BaseProtocol<T> {
