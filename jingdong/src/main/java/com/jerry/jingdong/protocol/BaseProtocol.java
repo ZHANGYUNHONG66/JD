@@ -1,8 +1,9 @@
-package com.jerry.jingdong.base;
+package com.jerry.jingdong.protocol;
 
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
+import com.jerry.jingdong.application.MyApplication;
 import com.jerry.jingdong.conf.MyConstants;
 import com.jerry.jingdong.utils.FileUtils;
 import com.jerry.jingdong.utils.IOUtils;
@@ -23,8 +24,12 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class BaseProtocol<T> {
 
+/**
+ * @des 根据接口文档的参数来获取数据，详细看
+ * @param <T>
+ */
+public abstract class BaseProtocol<T> {
 	/**
 	 * 加载数据,先内存,然后磁盘,最后网络
 	 * 
