@@ -6,13 +6,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/**
- * @创建�? Jerry
- * @创建时间: 2016/2/27 18:31
- * @包名: com.jerry.googleplay.manager
- * @工程�? GooglePlay
- * @描述: 线程池的代理�?
- */
+
 public class ThreadPoolProxy {
 
     private int        mCorePoolSize;
@@ -37,10 +31,10 @@ public class ThreadPoolProxy {
                     TimeUnit unit = TimeUnit.MILLISECONDS;
                     BlockingQueue<Runnable> workQueue = new LinkedBlockingQueue<>();
 
-                    mExecutor = new ThreadPoolExecutor(mCorePoolSize, // 核心线程�?
+                    mExecutor = new ThreadPoolExecutor(mCorePoolSize, // 核心线程�?
                             mMaximumExecutorSize, // 线程池最大线程数
                             keepAliveTime, // 保持时间
-                            unit, // 保持时间的单�?
+                            unit, // 保持时间的单�?
                             workQueue);// 任务队列
                 }
             }
@@ -48,9 +42,9 @@ public class ThreadPoolProxy {
     }
 
     /*
-     * 提交任务和执行任务的区别�?
-     * 返回值：提交任务有返回�?，执行任务没�?
-     * 返回值Future的作用，执行任务的结果，其中包含get和cancel方法，get是一个阻塞方法，会一直等到执行结果返�?
+     * 提交任务和执行任务的区别�?
+     * 返回值：提交任务有返回�?，执行任务没�?
+     * 返回值Future的作用，执行任务的结果，其中包含get和cancel方法，get是一个阻塞方法，会一直等到执行结果返�?
      */
     /**
      * 提交任务

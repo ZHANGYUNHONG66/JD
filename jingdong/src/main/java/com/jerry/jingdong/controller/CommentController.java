@@ -9,13 +9,13 @@ import com.jerry.jingdong.base.BaseController;
 import com.jerry.jingdong.utils.UIUtils;
 
 /**
- * 我的
+ * 品牌
  */
 
-public class MineController extends BaseController {
+public class CommentController extends BaseController {
 
 
-	public MineController(Context context) {
+	public CommentController(Context context) {
 		super(context);
 	}
 

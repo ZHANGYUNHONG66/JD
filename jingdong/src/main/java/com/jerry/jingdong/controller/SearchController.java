@@ -1,8 +1,8 @@
 package com.jerry.jingdong.controller;/*
-                                      			* @创建者     Jerry
-                                      			* @创建时间   2016/2/5 21:58
-                                      			* @描述      主页
-                                      			*/
+                                      * @创建者     Jerry
+                                      * @创建时间   2016/2/5 21:58
+                                      * @描述      分类
+                                      */
 
 import android.content.Context;
 import android.view.Gravity;
@@ -12,9 +12,13 @@ import android.widget.TextView;
 import com.jerry.jingdong.base.BaseController;
 import com.jerry.jingdong.utils.UIUtils;
 
-public class HomeController extends BaseController {
+/**
+ * 搜索
+ */
 
-    public HomeController(Context context) {
+public class SearchController extends BaseController {
+
+    public SearchController(Context context) {
         super(context);
     }
 
