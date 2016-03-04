@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <com.jerry.jingdong.views.NoScrollViewPager
+        android:id="@+id/content_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </com.jerry.jingdong.views.NoScrollViewPager>
+
+    <RadioGroup
+        android:id="@+id/content_rg"
+        android:layout_width="match_parent"
+        android:paddingTop="7dp"
+        android:background="@drawable/caidan_dibulan"
+        android:layout_height="46dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/content_rb_home"
+            style="@style/rb_content_style"
+            android:drawableTop="@drawable/content_rb_home_selector"
+            android:text="首页"/>
+
+        <RadioButton
+            android:id="@+id/content_rb_search"
+            style="@style/rb_content_style"
+            android:drawableTop="@drawable/content_rb_search_selector"
+            android:text="搜索"/>
+
+        <RadioButton
+            android:id="@+id/content_rb_comment"
+            style="@style/rb_content_style"
+            android:drawableTop="@drawable/content_rb_comment_selector"
+            android:text="品牌"/>
+
+        <RadioButton
+            android:id="@+id/content_rb_shopping"
+            style="@style/rb_content_style"
+            android:drawableTop="@drawable/content_rb_shopping_selector"
+            android:text="购物车"/>
+
+        <RadioButton
+            android:id="@+id/content_rb_mine"
+            style="@style/rb_content_style"
+            android:drawableTop="@drawable/content_rb_mine_selector"
+            android:text="我的"/>
+
+    </RadioGroup>
+
+
+</LinearLayout>

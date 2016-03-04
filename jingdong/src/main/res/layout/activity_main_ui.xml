@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/main_drawerlayout"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.jerry.jingdong.activity.MainUI">
+    android:layout_width="match_parent" android:layout_height="match_parent">
 
-</RelativeLayout>
+    <!--菜单区域(左侧菜单)-->
+    <!--layout_gravity="left"属性表示为左侧菜单-->
+    <FrameLayout
+        android:layout_width="180dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:background="#0ff">
+    </FrameLayout>
+
+    <!--内容区域-->
+
+
+
+</android.support.v4.widget.DrawerLayout>
