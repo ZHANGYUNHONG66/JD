@@ -19,26 +19,26 @@ import android.widget.RadioGroup;
 import com.jerry.jingdong.R;
 import com.jerry.jingdong.base.BaseController;
 import com.jerry.jingdong.base.BaseFragment;
+import com.jerry.jingdong.controller.CommentController;
 import com.jerry.jingdong.controller.HomeController;
 import com.jerry.jingdong.controller.MineController;
-import com.jerry.jingdong.controller.CommentController;
-import com.jerry.jingdong.controller.ShoppingController;
 import com.jerry.jingdong.controller.SearchController;
+import com.jerry.jingdong.controller.ShoppingController;
 import com.jerry.jingdong.utils.UIUtils;
 import com.jerry.jingdong.views.NoScrollViewPager;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class ContentFragment extends BaseFragment {
 
-    @InjectView(R.id.content_rg)
-    RadioGroup                   mContentRg;
-    @InjectView(R.id.content_viewPager)
-    NoScrollViewPager            mContentViewPager;
+    @Bind(R.id.content_rg)
+    RadioGroup        mContentRg;
+    @Bind(R.id.content_viewPager)
+    NoScrollViewPager mContentViewPager;
 
     private int                  mCurrRbIndex     = -1;
     private List<BaseController> mBaseControllers = new ArrayList<>();
@@ -47,7 +47,7 @@ public class ContentFragment extends BaseFragment {
     public View initView() {
         View view = View.inflate(UIUtils.getContext(),
                 R.layout.fragment_content, null);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         return view;
     }
 
@@ -110,14 +110,14 @@ public class ContentFragment extends BaseFragment {
         // TODO: inflate a fragment view
         View rootView = super.onCreateView(inflater, container,
                 savedInstanceState);
-        ButterKnife.inject(this, rootView);
+        ButterKnife.bind(this, rootView);
         return rootView;
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.reset(this);
+        ButterKnife.unbind(this);
     }
 
     private class MyAdapter extends PagerAdapter {
