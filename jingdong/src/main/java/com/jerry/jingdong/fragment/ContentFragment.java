@@ -136,8 +136,7 @@ public class ContentFragment extends BaseFragment {
             // 添加到容器
             container.addView(rootView);
 
-            // 调用当前展示页面的initData方法
-            controller.initData();
+            controller.mLoadingPager.triggerLoadData();
 
             return rootView;
         }

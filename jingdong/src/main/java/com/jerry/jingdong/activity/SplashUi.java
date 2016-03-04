@@ -36,7 +36,7 @@ public class SplashUi extends Activity {
      */
     private void initAnimation() {
         AlphaAnimation aa = new AlphaAnimation(.2f, 1);
-        aa.setDuration(3000);
+        aa.setDuration(2500);
         aa.setFillAfter(true);
 
         aa.setAnimationListener(new Animation.AnimationListener() {
