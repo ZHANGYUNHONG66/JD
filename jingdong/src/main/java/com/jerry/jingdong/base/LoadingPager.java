@@ -18,7 +18,7 @@ import butterknife.ButterKnife;
  * @创建时间: 2016/3/5 1:47
  * @包名: com.jerry.jingdong.base
  * @工程名: JingDong
- * @描述: TODO
+ * @描述: 加载页面的Controller
  */
 public abstract class LoadingPager extends FrameLayout {
     /** 错误视图 */
