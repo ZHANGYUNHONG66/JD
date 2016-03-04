@@ -4,11 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.SplashUi">
+    tools:context="com.jerry.jingdong.activity.MainUI">
 
-    <ImageView
-        android:id="@+id/splash_iv_welcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/welcome"/>
 </RelativeLayout>
