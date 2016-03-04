@@ -68,7 +68,7 @@ public abstract class BaseController {
             }
         });
 
-        initDaoHang();
+        initTitle();
 
         return view;
     }
@@ -76,7 +76,7 @@ public abstract class BaseController {
     /**
      * 初始化导航栏：文字或者左右按钮，每个页面都不同，子类必须实现
      */
-    public abstract void initDaoHang();
+    public abstract void initTitle();
 
     /**
      * 当右边按钮被点击

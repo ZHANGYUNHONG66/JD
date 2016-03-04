@@ -26,7 +26,7 @@ public class MineController extends BaseController {
 	 * 初始化导航栏
 	 */
 	@Override
-	public void initDaoHang() {
+	public void initTitle() {
 
 	}
 

@@ -18,10 +18,10 @@ public class HomeController extends BaseController {
 
 
     /**
-     * 初始化导航栏
+     * 初始化导航栏,可以设置
      */
     @Override
-    public void initDaoHang() {
+    public void initTitle() {
 
     }
 
