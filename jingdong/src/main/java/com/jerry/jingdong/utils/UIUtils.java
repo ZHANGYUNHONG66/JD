@@ -5,8 +5,6 @@ import android.content.res.Resources;
 import android.util.TypedValue;
 
 import com.jerry.jingdong.application.MyApplication;
-
-
 /**
  * @创建者: Jerry
  * @创建时间: 2016/2/24 14:12
