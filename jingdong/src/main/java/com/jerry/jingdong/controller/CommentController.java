@@ -14,17 +14,27 @@ import com.jerry.jingdong.utils.UIUtils;
 
 public class CommentController extends BaseController {
 
+    public CommentController(Context context) {
+        super(context);
+    }
 
-	public CommentController(Context context) {
-		super(context);
-	}
+    /**
+     * 初始化内容区域
+     * 
+     * @return
+     */
+    @Override
+    public View initContentView() {
+        TextView tv = new TextView(UIUtils.getContext());
+        tv.setText(getClass().getSimpleName());
+        tv.setGravity(Gravity.CENTER);
+        tv.setTextSize(20);
+        return tv;
+    }
 
 	@Override
-	public View initView() {
-		TextView tv = new TextView(UIUtils.getContext());
-		tv.setText(getClass().getSimpleName());
-		tv.setGravity(Gravity.CENTER);
-		tv.setTextSize(20);
-		return tv;
+	public void initDaoHang() {
+
 	}
+
 }

@@ -23,11 +23,15 @@ public class SearchController extends BaseController {
     }
 
     @Override
-    public View initView() {
-        TextView tv = new TextView(UIUtils.getContext());
+    public View initContentView() {TextView tv = new TextView(UIUtils.getContext());
         tv.setText(getClass().getSimpleName());
         tv.setGravity(Gravity.CENTER);
         tv.setTextSize(20);
         return tv;
+    }
+
+    @Override
+    public void initDaoHang() {
+
     }
 }
