@@ -13,8 +13,7 @@ import com.jerry.jingdong.entity.CartInfoBean;
 import com.jerry.jingdong.protocol.ProductProtocol;
 import com.jerry.jingdong.utils.CartParamsUtils;
 import com.jerry.jingdong.utils.UIUtils;
-
-import org.xutils.http.HttpMethod;
+import com.lidroid.xutils.http.client.HttpRequest;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -59,7 +58,7 @@ public class ShoppingController extends BaseController {
             for (int i = 0; i < 40; i++) {
                 HashMap<String, String> map = new HashMap<>();
                 map.put("pId", i + "");
-                CartInfoBean cartInfoBean = mCartProtocol.loadData(HttpMethod.GET, map, null);
+                CartInfoBean cartInfoBean = mCartProtocol.loadData(HttpRequest.HttpMethod.GET, map, null);
                 mProductEntities.add(cartInfoBean.product);
             }
         } catch (Exception e) {
@@ -71,7 +70,6 @@ public class ShoppingController extends BaseController {
 
         if (mIsLogin) {//已登录状态
             mCartParamsUtils = new CartParamsUtils();
-
             //mCartParamsUtils 1:3:1,2,3,4|2:2:2,3
 
 

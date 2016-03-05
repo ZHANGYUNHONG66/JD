@@ -1,5 +1,6 @@
 package com.jerry.jingdong.protocol;
 
+
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
@@ -9,10 +10,11 @@ import com.jerry.jingdong.utils.FileUtils;
 import com.jerry.jingdong.utils.IOUtils;
 import com.jerry.jingdong.utils.MD5Util;
 import com.jerry.jingdong.utils.UIUtils;
-
-import org.xutils.http.HttpMethod;
-import org.xutils.http.RequestParams;
-import org.xutils.x;
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.RequestParams;
+import com.lidroid.xutils.http.ResponseStream;
+import com.lidroid.xutils.http.client.HttpRequest;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -24,11 +26,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-/**
- * @param <T>
- * @des 根据接口文档的参数来获取数据，详细看{@link HomeProtocal}
- */
 public abstract class BaseProtocol<T> {
+
     /**
      * 加载数据,先内存,然后磁盘,最后网络
      *
@@ -36,13 +35,14 @@ public abstract class BaseProtocol<T> {
      * @throws Exception
      * @params 参数列表, 没有可以传 null
      */
-    public T loadData(HttpMethod method, HashMap<String, String> params, String header) throws Exception {
+    public T loadData(HttpRequest.HttpMethod method, HashMap<String, String> params, String header) throws Exception {
         String key = generateKey(params);
         // 1.先内存-->返回
         MyApplication app = (MyApplication) UIUtils.getContext();
         Map<String, String> protocolMap = app.getProtocolMap();
         String memJsonString = protocolMap.get(key);
         if (!TextUtils.isEmpty(memJsonString)) {
+            //LogUtils.i("###从内存加载数据-->" + key);
             // 解析返回即可
             return parseJsonString(memJsonString);
         }
@@ -50,10 +50,14 @@ public abstract class BaseProtocol<T> {
         // 2.再磁盘-->存内存,返回
         T t = loadDataFromLocal(key);
         if (t != null) {
+            // LogUtils.i("###磁盘加载数据-->" + getCacheFile(key).getAbsolutePath());
             return t;
         }
+
         // 3.最后网络-->存内存,存磁盘,返回
+
         t = loadDataFromNet(method, params, header);
+
         return t;
     }
 
@@ -87,6 +91,7 @@ public abstract class BaseProtocol<T> {
                         MyApplication app = (MyApplication) UIUtils.getContext();
                         app.getProtocolMap().put(key, diskJsonString);
 
+                        // 返回
                         return parseJsonString(diskJsonString);
                     }
 
@@ -114,9 +119,10 @@ public abstract class BaseProtocol<T> {
     }
 
     /**
-     * @des 缓存唯一命中，获取指定的值
-     * @param params
+     * 缓存的唯一索引
+     *
      * @return
+     * @params 参数的键值对
      */
     private String generateKey(HashMap<String, String> params) {
         StringBuffer buf = new StringBuffer();
@@ -133,70 +139,80 @@ public abstract class BaseProtocol<T> {
         return MD5Util.md5(keyString);
     }
 
-    /**
-     * @des 根据URL，拿到网络指定的内容
-     * @param method
-     * @param params
-     * @param header
-     * @return
-     * @throws IOException
-     */
-    private T loadDataFromNet(HttpMethod method, HashMap<String, String> params, String header) throws IOException {
+    private String generateKey(String url) {
+        return MD5Util.md5(url);
+    }
 
-        String result = null; // 返回请求的数据
+    /**
+     * 从网络加载数据
+     */
+    private T loadDataFromNet(HttpRequest.HttpMethod method, HashMap<String, String> params, String header) throws IOException {
+        /*=============== 1.得到网络请求回来的jsonString ===============*/
+
+        HttpUtils httpUtils = new HttpUtils();
+        ResponseStream responseStream = null;
+        String result = null;
         RequestParams rparams = null;
-        String postHead = null; //请求头
-        String postValue = null;//请求体
+        String postHead = null;
+        String postValue = null;
         try {
 
             if (params != null && params.size() != 0) {
                 rparams = new RequestParams();
                 for (HashMap.Entry<String, String> entry : params.entrySet()) {
+
                     String key = entry.getKey();
                     String value = entry.getValue();
-                    if (key.equals("userid")) {
+
+                    if (key.equals("userid")){
                         postHead = key;
                         postValue = entry.getValue();
                         continue;
                     }
-                    rparams.addQueryStringParameter(key, value);//添加参数头
+                    rparams.addQueryStringParameter(key, value);
                 }
             }
-
             String url = MyConstants.URL.BASEURL + getInterfaceKey();
-            rparams = new RequestParams(url);
-
-            if (params == null) { // 无参
-                if (header == null && method == HttpMethod.GET) {// 第一次GET请求
-
-                    result = x.http().getSync(rparams, String.class);//请求网络并直接获取json数据
-
-                } else if (method == HttpMethod.POST && header == null) {// 第一次POST请求
-                    result = x.http().postSync(rparams, String.class);
-                } else if (method == HttpMethod.GET && header != null) {
+            if (params == null) {
+                if (method == HttpRequest.HttpMethod.GET && header == null) {
+                    responseStream = httpUtils.sendSync(HttpRequest.HttpMethod.GET, url);
+                } else if (method == HttpRequest.HttpMethod.POST && header == null) {
+                    responseStream = httpUtils.sendSync(HttpRequest.HttpMethod.POST, url);
+                } else if (method == HttpRequest.HttpMethod.GET && header != null) {
+                    rparams = new RequestParams();
                     rparams.addHeader("userid", header);
-                    result = x.http().postSync(rparams, String.class);
-                } else if (method == HttpMethod.POST && header != null) {
+                    responseStream = httpUtils.sendSync(HttpRequest.HttpMethod.GET, url, rparams);
+                }else if(method == HttpRequest.HttpMethod.POST && header != null){
+                    rparams = new RequestParams();
                     rparams.addHeader("userid", header);
-                    result = x.http().postSync(rparams, String.class);
+                    responseStream = httpUtils.sendSync(HttpRequest.HttpMethod.POST, url, rparams);
                 }
-            } else { // 有参
-                if (method == HttpMethod.GET && header == null) {
-                    result = x.http().getSync(rparams, String.class);
-                } else if (method == HttpMethod.POST && header == null) {
-                    result = x.http().postSync(rparams, String.class);
-                } else if (method == HttpMethod.GET && header != null) {
+            } else {
+                if (method == HttpRequest.HttpMethod.GET&& header == null) {
+                    responseStream = httpUtils.sendSync(HttpRequest.HttpMethod.GET, url, rparams);
+
+                } else if (method == HttpRequest.HttpMethod.POST&& header == null) {
+                    responseStream = httpUtils.sendSync(HttpRequest.HttpMethod.POST, url, rparams);
+                }else if(method == HttpRequest.HttpMethod.GET&& header != null){
+
                     rparams.addHeader("userid", header);
-                    result = x.http().getSync(rparams, String.class);
-                } else if (method == HttpMethod.POST && header != null) {
+                    responseStream = httpUtils.sendSync(HttpRequest.HttpMethod.GET, url, rparams);
+                }else  if(method == HttpRequest.HttpMethod.POST&& header != null){
+
                     rparams.addHeader("userid", header);
-                    rparams.addHeader(postHead, postValue);//加入请求头
-                    result = x.http().postSync(rparams, String.class);
+
+                    rparams.addHeader(postHead,postValue);
+                    responseStream = httpUtils.sendSync(HttpRequest.HttpMethod.POST, url, rparams);
                 }
             }
 
-        } catch (Throwable throwable) {
-            throwable.printStackTrace();
+            result = responseStream.readString();
+            //Log.d("andy", result);
+
+        } catch (HttpException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
         MyApplication app = (MyApplication) UIUtils.getContext();
@@ -218,7 +234,9 @@ public abstract class BaseProtocol<T> {
             IOUtils.close(writer);
         }
 
-		/* =============== 2.接续网络请求回来的数据 =============== */
+        //LogUtils.i("resultJsonString:" + resultJsonString);
+
+		/*=============== 2.接续网络请求回来的数据 ===============*/
         // 解析json
         return parseJsonString(result);
     }
@@ -237,6 +255,4 @@ public abstract class BaseProtocol<T> {
      * @des 必须的
      */
     public abstract T parseJsonString(String resultJsonString);
-
-
 }
