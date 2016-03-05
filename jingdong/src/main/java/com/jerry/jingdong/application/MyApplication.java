@@ -12,42 +12,71 @@ import java.util.Map;
  */
 public class MyApplication extends Application {
 
-	public static Context mContext;
-	public static int mMainThreadId;
-	public static Handler mMainThreadHandler;
+    public static Context mContext;
+    public static int     mMainThreadId;
+    public static Handler mMainThreadHandler;
+    public static boolean isLogin = false;//默认状态未登录
+    private static int mUserId;//存放UserId
 
-	public Map<String, String> mProtocolMap = new HashMap<>();
+    public static void setmUserId(int mUserId) {
+        MyApplication.mUserId = mUserId;
+    }
 
-	public Map<String, String> getProtocolMap() {
-		return mProtocolMap;
-	}
+    public static int getmUserId() {
 
-	/** 得到上下文 */
-	public static Context getContext() {
-		return mContext;
-	}
+        return mUserId;
+    }
 
-	/** 得到主线程id */
-	public static int getMainThreadId() {
-		return mMainThreadId;
-	}
 
-	/** 得到主线程hanlder */
-	public static Handler getMainThreadHandler() {
-		return mMainThreadHandler;
-	}
+    public static boolean isLogin() {
+        return isLogin;
+    }
 
-	@Override
-	public void onCreate() {// 程序的入口方法
-		super.onCreate();
+    public static void setIsLogin(boolean isLogin) {
+        MyApplication.isLogin = isLogin;
+    }
 
-		// 上下文
-		mContext = getApplicationContext();
 
-		// 主线程的Id
-		mMainThreadId = android.os.Process.myTid();
+    public Map<String, String> mProtocolMap = new HashMap<>();
 
-		// 主线程的Handler
-		mMainThreadHandler = new Handler();
-	}
+    public Map<String, String> getProtocolMap() {
+        return mProtocolMap;
+    }
+
+    /**
+     * 得到上下文
+     */
+    public static Context getContext() {
+        return mContext;
+    }
+
+    /**
+     * 得到主线程id
+     */
+    public static int getMainThreadId() {
+        return mMainThreadId;
+    }
+
+    /**
+     * 得到主线程hanlder
+     */
+    public static Handler getMainThreadHandler() {
+        return mMainThreadHandler;
+    }
+
+    @Override
+    public void onCreate() {// 程序的入口方法
+        super.onCreate();
+
+        // 上下文
+        mContext = getApplicationContext();
+
+        // 主线程的Id
+        mMainThreadId = android.os.Process.myTid();
+
+        // 主线程的Handler
+        mMainThreadHandler = new Handler();
+    }
+
+
 }
