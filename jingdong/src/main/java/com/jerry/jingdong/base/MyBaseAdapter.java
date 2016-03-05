@@ -12,11 +12,11 @@ import java.util.List;
  * @描述: 继承BaseAdapter的ListView、GridView的基类
  */
 
-public abstract class MyBaseAdapter<T> extends BaseAdapter {
+public abstract class MyBaseAdapter<ITEMBEANTYPE> extends BaseAdapter {
 
-    private List<T> mDatas;
+    public List<ITEMBEANTYPE> mDatas;
 
-    public MyBaseAdapter(List<T> datas) {
+    public MyBaseAdapter(List<ITEMBEANTYPE> datas) {
         mDatas = datas;
     }
 
