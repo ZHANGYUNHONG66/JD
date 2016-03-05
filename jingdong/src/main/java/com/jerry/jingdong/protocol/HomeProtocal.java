@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.jerry.jingdong.entity.HomeInfoBean;
 
 
-public class HomeProtocal extends BaseProtocol<HomeInfoBean> {
+public class HomeProtocal extends BasePlusProtocol<HomeInfoBean> {
 
     @Override
     public String getInterfaceKey() {
