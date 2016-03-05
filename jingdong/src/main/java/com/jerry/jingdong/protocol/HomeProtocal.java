@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.jerry.jingdong.entity.HomeInfoBean;
 
 
-public class HomeProtocal extends BaseProtocol<HomeInfoBean> {
+public class HomeProtocal extends BasePlusProtocol<HomeInfoBean> {
 
     @Override
     public String getInterfaceKey() {
@@ -12,9 +12,9 @@ public class HomeProtocal extends BaseProtocol<HomeInfoBean> {
     }
 
     @Override
-    public HomeInfoBean parseJsonString(String resultJsonString) {
+    public HomeInfoBean parseJsonString(String jsonString) {
         Gson gson = new Gson();
-        HomeInfoBean homeInfoBean = gson.fromJson(resultJsonString, HomeInfoBean.class);
-        return homeInfoBean;
+        HomeInfoBean homeBean = gson.fromJson(jsonString, HomeInfoBean.class);
+        return homeBean;
     }
 }

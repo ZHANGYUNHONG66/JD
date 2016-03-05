@@ -12,7 +12,7 @@ import java.util.Map;
  * @工程名: GooglePlay
  * @描述: 与网络相关的工具类
  */
-public class HttpUtils {
+public class HttpsUtils {
     /**
      * 将map转换成url
      *
