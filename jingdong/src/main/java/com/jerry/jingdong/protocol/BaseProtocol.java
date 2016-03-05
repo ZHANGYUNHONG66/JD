@@ -150,13 +150,13 @@ public abstract class BaseProtocol<T> {
 		try {
 
 			if (params != null && params.size() != 0) {
-				rparams = new RequestParams(url);
+				rparams = new RequestParams();
 				for (HashMap.Entry<String, String> entry : params.entrySet()) {
 
 					String key = entry.getKey();
 					String value = entry.getValue();
 
-					if (key.equals("userid")) {
+					if (key.equals("userId")) {
 						postHead = key;
 						postValue = entry.getValue();
 						continue;
@@ -172,12 +172,12 @@ public abstract class BaseProtocol<T> {
 					responseStream = x.http().postSync(rparams, ResponseParser.class);
 				} else if (method == HttpMethod.GET && header != null) {
 					rparams = new RequestParams();
-					rparams.addHeader("userid", header);
+					rparams.addHeader("userId", header);
 					responseStream = x.http().postSync(rparams, ResponseParser.class);
 				} else if (method == HttpMethod.POST && header != null) {
 
 					rparams = new RequestParams();
-					rparams.addHeader("userid", header);
+					rparams.addHeader("userId", header);
 					responseStream = x.http().postSync(rparams, ResponseParser.class);
 				}
 			} else {// 有参
@@ -190,12 +190,12 @@ public abstract class BaseProtocol<T> {
 				} else if (method == HttpMethod.GET && header != null) {
 
 					// rparams = new RequestParams();
-					rparams.addHeader("userid", header);
+					rparams.addHeader("userId", header);
 					responseStream = x.http().getSync(rparams, ResponseParser.class);
 
 				} else if (method == HttpMethod.POST && header != null) {
 
-					rparams.addHeader("userid", header);
+					rparams.addHeader("userId", header);
 					rparams.addHeader(postHead, postValue);
 				}
 			}

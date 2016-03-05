@@ -55,4 +55,34 @@
         <item name="android:textColor">@color/myorder_rb_textselector</item>
     </style>
 
+    <!--*********结算中心样式  start*********-->
+    <!--LinearLayout样式-->
+    <style name="BlanceAccountLinearLayoutStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:background">@drawable/shouhuodizhibeijing</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">15dp</item>
+    </style>
+    
+    <!--字体样式-->
+    <style name="BlanceAccountAddressTextStyle">
+        <item name="android:text" >xxx</item>
+        <item name="android:textColor" >#fff</item>
+        <item name="android:textSize" >14sp</item>
+        <item name="android:layout_width" >wrap_content</item>
+        <item name="android:layout_height" >wrap_content</item>
+    </style>
+
+    <!--加载内容ImageView样式-->
+    <style name="BlanceAccountIvStyle">
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:src">@drawable/balance_account_click_selector</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!--*********结算中心样式  end*********-->
 </resources>

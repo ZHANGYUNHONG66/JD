@@ -17,7 +17,8 @@ public interface MyConstants {
 	public static final long PROTOCOLTIMEOUT = 5 * 60 * 1000; // 协议缓存时间为5分钟
 
 	public static class URL {
-		public static final String BASEURL = "http://192.168.165.1:8080/Market/";
+//		public static final String BASEURL = "http://192.168.165.1:8080/Market/";
+		public static final String BASEURL = "http://188.188.5.50:8080/Market/";
 
 	}
 }
