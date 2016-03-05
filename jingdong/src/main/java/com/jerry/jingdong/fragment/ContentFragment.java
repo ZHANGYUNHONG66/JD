@@ -1,12 +1,8 @@
 package com.jerry.jingdong.fragment;
 /*
- * @创建�?    Jerry
+ * @创建      Jerry
  * @创建时间   2016/2/5 16:10
  * @描述      内容区域对应的Fragment
- * 
- * @更新�?    $Author$
- * @更新时间   $Date$
- * @更新描述   ${TODO}
  */
 
 import android.os.Bundle;
@@ -36,9 +32,9 @@ import butterknife.ButterKnife;
 public class ContentFragment extends BaseFragment {
 
     @Bind(R.id.content_rg)
-    RadioGroup        mContentRg;
+    RadioGroup                   mContentRg;
     @Bind(R.id.content_viewPager)
-    NoScrollViewPager mContentViewPager;
+    NoScrollViewPager            mContentViewPager;
 
     private int                  mCurrRbIndex     = -1;
     private List<BaseController> mBaseControllers = new ArrayList<>();
@@ -107,10 +103,8 @@ public class ContentFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
         View rootView = super.onCreateView(inflater, container,
                 savedInstanceState);
-        ButterKnife.bind(this, rootView);
         return rootView;
     }
 
@@ -142,8 +136,7 @@ public class ContentFragment extends BaseFragment {
             // 添加到容器
             container.addView(rootView);
 
-            // 调用当前展示页面的initData方法
-            controller.initData();
+            controller.mLoadingPager.triggerLoadData();
 
             return rootView;
         }

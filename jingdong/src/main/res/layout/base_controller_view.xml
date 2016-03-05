@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/base_controller_rl_daohang"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:background="@drawable/daohang_title">
+
+        <Button
+            android:id="@+id/base_controller_btn_left"
+            style="@style/ButtonStyle"
+            android:layout_marginLeft="3dp"
+            android:text="返回"/>
+
+        <Button
+            android:id="@+id/base_controller_btn_right"
+            style="@style/ButtonStyle"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="3dp"
+            android:text="去结算"/>
+
+        <TextView
+            android:id="@+id/base_controller_tv_title"
+            style="@style/MyTitleStyle"
+            android:text="促销快报"
+            />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/base_controller_fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+
+</LinearLayout>
