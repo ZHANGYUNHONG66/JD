@@ -28,7 +28,7 @@ public class ShoppingController extends BaseController {
     private ProductProtocol                  mCartProtocol;
     private List<CartInfoBean.ProductEntity> mProductEntities;//商品集合
     private boolean                          mIsLogin;
-    private CartParamsUtils mCartParamsUtils;
+    private CartParamsUtils                  mCartParamsUtils;
 
     public ShoppingController(Context context) {
         super(context);
@@ -69,9 +69,10 @@ public class ShoppingController extends BaseController {
 
         mIsLogin = MyApplication.isLogin();//拿到当前登录状态
 
-        if(mIsLogin){//已登录状态
+        if (mIsLogin) {//已登录状态
             mCartParamsUtils = new CartParamsUtils();
 
+            //mCartParamsUtils 1:3:1,2,3,4|2:2:2,3
 
 
         }

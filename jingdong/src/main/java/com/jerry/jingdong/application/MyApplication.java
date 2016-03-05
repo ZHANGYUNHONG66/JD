@@ -16,6 +16,17 @@ public class MyApplication extends Application {
     public static int     mMainThreadId;
     public static Handler mMainThreadHandler;
     public static boolean isLogin = false;//默认状态未登录
+    private static int mUserId;//存放UserId
+
+    public static void setmUserId(int mUserId) {
+        MyApplication.mUserId = mUserId;
+    }
+
+    public static int getmUserId() {
+
+        return mUserId;
+    }
+
 
     public static boolean isLogin() {
         return isLogin;
@@ -24,6 +35,7 @@ public class MyApplication extends Application {
     public static void setIsLogin(boolean isLogin) {
         MyApplication.isLogin = isLogin;
     }
+
 
     public Map<String, String> mProtocolMap = new HashMap<>();
 
@@ -65,4 +77,6 @@ public class MyApplication extends Application {
         // 主线程的Handler
         mMainThreadHandler = new Handler();
     }
+
+
 }
