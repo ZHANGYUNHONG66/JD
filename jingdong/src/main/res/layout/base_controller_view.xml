@@ -12,39 +12,22 @@
 
         <Button
             android:id="@+id/base_controller_btn_left"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
+            style="@style/ButtonStyle"
             android:layout_marginLeft="3dp"
-            android:background="@null"
-            android:padding="5dp"
-            android:text="返回"
-            android:gravity="center"
-            android:textColor="#000"
-            android:textSize="16sp"/>
+            android:text="返回"/>
 
         <Button
             android:id="@+id/base_controller_btn_right"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ButtonStyle"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
             android:layout_marginRight="3dp"
-            android:background="@null"
-            android:padding="5dp"
-            android:gravity="center"
-            android:text="去结算"
-            android:textColor="#000"
-            android:textSize="16sp"/>
+            android:text="去结算"/>
 
         <TextView
             android:id="@+id/base_controller_tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            style="@style/MyTitleStyle"
             android:text="促销快报"
-            android:textColor="#000"
-            android:textSize="22sp"/>
+            />
     </RelativeLayout>
 
     <FrameLayout
