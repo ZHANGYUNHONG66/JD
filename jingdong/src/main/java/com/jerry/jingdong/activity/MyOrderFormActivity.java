@@ -54,6 +54,8 @@ public class MyOrderFormActivity extends Activity {
 
         public OrderListAdapter(List<List<OrderListInfo>> datas) {
             super(datas);
+
+            //aaa
         }
 
         @Override
