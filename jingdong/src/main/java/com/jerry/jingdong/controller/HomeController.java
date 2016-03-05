@@ -18,7 +18,7 @@ public class HomeController extends BaseController {
 
 
     /**
-     * 初始化导航栏,可以设置
+     * 初始化导航栏
      */
     @Override
     public void initTitle() {

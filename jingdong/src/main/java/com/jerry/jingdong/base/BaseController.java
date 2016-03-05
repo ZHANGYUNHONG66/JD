@@ -129,9 +129,6 @@ public abstract class BaseController {
 
     /**
      * 校验请求网络返回的数据的状态
-     *
-     * @param resObj
-     * @return
      */
     public LoadingPager.LoadResultState checkState(Object resObj) {
         if (resObj == null) {
