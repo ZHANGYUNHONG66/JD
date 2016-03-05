@@ -3,6 +3,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -10,6 +11,7 @@
         >
 
         <Button
+            android:id="@+id/myorder_btn_back"
             style="@style/ButtonStyle"
             android:layout_marginLeft="3dp"
             android:text="返回"/>
@@ -19,4 +21,74 @@
             android:text="我的订单"
             android:textStyle="bold"/>
     </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp">
+
+        <RadioGroup
+            android:id="@+id/myorder_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/myorder_rb_onemonth"
+                style="@style/RadioButtonStyle"
+                android:background="@drawable/myorder_rb_onemonth_selector"
+                android:checked="true"
+                android:text="近一个月订单"/>
+
+            <RadioButton
+                android:id="@+id/myorder_rb_monthago"
+                style="@style/RadioButtonStyle"
+                android:background="@drawable/myorder_rb_monthago_selector"
+                android:text="一个月前订单"/>
+
+            <RadioButton
+                android:id="@+id/myorder_rb_cancel"
+                style="@style/RadioButtonStyle"
+                android:background="@drawable/myorder_rb_cancel_selector"
+                android:text="已取消的订单"/>
+
+        </RadioGroup>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/myorder_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
+
+        <LinearLayout
+            android:id="@+id/myorder_empty_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/neirong_hezi_tupian"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:text="您现在还没有生成订单哦！"
+                android:textColor="#000"
+                android:textSize="22sp"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
 </LinearLayout>
