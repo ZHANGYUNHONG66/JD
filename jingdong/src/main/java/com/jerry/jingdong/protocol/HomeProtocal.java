@@ -3,10 +3,8 @@ package com.jerry.jingdong.protocol;
 import com.google.gson.Gson;
 import com.jerry.jingdong.entity.HomeInfoBean;
 
-/**
- * Created by Administrator on 2015/12/18.
- */
-public class HomeProtocal extends BaseProtocol<HomeInfoBean> {
+
+public class HomeProtocal extends BasePlusProtocol<HomeInfoBean> {
 
     @Override
     public String getInterfaceKey() {

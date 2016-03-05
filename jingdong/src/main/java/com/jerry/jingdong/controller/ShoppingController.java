@@ -6,15 +6,28 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.jerry.jingdong.application.MyApplication;
 import com.jerry.jingdong.base.BaseController;
 import com.jerry.jingdong.base.LoadingPager;
+import com.jerry.jingdong.entity.CartInfoBean;
+import com.jerry.jingdong.protocol.ProductProtocol;
+import com.jerry.jingdong.utils.CartParamsUtils;
 import com.jerry.jingdong.utils.UIUtils;
+import com.lidroid.xutils.http.client.HttpRequest;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 /**
- * 购物
+ *
  */
-
 public class ShoppingController extends BaseController {
+
+    private ProductProtocol                  mCartProtocol;
+    private List<CartInfoBean.ProductEntity> mProductEntities;//商品集合
+    private boolean                          mIsLogin;
+    private CartParamsUtils                  mCartParamsUtils;
 
     public ShoppingController(Context context) {
         super(context);
@@ -25,7 +38,7 @@ public class ShoppingController extends BaseController {
      */
     @Override
     public void initTitle() {
-
+        mTvTitle.setText("杨哥的购物车");
     }
 
     /**
@@ -36,6 +49,32 @@ public class ShoppingController extends BaseController {
     @Override
     public LoadingPager.LoadResultState initData() {
         SystemClock.sleep(2000);
+
+        mCartProtocol = new ProductProtocol();
+
+        mProductEntities = new ArrayList<CartInfoBean.ProductEntity>();
+
+        try {
+            for (int i = 0; i < 40; i++) {
+                HashMap<String, String> map = new HashMap<>();
+                map.put("pId", i + "");
+                CartInfoBean cartInfoBean = mCartProtocol.loadData(HttpRequest.HttpMethod.GET, map, null);
+                mProductEntities.add(cartInfoBean.product);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return LoadingPager.LoadResultState.ERROR;
+        }
+
+        mIsLogin = MyApplication.isLogin();//拿到当前登录状态
+
+        if (mIsLogin) {//已登录状态
+            mCartParamsUtils = new CartParamsUtils();
+            //mCartParamsUtils 1:3:1,2,3,4|2:2:2,3
+
+
+        }
+
         return LoadingPager.LoadResultState.SUCCESS;
     }
 

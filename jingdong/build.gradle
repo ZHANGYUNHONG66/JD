@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 // This does not break the build when Android Studio is missing the JRebel for Android plugin.
 //apply plugin: 'com.zeroturnaround.jrebel.android'
+// This does not break the build when Android Studio is missing the JRebel for Android plugin.
 
 android {
     compileSdkVersion 23
@@ -19,6 +20,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    useLibrary('org.apache.http.legacy')
 }
 
 dependencies {
@@ -26,5 +29,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile files('libs/butterknife-7.0.1.jar')
     compile files('libs/gson-2.2.4.jar')
-    compile files('libs/xutils-3.3.12.jar')
+    compile files('libs/xUtils-2.6.14.jar')
+    compile files('libs/org.apache.http.legacy.jar')
 }
