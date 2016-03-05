@@ -237,4 +237,6 @@ public abstract class BaseProtocol<T> {
      * @des 必须的
      */
     public abstract T parseJsonString(String resultJsonString);
+
+
 }

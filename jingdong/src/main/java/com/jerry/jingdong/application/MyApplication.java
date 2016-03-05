@@ -12,42 +12,57 @@ import java.util.Map;
  */
 public class MyApplication extends Application {
 
-	public static Context mContext;
-	public static int mMainThreadId;
-	public static Handler mMainThreadHandler;
+    public static Context mContext;
+    public static int     mMainThreadId;
+    public static Handler mMainThreadHandler;
+    public static boolean isLogin = false;//默认状态未登录
 
-	public Map<String, String> mProtocolMap = new HashMap<>();
+    public static boolean isLogin() {
+        return isLogin;
+    }
 
-	public Map<String, String> getProtocolMap() {
-		return mProtocolMap;
-	}
+    public static void setIsLogin(boolean isLogin) {
+        MyApplication.isLogin = isLogin;
+    }
 
-	/** 得到上下文 */
-	public static Context getContext() {
-		return mContext;
-	}
+    public Map<String, String> mProtocolMap = new HashMap<>();
 
-	/** 得到主线程id */
-	public static int getMainThreadId() {
-		return mMainThreadId;
-	}
+    public Map<String, String> getProtocolMap() {
+        return mProtocolMap;
+    }
 
-	/** 得到主线程hanlder */
-	public static Handler getMainThreadHandler() {
-		return mMainThreadHandler;
-	}
+    /**
+     * 得到上下文
+     */
+    public static Context getContext() {
+        return mContext;
+    }
 
-	@Override
-	public void onCreate() {// 程序的入口方法
-		super.onCreate();
+    /**
+     * 得到主线程id
+     */
+    public static int getMainThreadId() {
+        return mMainThreadId;
+    }
 
-		// 上下文
-		mContext = getApplicationContext();
+    /**
+     * 得到主线程hanlder
+     */
+    public static Handler getMainThreadHandler() {
+        return mMainThreadHandler;
+    }
 
-		// 主线程的Id
-		mMainThreadId = android.os.Process.myTid();
+    @Override
+    public void onCreate() {// 程序的入口方法
+        super.onCreate();
 
-		// 主线程的Handler
-		mMainThreadHandler = new Handler();
-	}
+        // 上下文
+        mContext = getApplicationContext();
+
+        // 主线程的Id
+        mMainThreadId = android.os.Process.myTid();
+
+        // 主线程的Handler
+        mMainThreadHandler = new Handler();
+    }
 }
