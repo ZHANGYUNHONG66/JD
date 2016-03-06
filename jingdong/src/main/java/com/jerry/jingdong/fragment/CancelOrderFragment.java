@@ -1,5 +1,6 @@
 package com.jerry.jingdong.fragment;
 
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.ListView;
@@ -31,8 +32,8 @@ public class CancelOrderFragment extends OrderBaseFragment {
     public LoadingPager.LoadResultState initData() {
         mDatas = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
-            OrderInfo data = new OrderInfo("12312", getClass().getSimpleName(), "1439528260115",
-                    "208", 1);
+            OrderInfo data = new OrderInfo("12312", getClass().getSimpleName(),
+                    "1439528260115", "208", 1);
             mDatas.add(data);
         }
 
@@ -57,14 +58,17 @@ public class CancelOrderFragment extends OrderBaseFragment {
          */
         @Override
         public List<OrderInfo> loadMoreData() throws IOException {
+            SystemClock.sleep(2000);
             mDatas = new ArrayList();
             SimpleDateFormat dateFormat = new SimpleDateFormat(
                     "yyyy/MM/dd HH:mm:ss");
             for (int i = 0; i < 20; i++) {
-                String time = String.valueOf(new Random().nextInt());
+                String time = String.valueOf(new Random().nextInt() + 2);
 
-                OrderInfo data = new OrderInfo("1231" + i, getClass().getSimpleName(),
-                        dateFormat.format(new Date(Long.parseLong(time))), "20" + i, 1);
+                OrderInfo data = new OrderInfo("1231" + i,
+                        getClass().getSimpleName(),
+                        dateFormat.format(new Date(Long.parseLong(time))),
+                        "20" + i, 1);
 
                 mDatas.add(data);
             }

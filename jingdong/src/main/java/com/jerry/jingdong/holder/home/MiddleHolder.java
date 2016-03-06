@@ -1,11 +1,19 @@
 package com.jerry.jingdong.holder.home;
 
-import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.jerry.jingdong.R;
 import com.jerry.jingdong.base.BaseHolder;
 import com.jerry.jingdong.utils.UIUtils;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 /**
  * @创建者: Jerry
@@ -15,18 +23,100 @@ import com.jerry.jingdong.utils.UIUtils;
  * @描述: 首页中间的部分
  * @描述: TODO：参数暂时不确定
  */
-public class MiddleHolder<T> extends BaseHolder {
+public class MiddleHolder<T> extends BaseHolder
+        implements AdapterView.OnItemClickListener {
+    // 描述
+    private String[] mTitles = new String[] { "热门单品", "新品上架", "限时抢购", "促销快报",
+            "推荐品牌", "商品分类" };
+
+    // 图标
+    private int[]    mIcons  = new int[] {
+            R.drawable.neirong_remendanpin_anniu_tiaozhuan_moren,
+            R.drawable.neirong_xinpinshangjia_anniu_tiaozhuan_moren,
+            R.drawable.neirong_xianshiqianggou_anniu_tiaozhuan_moren,
+            R.drawable.neirong_cuxiaokuaibao_anniu_tiaozhuan_moren,
+            R.drawable.neirong_tuijianpinpai_anniu_tiaozhuan_moren,
+            R.drawable.neirong_shangpinfenlei_anniu_tiaozhuan_moren };
+
+    @Bind(R.id.home_middle_gridview)
+    GridView         mHomeMiddleGridview;
+
     @Override
     public View initRootView() {
-        TextView tv = new TextView(UIUtils.getContext());
-        tv.setText(getClass().getSimpleName());
-        tv.setGravity(Gravity.CENTER);
-        tv.setTextSize(30);
-        return tv;
+        View view = View.inflate(UIUtils.getContext(), R.layout.gridview, null);
+        ButterKnife.bind(this, view);
+
+        return view;
     }
 
     @Override
     protected void refreshView(Object data) {
+        mHomeMiddleGridview.setAdapter(new GridViewAdapter());
+
+        mHomeMiddleGridview.setOnItemClickListener(this);
+    }
+
+    /**
+     * GridView条目点击事件监听
+     */
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position,
+            long id) {
+        switch (position) {
+        case 0:// 热门单品
+
+            break;
+        case 1:// 新品上架
+
+            break;
+        case 2:// 限时抢购
+
+            break;
+        case 3:// 促销快报
+
+            break;
+        case 4:// 推荐品牌
+
+            break;
+        case 5:// 商品分类
+
+            break;
+
+        default:
+            break;
+        }
+    }
+
+    private class GridViewAdapter extends BaseAdapter {
+
+        @Override
+        public int getCount() {
+            return mTitles.length;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View view = View.inflate(UIUtils.getContext(),
+                    R.layout.item_home_gridview, null);
+
+            ImageView ivIcon = (ImageView) view.findViewById(R.id.iv_icon);
+            TextView tvDes = (TextView) view.findViewById(R.id.tv_des);
+
+            ivIcon.setImageResource(mIcons[position]);
+            tvDes.setText(mTitles[position]);
+
+            return view;
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
 
     }
 }

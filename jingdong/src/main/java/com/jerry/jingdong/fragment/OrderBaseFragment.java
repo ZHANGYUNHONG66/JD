@@ -10,9 +10,6 @@ import android.view.ViewGroup;
 import com.jerry.jingdong.base.LoadingPager;
 import com.jerry.jingdong.utils.UIUtils;
 
-import java.util.List;
-import java.util.Map;
-
 /**
  * @创建者: Jerry
  * @创建时间: 2016/3/5 20:35
@@ -48,33 +45,9 @@ public abstract class OrderBaseFragment extends Fragment {
             };
         }
 
+        mLoadingPager.triggerLoadData();
+
         return mLoadingPager;
-    }
-
-    /**
-     * 校验请求网络返回的数据的状态
-     *
-     * @param resObj
-     * @return
-     */
-    public LoadingPager.LoadResultState checkState(Object resObj) {
-        if (resObj == null) {
-            return LoadingPager.LoadResultState.EMPTY;
-        }
-
-        if (resObj instanceof List) {
-            if (((List) resObj).size() == 0) {
-                return LoadingPager.LoadResultState.EMPTY;
-            }
-        }
-
-        if (resObj instanceof Map) {
-            if (((Map) resObj).size() == 0) {
-                return LoadingPager.LoadResultState.EMPTY;
-            }
-        }
-
-        return LoadingPager.LoadResultState.SUCCESS;
     }
 
     /**
