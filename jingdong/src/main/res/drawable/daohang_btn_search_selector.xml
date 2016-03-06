@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/daohang_sousuo_anniu_tiaozhuan_dianji"
+          android:state_pressed="true"></item>
+    <item android:drawable="@drawable/daohang_sousuo_anniu_tiaozhuan_moren"
+          android:state_pressed="false"></item>
+</selector>

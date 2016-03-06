@@ -3,11 +3,13 @@ package com.jerry.jingdong.adapter;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.Toast;
 
 import com.jerry.jingdong.base.BaseHolder;
 import com.jerry.jingdong.base.SuperBaseAdapter;
 import com.jerry.jingdong.entity.OrderInfo;
 import com.jerry.jingdong.holder.item.OrderListItemHolder;
+import com.jerry.jingdong.utils.UIUtils;
 
 import java.util.List;
 
@@ -46,6 +48,10 @@ public class OrderItemAdapter extends SuperBaseAdapter<OrderInfo> {
     @Override
     public void onNormalItenClick(AdapterView<?> parent, View view,
             int position, long id) {
+        // TODO: 出口，跳转到订单详情，传递一个bean过去
 
+        OrderInfo o = (OrderInfo) mDatas.get(position);
+        Toast.makeText(UIUtils.getContext(), "点击了" + o.orderId,
+                Toast.LENGTH_SHORT).show();
     }
 }
