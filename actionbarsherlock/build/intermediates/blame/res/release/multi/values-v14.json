@@ -1,0 +1,1183 @@
+[
+    {
+        "outputFile": "E:\\Android_protect\\JingDong\\actionbarsherlock\\build\\intermediates\\res\\merged\\release\\values-v14\\values-v14.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 3,
+                    "endColumn": 12,
+                    "endOffset": 127
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__themes.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 59,
+                        "endLine": 4,
+                        "endColumn": 12,
+                        "endOffset": 132
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 132,
+                    "endLine": 15,
+                    "endColumn": 12,
+                    "endOffset": 978
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__themes.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 229,
+                        "endLine": 18,
+                        "endColumn": 12,
+                        "endOffset": 1086
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 983,
+                    "endLine": 17,
+                    "endColumn": 12,
+                    "endOffset": 1067
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__themes.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 138,
+                        "endLine": 6,
+                        "endColumn": 12,
+                        "endOffset": 223
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1072,
+                    "endLine": 19,
+                    "endColumn": 12,
+                    "endOffset": 1212
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 116,
+                        "startColumn": 4,
+                        "startOffset": 6221,
+                        "endLine": 117,
+                        "endColumn": 12,
+                        "endOffset": 6362
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1217,
+                    "endLine": 21,
+                    "endColumn": 12,
+                    "endOffset": 1357
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 120,
+                        "startColumn": 4,
+                        "startOffset": 6509,
+                        "endLine": 121,
+                        "endColumn": 12,
+                        "endOffset": 6650
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1362,
+                    "endLine": 23,
+                    "endColumn": 12,
+                    "endOffset": 1494
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 92,
+                        "startColumn": 4,
+                        "startOffset": 4584,
+                        "endLine": 93,
+                        "endColumn": 12,
+                        "endOffset": 4717
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 1499,
+                    "endLine": 25,
+                    "endColumn": 12,
+                    "endOffset": 1639
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 99,
+                        "startColumn": 4,
+                        "startOffset": 5023,
+                        "endLine": 100,
+                        "endColumn": 12,
+                        "endOffset": 5164
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 1644,
+                    "endLine": 27,
+                    "endColumn": 12,
+                    "endOffset": 1800
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 101,
+                        "startColumn": 4,
+                        "startOffset": 5170,
+                        "endLine": 102,
+                        "endColumn": 12,
+                        "endOffset": 5327
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 28,
+                    "startColumn": 4,
+                    "startOffset": 1805,
+                    "endLine": 29,
+                    "endColumn": 12,
+                    "endOffset": 1939
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 95,
+                        "startColumn": 4,
+                        "startOffset": 4725,
+                        "endLine": 96,
+                        "endColumn": 12,
+                        "endOffset": 4860
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 30,
+                    "startColumn": 4,
+                    "startOffset": 1944,
+                    "endLine": 31,
+                    "endColumn": 12,
+                    "endOffset": 2094
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 97,
+                        "startColumn": 4,
+                        "startOffset": 4866,
+                        "endLine": 98,
+                        "endColumn": 12,
+                        "endOffset": 5017
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 2099,
+                    "endLine": 33,
+                    "endColumn": 12,
+                    "endOffset": 2241
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 107,
+                        "startColumn": 4,
+                        "startOffset": 5635,
+                        "endLine": 108,
+                        "endColumn": 12,
+                        "endOffset": 5778
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 34,
+                    "startColumn": 4,
+                    "startOffset": 2246,
+                    "endLine": 35,
+                    "endColumn": 12,
+                    "endOffset": 2404
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 109,
+                        "startColumn": 4,
+                        "startOffset": 5784,
+                        "endLine": 110,
+                        "endColumn": 12,
+                        "endOffset": 5943
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 36,
+                    "startColumn": 4,
+                    "startOffset": 2409,
+                    "endLine": 37,
+                    "endColumn": 12,
+                    "endOffset": 2545
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 103,
+                        "startColumn": 4,
+                        "startOffset": 5333,
+                        "endLine": 104,
+                        "endColumn": 12,
+                        "endOffset": 5470
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 38,
+                    "startColumn": 4,
+                    "startOffset": 2550,
+                    "endLine": 39,
+                    "endColumn": 12,
+                    "endOffset": 2702
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 105,
+                        "startColumn": 4,
+                        "startOffset": 5476,
+                        "endLine": 106,
+                        "endColumn": 12,
+                        "endOffset": 5629
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 40,
+                    "startColumn": 4,
+                    "startOffset": 2707,
+                    "endLine": 41,
+                    "endColumn": 12,
+                    "endOffset": 2829
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 112,
+                        "startColumn": 4,
+                        "startOffset": 5951,
+                        "endLine": 113,
+                        "endColumn": 12,
+                        "endOffset": 6074
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 42,
+                    "startColumn": 4,
+                    "startOffset": 2834,
+                    "endLine": 43,
+                    "endColumn": 12,
+                    "endOffset": 2968
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 114,
+                        "startColumn": 4,
+                        "startOffset": 6080,
+                        "endLine": 115,
+                        "endColumn": 12,
+                        "endOffset": 6215
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 44,
+                    "startColumn": 4,
+                    "startOffset": 2973,
+                    "endLine": 45,
+                    "endColumn": 12,
+                    "endOffset": 3107
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 118,
+                        "startColumn": 4,
+                        "startOffset": 6368,
+                        "endLine": 119,
+                        "endColumn": 12,
+                        "endOffset": 6503
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 46,
+                    "startColumn": 4,
+                    "startOffset": 3112,
+                    "endLine": 49,
+                    "endColumn": 12,
+                    "endOffset": 3281
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__themes.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 4,
+                        "startOffset": 1266,
+                        "endLine": 27,
+                        "endColumn": 12,
+                        "endOffset": 1438
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 50,
+                    "startColumn": 4,
+                    "startOffset": 3286,
+                    "endLine": 53,
+                    "endColumn": 12,
+                    "endOffset": 3449
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__themes.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1094,
+                        "endLine": 23,
+                        "endColumn": 12,
+                        "endOffset": 1260
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 54,
+                    "startColumn": 4,
+                    "startOffset": 3454,
+                    "endLine": 55,
+                    "endColumn": 12,
+                    "endOffset": 3546
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 59,
+                        "endLine": 4,
+                        "endColumn": 12,
+                        "endOffset": 152
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 56,
+                    "startColumn": 4,
+                    "startOffset": 3551,
+                    "endLine": 57,
+                    "endColumn": 12,
+                    "endOffset": 3655
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 158,
+                        "endLine": 6,
+                        "endColumn": 12,
+                        "endOffset": 263
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 58,
+                    "startColumn": 4,
+                    "startOffset": 3660,
+                    "endLine": 59,
+                    "endColumn": 12,
+                    "endOffset": 3766
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 1031,
+                        "endLine": 22,
+                        "endColumn": 12,
+                        "endOffset": 1138
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 60,
+                    "startColumn": 4,
+                    "startOffset": 3771,
+                    "endLine": 61,
+                    "endColumn": 12,
+                    "endOffset": 3879
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 28,
+                        "startColumn": 4,
+                        "startOffset": 1412,
+                        "endLine": 29,
+                        "endColumn": 12,
+                        "endOffset": 1521
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 62,
+                    "startColumn": 4,
+                    "startOffset": 3884,
+                    "endLine": 63,
+                    "endColumn": 12,
+                    "endOffset": 3992
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 644,
+                        "endLine": 15,
+                        "endColumn": 12,
+                        "endOffset": 753
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 64,
+                    "startColumn": 4,
+                    "startOffset": 3997,
+                    "endLine": 65,
+                    "endColumn": 12,
+                    "endOffset": 4095
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 35,
+                        "startColumn": 4,
+                        "startOffset": 1799,
+                        "endLine": 36,
+                        "endColumn": 12,
+                        "endOffset": 1898
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 66,
+                    "startColumn": 4,
+                    "startOffset": 4100,
+                    "endLine": 67,
+                    "endColumn": 12,
+                    "endOffset": 4218
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 40,
+                        "startColumn": 4,
+                        "startOffset": 2023,
+                        "endLine": 41,
+                        "endColumn": 12,
+                        "endOffset": 2142
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 68,
+                    "startColumn": 4,
+                    "startOffset": 4223,
+                    "endLine": 69,
+                    "endColumn": 12,
+                    "endOffset": 4339
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 45,
+                        "startColumn": 4,
+                        "startOffset": 2287,
+                        "endLine": 46,
+                        "endColumn": 12,
+                        "endOffset": 2404
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 70,
+                    "startColumn": 4,
+                    "startOffset": 4344,
+                    "endLine": 71,
+                    "endColumn": 12,
+                    "endOffset": 4438
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 50,
+                        "startColumn": 4,
+                        "startOffset": 2547,
+                        "endLine": 51,
+                        "endColumn": 12,
+                        "endOffset": 2642
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 72,
+                    "startColumn": 4,
+                    "startOffset": 4443,
+                    "endLine": 73,
+                    "endColumn": 12,
+                    "endOffset": 4547
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 269,
+                        "endLine": 8,
+                        "endColumn": 12,
+                        "endOffset": 374
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 74,
+                    "startColumn": 4,
+                    "startOffset": 4552,
+                    "endLine": 75,
+                    "endColumn": 12,
+                    "endOffset": 4668
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 380,
+                        "endLine": 10,
+                        "endColumn": 12,
+                        "endOffset": 497
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 76,
+                    "startColumn": 4,
+                    "startOffset": 4673,
+                    "endLine": 77,
+                    "endColumn": 12,
+                    "endOffset": 4805
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 503,
+                        "endLine": 12,
+                        "endColumn": 12,
+                        "endOffset": 636
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 78,
+                    "startColumn": 4,
+                    "startOffset": 4810,
+                    "endLine": 79,
+                    "endColumn": 12,
+                    "endOffset": 4928
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 4,
+                        "startOffset": 1144,
+                        "endLine": 24,
+                        "endColumn": 12,
+                        "endOffset": 1263
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 80,
+                    "startColumn": 4,
+                    "startOffset": 4933,
+                    "endLine": 81,
+                    "endColumn": 12,
+                    "endOffset": 5067
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 25,
+                        "startColumn": 4,
+                        "startOffset": 1269,
+                        "endLine": 26,
+                        "endColumn": 12,
+                        "endOffset": 1404
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 82,
+                    "startColumn": 4,
+                    "startOffset": 5072,
+                    "endLine": 83,
+                    "endColumn": 12,
+                    "endOffset": 5192
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 30,
+                        "startColumn": 4,
+                        "startOffset": 1527,
+                        "endLine": 31,
+                        "endColumn": 12,
+                        "endOffset": 1648
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 84,
+                    "startColumn": 4,
+                    "startOffset": 5197,
+                    "endLine": 85,
+                    "endColumn": 12,
+                    "endOffset": 5333
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 32,
+                        "startColumn": 4,
+                        "startOffset": 1654,
+                        "endLine": 33,
+                        "endColumn": 12,
+                        "endOffset": 1791
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 86,
+                    "startColumn": 4,
+                    "startOffset": 5338,
+                    "endLine": 87,
+                    "endColumn": 12,
+                    "endOffset": 5458
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 759,
+                        "endLine": 17,
+                        "endColumn": 12,
+                        "endOffset": 880
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 88,
+                    "startColumn": 4,
+                    "startOffset": 5463,
+                    "endLine": 89,
+                    "endColumn": 12,
+                    "endOffset": 5599
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 886,
+                        "endLine": 19,
+                        "endColumn": 12,
+                        "endOffset": 1023
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 90,
+                    "startColumn": 4,
+                    "startOffset": 5604,
+                    "endLine": 91,
+                    "endColumn": 12,
+                    "endOffset": 5714
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 37,
+                        "startColumn": 4,
+                        "startOffset": 1904,
+                        "endLine": 38,
+                        "endColumn": 12,
+                        "endOffset": 2015
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 92,
+                    "startColumn": 4,
+                    "startOffset": 5719,
+                    "endLine": 93,
+                    "endColumn": 12,
+                    "endOffset": 5849
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 42,
+                        "startColumn": 4,
+                        "startOffset": 2148,
+                        "endLine": 43,
+                        "endColumn": 12,
+                        "endOffset": 2279
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 94,
+                    "startColumn": 4,
+                    "startOffset": 5854,
+                    "endLine": 95,
+                    "endColumn": 12,
+                    "endOffset": 5982
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 47,
+                        "startColumn": 4,
+                        "startOffset": 2410,
+                        "endLine": 48,
+                        "endColumn": 12,
+                        "endOffset": 2539
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 96,
+                    "startColumn": 4,
+                    "startOffset": 5987,
+                    "endLine": 97,
+                    "endColumn": 12,
+                    "endOffset": 6093
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 52,
+                        "startColumn": 4,
+                        "startOffset": 2648,
+                        "endLine": 53,
+                        "endColumn": 12,
+                        "endOffset": 2755
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 98,
+                    "startColumn": 4,
+                    "startOffset": 6098,
+                    "endLine": 99,
+                    "endColumn": 12,
+                    "endOffset": 6220
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 54,
+                        "startColumn": 4,
+                        "startOffset": 2761,
+                        "endLine": 55,
+                        "endColumn": 12,
+                        "endOffset": 2884
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 100,
+                    "startColumn": 4,
+                    "startOffset": 6225,
+                    "endLine": 101,
+                    "endColumn": 12,
+                    "endOffset": 6345
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 69,
+                        "startColumn": 4,
+                        "startOffset": 3461,
+                        "endLine": 70,
+                        "endColumn": 12,
+                        "endOffset": 3582
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 102,
+                    "startColumn": 4,
+                    "startOffset": 6350,
+                    "endLine": 103,
+                    "endColumn": 12,
+                    "endOffset": 6454
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 59,
+                        "startColumn": 4,
+                        "startOffset": 2991,
+                        "endLine": 60,
+                        "endColumn": 12,
+                        "endOffset": 3096
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 104,
+                    "startColumn": 4,
+                    "startOffset": 6459,
+                    "endLine": 105,
+                    "endColumn": 12,
+                    "endOffset": 6578
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 74,
+                        "startColumn": 4,
+                        "startOffset": 3704,
+                        "endLine": 75,
+                        "endColumn": 12,
+                        "endOffset": 3824
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 106,
+                    "startColumn": 4,
+                    "startOffset": 6583,
+                    "endLine": 107,
+                    "endColumn": 12,
+                    "endOffset": 6691
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 79,
+                        "startColumn": 4,
+                        "startOffset": 3935,
+                        "endLine": 80,
+                        "endColumn": 12,
+                        "endOffset": 4044
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 108,
+                    "startColumn": 4,
+                    "startOffset": 6696,
+                    "endLine": 109,
+                    "endColumn": 12,
+                    "endOffset": 6826
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 84,
+                        "startColumn": 4,
+                        "startOffset": 4177,
+                        "endLine": 85,
+                        "endColumn": 12,
+                        "endOffset": 4308
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 110,
+                    "startColumn": 4,
+                    "startOffset": 6831,
+                    "endLine": 111,
+                    "endColumn": 12,
+                    "endOffset": 6963
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 89,
+                        "startColumn": 4,
+                        "startOffset": 4443,
+                        "endLine": 90,
+                        "endColumn": 12,
+                        "endOffset": 4576
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 112,
+                    "startColumn": 4,
+                    "startOffset": 6968,
+                    "endLine": 113,
+                    "endColumn": 12,
+                    "endOffset": 7087
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 64,
+                        "startColumn": 4,
+                        "startOffset": 3218,
+                        "endLine": 65,
+                        "endColumn": 12,
+                        "endOffset": 3338
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 114,
+                    "startColumn": 4,
+                    "startOffset": 7092,
+                    "endLine": 115,
+                    "endColumn": 12,
+                    "endOffset": 7200
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 67,
+                        "startColumn": 4,
+                        "startOffset": 3346,
+                        "endLine": 68,
+                        "endColumn": 12,
+                        "endOffset": 3455
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 116,
+                    "startColumn": 4,
+                    "startOffset": 7205,
+                    "endLine": 117,
+                    "endColumn": 12,
+                    "endOffset": 7297
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 57,
+                        "startColumn": 4,
+                        "startOffset": 2892,
+                        "endLine": 58,
+                        "endColumn": 12,
+                        "endOffset": 2985
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 118,
+                    "startColumn": 4,
+                    "startOffset": 7302,
+                    "endLine": 119,
+                    "endColumn": 12,
+                    "endOffset": 7409
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 72,
+                        "startColumn": 4,
+                        "startOffset": 3590,
+                        "endLine": 73,
+                        "endColumn": 12,
+                        "endOffset": 3698
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 120,
+                    "startColumn": 4,
+                    "startOffset": 7414,
+                    "endLine": 121,
+                    "endColumn": 12,
+                    "endOffset": 7510
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 77,
+                        "startColumn": 4,
+                        "startOffset": 3832,
+                        "endLine": 78,
+                        "endColumn": 12,
+                        "endOffset": 3929
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 122,
+                    "startColumn": 4,
+                    "startOffset": 7515,
+                    "endLine": 123,
+                    "endColumn": 12,
+                    "endOffset": 7633
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 82,
+                        "startColumn": 4,
+                        "startOffset": 4052,
+                        "endLine": 83,
+                        "endColumn": 12,
+                        "endOffset": 4171
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 124,
+                    "startColumn": 4,
+                    "startOffset": 7638,
+                    "endLine": 125,
+                    "endColumn": 12,
+                    "endOffset": 7758
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 87,
+                        "startColumn": 4,
+                        "startOffset": 4316,
+                        "endLine": 88,
+                        "endColumn": 12,
+                        "endOffset": 4437
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 126,
+                    "startColumn": 4,
+                    "startOffset": 7763,
+                    "endLine": 127,
+                    "endColumn": 12,
+                    "endOffset": 7870
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-v14\\abs__styles.xml",
+                    "position": {
+                        "startLine": 62,
+                        "startColumn": 4,
+                        "startOffset": 3104,
+                        "endLine": 63,
+                        "endColumn": 12,
+                        "endOffset": 3212
+                    }
+                }
+            }
+        ]
+    }
+]

@@ -1,0 +1,64 @@
+[
+    {
+        "outputFile": "E:\\Android_protect\\JingDong\\actionbarsherlock\\build\\intermediates\\res\\merged\\release\\values-w480dp-v13\\values-w480dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 55,
+                    "endOffset": 106
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-w480dp\\abs__bools.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 698,
+                        "endColumn": 55,
+                        "endOffset": 749
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 111,
+                    "endColumn": 72,
+                    "endOffset": 179
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-w480dp\\abs__config.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 1064,
+                        "endColumn": 72,
+                        "endOffset": 1132
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 184,
+                    "endColumn": 61,
+                    "endOffset": 241
+                },
+                "from": {
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\res\\values-w480dp\\abs__bools.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 755,
+                        "endColumn": 61,
+                        "endOffset": 812
+                    }
+                }
+            }
+        ]
+    }
+]
