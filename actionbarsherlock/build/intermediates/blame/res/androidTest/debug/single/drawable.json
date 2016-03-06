@@ -50,6 +50,7 @@
     {
         "merged": "J:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abs__textfield_searchview_holo_dark.xml",
         "source": "J:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\drawable\\abs__textfield_searchview_holo_dark.xml"
+<<<<<<< Updated upstream
     },
     {
         "merged": "J:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abs__progress_medium_holo.xml",
@@ -58,6 +59,12 @@
     {
         "merged": "J:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abs__tab_indicator_ab_holo.xml",
         "source": "J:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\drawable\\abs__tab_indicator_ab_holo.xml"
+=======
+>>>>>>> Stashed changes
+    },
+    {
+        "merged": "J:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abs__progress_medium_holo.xml",
+        "source": "J:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\drawable\\abs__progress_medium_holo.xml"
     },
     {
         "merged": "J:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abs__btn_cab_done_holo_dark.xml",

@@ -84,6 +84,7 @@
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\layout\\sherlock_spinner_item.xml"
     },
     {
+<<<<<<< Updated upstream
         "merged": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\debug\\layout\\abs__action_bar_tab.xml",
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\layout\\abs__action_bar_tab.xml"
     },
@@ -110,6 +111,14 @@
     {
         "merged": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\debug\\layout\\abs__action_mode_bar.xml",
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\layout\\abs__action_mode_bar.xml"
+=======
+        "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\debug\\layout\\abs__action_mode_bar.xml",
+        "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\layout\\abs__action_mode_bar.xml"
+>>>>>>> Stashed changes
+    },
+    {
+        "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\debug\\layout\\abs__screen_action_bar_overlay.xml",
+        "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\layout\\abs__screen_action_bar_overlay.xml"
     },
     {
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\debug\\layout\\abs__screen_simple.xml",

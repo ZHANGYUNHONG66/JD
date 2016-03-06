@@ -4,6 +4,17 @@
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable\\abs__activated_background_holo_dark.xml"
     },
     {
+<<<<<<< Updated upstream
+=======
+        "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abs__tab_indicator_ab_holo.xml",
+        "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable\\abs__tab_indicator_ab_holo.xml"
+    },
+    {
+        "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abs__ic_menu_moreoverflow_holo_dark.xml",
+        "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable\\abs__ic_menu_moreoverflow_holo_dark.xml"
+    },
+    {
+>>>>>>> Stashed changes
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abs__textfield_searchview_holo_dark.xml",
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable\\abs__textfield_searchview_holo_dark.xml"
     },
@@ -20,6 +31,7 @@
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable\\abs__search_dropdown_light.xml"
     },
     {
+<<<<<<< Updated upstream
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abs__search_dropdown_dark.xml",
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable\\abs__search_dropdown_dark.xml"
     },
@@ -52,16 +64,23 @@
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable\\abs__btn_cab_done_holo_light.xml"
     },
     {
+=======
+>>>>>>> Stashed changes
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abs__progress_medium_holo.xml",
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable\\abs__progress_medium_holo.xml"
     },
     {
+<<<<<<< Updated upstream
         "merged": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abs__textfield_searchview_holo_light.xml",
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable\\abs__textfield_searchview_holo_light.xml"
     },
     {
         "merged": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abs__item_background_holo_light.xml",
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable\\abs__item_background_holo_light.xml"
+=======
+        "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abs__search_dropdown_dark.xml",
+        "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable\\abs__search_dropdown_dark.xml"
+>>>>>>> Stashed changes
     },
     {
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abs__list_selector_holo_dark.xml",
@@ -176,10 +195,13 @@
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable\\abs__item_background_holo_dark.xml"
     },
     {
+<<<<<<< Updated upstream
         "merged": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abs__search_dropdown_dark.xml",
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable\\abs__search_dropdown_dark.xml"
     },
     {
+=======
+>>>>>>> Stashed changes
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abs__textfield_searchview_right_holo_light.xml",
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable\\abs__textfield_searchview_right_holo_light.xml"
     },
@@ -188,6 +210,7 @@
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable\\abs__spinner_ab_holo_light.xml"
     },
     {
+<<<<<<< Updated upstream
         "merged": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abs__tab_indicator_ab_holo.xml",
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable\\abs__tab_indicator_ab_holo.xml"
     },
@@ -204,6 +227,8 @@
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable\\abs__list_selector_holo_dark.xml"
     },
     {
+=======
+>>>>>>> Stashed changes
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abs__textfield_searchview_holo_light.xml",
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable\\abs__textfield_searchview_holo_light.xml"
     }
