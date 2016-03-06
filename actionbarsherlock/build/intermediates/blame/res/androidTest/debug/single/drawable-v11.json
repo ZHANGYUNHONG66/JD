@@ -1,5 +1,9 @@
 [
     {
+        "merged": "E:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-v11\\abs__progress_medium_holo.xml",
+        "source": "E:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\drawable-v11\\abs__progress_medium_holo.xml"
+    },
+    {
         "merged": "J:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-v11\\abs__progress_medium_holo.xml",
         "source": "J:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\drawable-v11\\abs__progress_medium_holo.xml"
     }

@@ -1,5 +1,6 @@
 package com.jerry.jingdong.holder.mine;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 import android.view.View;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jerry.jingdong.R;
+import com.jerry.jingdong.activity.ForgetPasswordView;
+import com.jerry.jingdong.activity.RegisterAccountView;
 import com.jerry.jingdong.application.MyApplication;
 import com.jerry.jingdong.base.BaseHolder;
 import com.jerry.jingdong.utils.UIUtils;
