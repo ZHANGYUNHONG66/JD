@@ -137,13 +137,12 @@ public class ShoppingController extends BaseController implements View.OnTouchLi
 
         mProductEntities = new ArrayList<>();
         try {
-            for (int i = 0; i < 10; i++) {
-                HashMap<String, String> map = new HashMap<>();
-                map.put("pId", i + "");
-                CartNewBean cartInfoBean = mProductProtocol.loadData(HttpRequest.HttpMethod.GET, map);
-                mProductEntities.add(cartInfoBean.product);
-                Log.d("CartFragment", cartInfoBean.response);
-            }
+            HashMap<String, String> map = new HashMap<>();
+            map.put("pId", "1");
+            CartNewBean cartInfoBean = mProductProtocol.loadData(HttpRequest.HttpMethod.GET, map, null);
+            mProductEntities.add(cartInfoBean.product);
+            Log.d("CartFragment", cartInfoBean.response);
+
         } catch (Exception e) {
             e.printStackTrace();
             return LoadingPager.LoadResultState.ERROR;
@@ -492,7 +491,7 @@ public class ShoppingController extends BaseController implements View.OnTouchLi
                 if (convertView == null) {
                     //显示正常视图
                     mCartHolder = new CartHolder(mCartGoodsShowLv);
-                    mCartHolder.refreshHolderView(mCartEntities.get(position));
+                    mCartHolder.refreshView(mCartEntities.get(position));
                 } else {
                     mCartHolder = (CartHolder) convertView.getTag();
                 }
@@ -532,8 +531,6 @@ public class ShoppingController extends BaseController implements View.OnTouchLi
                 }
                 convertView = mProductHolder.mRootView;
             }
-            //根据结果返回结果
-            //模拟已经登陆了
 
             return convertView;
         }

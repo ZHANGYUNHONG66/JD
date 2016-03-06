@@ -125,16 +125,7 @@ public class CartHolder extends BaseHolder<CartInfoBean.CartEntity> implements V
     }
 
     @Override
-    protected void refreshView(CartInfoBean.CartEntity data) {
-
-    }
-
-    @Override
-    public void onClick(View v) {
-
-    }
-
-    public void refreshHolderView(CartInfoBean.CartEntity cartEntity) {
+    public void refreshView(CartInfoBean.CartEntity cartEntity) {
         mCartEntity = cartEntity;
         //设置勾选状态
         if (cartEntity.isSeleced()) {
@@ -183,9 +174,7 @@ public class CartHolder extends BaseHolder<CartInfoBean.CartEntity> implements V
                 product.productProperty;
         StringBuffer colorSb = new StringBuffer();
         StringBuffer sizeSb = new StringBuffer();
-        if (productProperty != null && productProperty.size() > 0)
-
-        {
+        if (productProperty != null && productProperty.size() > 0) {
             for (CartInfoBean.CartEntity.ProductEntity.ProductPropertyEntity productPropertyEntity : productProperty) {
                 String k = productPropertyEntity.k;
                 if ("颜色".equals(k)) {
@@ -201,9 +190,7 @@ public class CartHolder extends BaseHolder<CartInfoBean.CartEntity> implements V
             mItemNormalColorTv.setText(UIUtils.getString(R.string.color) + colorSb.toString() + ";");
             //尺寸
             mItemNormalSizeTv.setText(UIUtils.getString(R.string.size) + sizeSb.toString());
-        } else
-
-        {
+        } else {
             mItemNormalColorTv.setText(UIUtils.getString(R.string.color) + "空");
             mItemNormalSizeTv.setText(UIUtils.getString(R.string.size) + "空");
         }
@@ -219,6 +206,11 @@ public class CartHolder extends BaseHolder<CartInfoBean.CartEntity> implements V
                     }
                 }
         );
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 
     //定义接口

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/daohang_title"
+        >
+
+        <TextView
+            style="@style/MyTitleStyle"
+            android:text="选择送货时间"
+            android:layout_centerInParent="true"/>
+        <TextView
+            style="@style/MyTitleStyle"
+            android:text="结算中心"
+            android:textSize="14sp"
+            android:layout_marginLeft="5dp"
+            android:layout_alignParentLeft="true"
+            />
+        <TextView
+            style="@style/MyTitleStyle"
+            android:text="添加"
+            android:textSize="14sp"
+            android:layout_marginRight="5dp"
+            android:visibility="gone"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/item_way_dialog_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>
+</LinearLayout>

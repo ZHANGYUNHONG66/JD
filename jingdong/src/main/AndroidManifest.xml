@@ -9,19 +9,28 @@
     <application
         android:name=".application.MyApplication"
         android:allowBackup="true"
-        android:icon="@drawable/app_login"
+        android:icon="@mipmap/icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@android:style/Theme.Light.NoTitleBar">
+        android:theme="@android:style/Theme.Black.NoTitleBar">
         <activity android:name=".activity.SplashUi">
+<!--   <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>-->
+        </activity>
+        <activity android:name=".activity.MainUI">
+        </activity>
+        <activity android:name=".activity.BalanceAccountsCenterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainUI">
-        </activity>
+        <activity android:name=".activity.BillInfoActivity"></activity>
+        <activity android:name=".activity.CommitOrderActivity"></activity>
         <activity
             android:name=".activity.MyOrderActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
