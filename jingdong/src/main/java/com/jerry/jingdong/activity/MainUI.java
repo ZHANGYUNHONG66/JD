@@ -1,19 +1,29 @@
 package com.jerry.jingdong.activity;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.view.ViewTreeObserver;
+import android.widget.RadioGroup;
 
 import com.jerry.jingdong.R;
-import com.jerry.jingdong.fragment.ContentFragment;
-import com.jerry.jingdong.fragment.TitleFragment;
+import com.jerry.jingdong.base.BaseFragment;
+import com.jerry.jingdong.factory.TabFragmentFactory;
+import com.jerry.jingdong.fragment.tab.HomeFragment;
+import com.jerry.jingdong.views.LazyViewPager;
+import com.jerry.jingdong.views.NoScrollViewPager;
+import com.jerry.jingdong.views.TitleView;
 
-public class MainUI extends FragmentActivity {
+public class MainUI extends FragmentActivity
+        implements LazyViewPager.OnPageChangeListener {
 
-    private static final String TAG_FRAGMENT_CONTENT = "fragment_content";
-    private static final String TAG_FRAGMENT_TITLE   = "fragment_title";
+    public RadioGroup        mContentRg;
+    public NoScrollViewPager mContentViewPager;
+    public TitleView         mMainTitleview;
+
+    public int               mCurrRbIndex = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,52 +31,127 @@ public class MainUI extends FragmentActivity {
         // 告诉它内容的区域
         setContentView(R.layout.fragment_main_content);
 
-        initFragment();
+        initView();
+
+        initData();
+
+        initListener();
     }
 
     /**
-     * 初始化fragment
+     * 初始化View
      */
-    private void initFragment() {
-        FragmentManager fragmentManager = getSupportFragmentManager();
+    private void initView() {
+        mContentRg = (RadioGroup) findViewById(R.id.main_radiogroup);
+        mContentViewPager = (NoScrollViewPager) findViewById(
+                R.id.main_viewPager);
+        mMainTitleview = (TitleView) findViewById(R.id.main_titleview);
+    }
 
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
+    private void initData() {
+        // 设置预加载的页面数
+        mContentViewPager.setOffscreenPageLimit(0);
 
-        transaction.add(R.id.fl_main_title, new TitleFragment(),
-                TAG_FRAGMENT_TITLE);
+        // 给ViePager设置适配器
+        mContentViewPager
+                .setAdapter(new MyAdapter(getSupportFragmentManager()));
 
-        transaction.add(R.id.fl_main_content, new ContentFragment(),
-                TAG_FRAGMENT_CONTENT);
-
-        transaction.commit();
+        // 初始化选中首页
+        mContentRg.check(R.id.content_rb_home);
     }
 
     /**
-     * 获得内容Fragment的实例，通过这个实例可以获得内容区域的容器
+     * 初始化监听
      */
-    public ContentFragment getContentFragment() {
-        // 通过添加视图时的tag获得右侧内容区域的实例
-        android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
-        ContentFragment contentFragment = (ContentFragment) fragmentManager
-                .findFragmentByTag(TAG_FRAGMENT_CONTENT);
+    public void initListener() {
 
-        return contentFragment;
-    }
+        mContentRg.setOnCheckedChangeListener(
+                new RadioGroup.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(RadioGroup group,
+                            int checkedId) {
+                        switch (checkedId) {// 首页
+                        case R.id.content_rb_home:
+                            mCurrRbIndex = 0;
+                            break;
+                        case R.id.content_rb_search:// 搜索
+                            mCurrRbIndex = 1;
+                            break;
+                        case R.id.content_rb_comment:// 品牌
+                            mCurrRbIndex = 2;
+                            break;
+                        case R.id.content_rb_shopping:// 购物车
+                            mCurrRbIndex = 3;
+                            break;
+                        case R.id.content_rb_mine:// 我的
+                            mCurrRbIndex = 4;
+                            break;
+                        }
+                        mContentViewPager.setCurrentItem(mCurrRbIndex);
+                    }
+                });
 
-    /**
-     * 获得标题Fragment的实例，通过这个实例可以获得自定义标题，通过标题可以设置相关标题内容
-     */
-    public TitleFragment getTitleFragment() {
-        // 通过添加视图时的tag获得右侧内容区域的实例
-        android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
-        TitleFragment titleFragment = (TitleFragment) fragmentManager
-                .findFragmentByTag(TAG_FRAGMENT_TITLE);
+        mContentViewPager.setOnPageChangeListener(this);
 
-        return titleFragment;
+        mContentViewPager.getViewTreeObserver().addOnGlobalLayoutListener(
+                new ViewTreeObserver.OnGlobalLayoutListener() {
+                    @Override
+                    public void onGlobalLayout() {
+                        MainUI.this.onPageSelected(0);
+
+                        mContentViewPager.getViewTreeObserver()
+                                .removeGlobalOnLayoutListener(this);
+                    }
+                });
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
-//        super.onSaveInstanceState(outState, outPersistentState);
+    public void onPageScrolled(int position, float positionOffset,
+            int positionOffsetPixels) {
+
     }
+
+    @Override
+    public void onPageSelected(int position) {
+        BaseFragment fragment = TabFragmentFactory.createFragment(position,
+                MainUI.this);
+        if(fragment instanceof HomeFragment){
+            mMainTitleview.isTitleDaohang(false);
+        }else{
+            mMainTitleview.isTitleDaohang(true);
+        }
+
+        if (fragment != null && fragment.mLoadingPager != null) {
+            fragment.mLoadingPager.triggerLoadData();
+        }
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
+    }
+
+    private class MyAdapter extends FragmentPagerAdapter {
+        public MyAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public int getCount() {
+
+            return mContentRg.getChildCount();
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+
+            BaseFragment fragment = TabFragmentFactory.createFragment(position,
+                    MainUI.this);
+
+
+            return fragment;
+        }
+
+    }
+
 }

@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,12 +22,12 @@ import butterknife.ButterKnife;
 
 public class ContentFragment extends Fragment implements LazyViewPager.OnPageChangeListener {
 
-    @Bind(R.id.content_rg)
+    @Bind(R.id.main_radiogroup)
     RadioGroup        mContentRg;
-    @Bind(R.id.content_viewPager)
+    @Bind(R.id.main_viewPager)
     NoScrollViewPager mContentViewPager;
 
-    private int mCurrRbIndex = -1;
+    public int mCurrRbIndex = -1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -117,9 +116,8 @@ public class ContentFragment extends Fragment implements LazyViewPager.OnPageCha
 
     @Override
     public void onPageSelected(int position) {
-        BaseFragment fragment = TabFragmentFactory.createFragment(position);
+        BaseFragment fragment = TabFragmentFactory.createFragment(position, getContext());
         if (fragment != null && fragment.mLoadingPager != null) {
-            Log.d("0000", "3333333" );
             fragment.mLoadingPager.triggerLoadData();
         }
     }
@@ -143,7 +141,7 @@ public class ContentFragment extends Fragment implements LazyViewPager.OnPageCha
         @Override
         public Fragment getItem(int position) {
 
-            BaseFragment fragment = TabFragmentFactory.createFragment(position);
+            BaseFragment fragment = TabFragmentFactory.createFragment(position,getContext());
 
             return fragment;
         }

@@ -47,7 +47,9 @@ public class TitleView extends RelativeLayout implements View.OnClickListener {
         } else {
             mLlDaohangSearchcontainer.setVisibility(View.VISIBLE);
             mRlDaohangTitlecontainer.setVisibility(View.GONE);
+
         }
+
     }
 
     /**
@@ -133,23 +135,23 @@ public class TitleView extends RelativeLayout implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.daohang_btn_left:
-                //左边按钮
-                mListener.onLeftBtnClick();
-                break;
+        case R.id.daohang_btn_left:
+            // 左边按钮
+            mListener.onLeftBtnClick();
+            break;
 
-            case R.id.daohang_btn_right:
-                //右边按钮
-                mListener.onRightBtnClick();
-                break;
+        case R.id.daohang_btn_right:
+            // 右边按钮
+            mListener.onRightBtnClick();
+            break;
 
-            case R.id.daohang_search_btn:
-                //搜索按钮
-                mListener.onSearchBtnClick();
-                break;
+        case R.id.daohang_search_btn:
+            // 搜索按钮
+            mListener.onSearchBtnClick();
+            break;
 
-            default:
-                break;
+        default:
+            break;
         }
     }
 

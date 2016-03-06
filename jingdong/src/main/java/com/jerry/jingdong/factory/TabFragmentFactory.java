@@ -1,5 +1,7 @@
 package com.jerry.jingdong.factory;
 
+import android.content.Context;
+
 import com.jerry.jingdong.base.BaseFragment;
 import com.jerry.jingdong.fragment.tab.CommentFragment;
 import com.jerry.jingdong.fragment.tab.HomeFragment;
@@ -30,7 +32,7 @@ public class TabFragmentFactory {
     // 定义一个内存中的集合，保存创建过的Fragment实例
     public static Map<Integer, BaseFragment> mFragments        = new HashMap<>();
 
-    public static BaseFragment createFragment(int position) {
+    public static BaseFragment createFragment(int position, Context context) {
         BaseFragment fragment = null;
         // 判断内存中是否有存在的fragment实例，有就直接从内存中拿
         if (mFragments.containsKey(position)) {

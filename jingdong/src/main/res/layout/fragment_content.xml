@@ -5,14 +5,14 @@
               android:orientation="vertical">
 
     <com.jerry.jingdong.views.NoScrollViewPager
-        android:id="@+id/content_viewPager"
+        android:id="@+id/main_viewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
     </com.jerry.jingdong.views.NoScrollViewPager>
 
     <RadioGroup
-        android:id="@+id/content_rg"
+        android:id="@+id/main_radiogroup"
         android:layout_width="match_parent"
         android:paddingTop="7dp"
         android:background="@drawable/caidan_dibulan"

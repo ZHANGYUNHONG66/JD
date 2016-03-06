@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.jerry.jingdong.R;
+import com.jerry.jingdong.activity.MainUI;
 import com.jerry.jingdong.base.BaseFragment;
 import com.jerry.jingdong.base.LoadingPager;
 import com.jerry.jingdong.holder.home.DownHolder;
@@ -18,11 +19,12 @@ import butterknife.ButterKnife;
 public class HomeFragment extends BaseFragment {
 
     @Bind(R.id.home_content_up_container)
-    FrameLayout mHomeContentUpContainer;
+    FrameLayout             mHomeContentUpContainer;
     @Bind(R.id.home_content_middle_container)
-    FrameLayout mHomeContentMiddleContainer;
+    FrameLayout             mHomeContentMiddleContainer;
     @Bind(R.id.home_content_down_container)
-    FrameLayout mHomeContentDownContainer;
+    FrameLayout             mHomeContentDownContainer;
+
 
     /**
      * 在子线程中加载数据
@@ -32,6 +34,7 @@ public class HomeFragment extends BaseFragment {
     @Override
     public LoadingPager.LoadResultState initData() {
         SystemClock.sleep(2000);
+
         return LoadingPager.LoadResultState.SUCCESS;
     }
 
@@ -59,4 +62,5 @@ public class HomeFragment extends BaseFragment {
 
         return homeView;
     }
+
 }
