@@ -226,36 +226,8 @@
                     android:layout_centerVertical="true"
                     android:orientation="horizontal">
 
-                    <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:src="@drawable/shangpinxiangqing_lunbotu"
-                        />
 
-                    <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_marginLeft="5dp"
-                        android:src="@drawable/shangpinxiangqing_lunbotu"
-                        />
 
-                    <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_marginLeft="5dp"
-                        android:src="@drawable/shangpinxiangqing_lunbotu"
-                        />
-
-                    <TextView
-                        android:id="@+id/balance_account_tv_product_num"
-                        style="@style/BlanceAccountAddressTextStyle"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="3dp"
-                        android:text="共三件"
-                        android:textColor="#000"
-                        android:textSize="14sp"
-                        />
                 </LinearLayout>
 
                 <ImageButton
@@ -354,13 +326,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:background="@drawable/xuanzheyouhuijian_moren">
+                android:orientation="vertical"
+                android:background="@drawable/xuanzheyouhuijian_moren"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="50优惠券"/>
-            </LinearLayout>
 
             <Button
                 android:id="@+id/balance_account_btn_commit"
