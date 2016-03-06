@@ -1,14 +1,15 @@
 package com.jerry.jingdong.base;
 
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.jerry.jingdong.holder.LoadMoreHolder;
 import com.jerry.jingdong.application.MyApplication;
 import com.jerry.jingdong.factory.ThreadPoolProxyFactory;
+import com.jerry.jingdong.holder.LoadMoreHolder;
 
 import java.io.IOException;
 import java.util.List;
@@ -122,12 +123,10 @@ public abstract class SuperBaseAdapter<ITEMBEANTYPE> extends MyBaseAdapter
                 } else {
                     // 说明小于20条，说明下次再加载没有更多数据了
                     mState = LoadMoreHolder.LOADDATA_NONE;
-
                 }
             } catch (IOException e) {
                 e.printStackTrace();
                 // 出现异常时更改状态为加载失败
-                System.out.println("捕获异常");
                 mState = LoadMoreHolder.LOADDATA_RETRY;
             }
 
@@ -142,9 +141,10 @@ public abstract class SuperBaseAdapter<ITEMBEANTYPE> extends MyBaseAdapter
                         notifyDataSetChanged();
                     }
 
+                    Log.d("1111", "加载更多数据完成更新UI" );
                     // 更新UI-->LoadMoreHolder
-                    // 捕获异常后更新UI
                     mLoadMoreHolder.setDataAndRefreshView(mState);
+                    mLoadMoreHolder.stopTextPointThread();
                 }
             });
 

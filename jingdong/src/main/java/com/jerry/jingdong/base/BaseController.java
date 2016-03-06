@@ -4,13 +4,13 @@ import android.content.Context;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.jerry.jingdong.R;
 import com.jerry.jingdong.utils.UIUtils;
-
-import java.util.List;
-import java.util.Map;
 
 /**
  * @创建者: Jerry
@@ -20,13 +20,23 @@ import java.util.Map;
  * @描述: ViewPager五个页面的基类
  */
 public abstract class BaseController {
-    public Context       mContext;
-    public View          mRootView;
+    public Context        mContext;
+    public View           mRootView;
 
-    public TextView      mTvTitle;
-    public Button        mBtnLeft, mBtnRight;
-    private FrameLayout  mFlContentContainer;
-    public LoadingPager mLoadingPager;
+    public TextView       mTvTitle;
+    public Button         mBtnLeft, mBtnRight;
+    public LoadingPager   mLoadingPager;
+
+    // 普通标题栏容器
+    public RelativeLayout mRlDaohangTitleContainer;
+    // 首页搜索标题栏容器
+    public LinearLayout   mLlDaohangSearchContainer;
+    // 内容区域容器
+    public FrameLayout    mFlContentContainer;
+
+    // 首页标题搜索栏的两个子View
+    public TextView       mHomeSearchTv;
+    public ImageButton    mHomeSearchBtn;
 
     public BaseController(Context context) {
         this.mContext = context;
@@ -46,6 +56,18 @@ public abstract class BaseController {
         mBtnRight = (Button) view.findViewById(R.id.base_controller_btn_right);
         mFlContentContainer = (FrameLayout) view
                 .findViewById(R.id.base_controller_fl_content);
+
+        // 普通标题栏容器
+        mRlDaohangTitleContainer = (RelativeLayout) view
+                .findViewById(R.id.base_controller_rl_daohang_titlecontainer);
+        // 首页搜索栏容器
+        mLlDaohangSearchContainer = (LinearLayout) view
+                .findViewById(R.id.base_controller_ll_daohang_searchcontainer);
+
+        mHomeSearchTv = (TextView) view
+                .findViewById(R.id.home_daohang_search_tv);
+        mHomeSearchBtn = (ImageButton) view
+                .findViewById(R.id.home_daohang_search_btn);
 
         mFlContentContainer.addView(initContentView());
 
@@ -125,29 +147,6 @@ public abstract class BaseController {
         }
 
         return mLoadingPager;
-    }
-
-    /**
-     * 校验请求网络返回的数据的状态
-     */
-    public LoadingPager.LoadResultState checkState(Object resObj) {
-        if (resObj == null) {
-            return LoadingPager.LoadResultState.EMPTY;
-        }
-
-        if (resObj instanceof List) {
-            if (((List) resObj).size() == 0) {
-                return LoadingPager.LoadResultState.EMPTY;
-            }
-        }
-
-        if (resObj instanceof Map) {
-            if (((Map) resObj).size() == 0) {
-                return LoadingPager.LoadResultState.EMPTY;
-            }
-        }
-
-        return LoadingPager.LoadResultState.SUCCESS;
     }
 
     /**
