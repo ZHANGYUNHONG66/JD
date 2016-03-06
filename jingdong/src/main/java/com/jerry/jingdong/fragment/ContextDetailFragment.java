@@ -134,9 +134,7 @@ public class ContextDetailFragment extends BaseDetailFragment {
         mCartNewBean = goodsDeanBean;
         mSildContext = sildContext;
         mPid = pid;
-
     }
-
 
     @Override
     public View initView() {
@@ -184,14 +182,11 @@ public class ContextDetailFragment extends BaseDetailFragment {
             };
             noaddData(mLeftTime);
 
-            //设置送货范围
             mTvInventoryArea.setText(mProduct.getInventoryArea());
-            //库存
             mTvGoodsTotal.setText(mProduct.getBuyLimit() + "件");
             //评论数
             mTvCommentCount.setText(mProduct.getCommentCount() + "人评论");
 
-            //设置viewPager
             mPics = mProduct.getPics();
             mVpGoodsPic.setAdapter(new picsAdapter());
 
@@ -206,7 +201,6 @@ public class ContextDetailFragment extends BaseDetailFragment {
                 }
             });
 
-            //动态设置底部的的圆点
             mLlBottomDot.removeAllViews();
             for (int i = 0; i < mPics.size(); i++) {
                 ImageView iv = new ImageView(mContext);
@@ -226,7 +220,7 @@ public class ContextDetailFragment extends BaseDetailFragment {
                 }
             }
             //设置小圆点的滑动
-            mVpGoodsPic.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            mVpGoodsPic.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
                 @Override
                 public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -323,35 +317,41 @@ public class ContextDetailFragment extends BaseDetailFragment {
      * 显示剩余时间
      */
     private void showTiem() {
-        if (mLeftTime == 0) {
-            if (mIvQiang != null) {
-                mIvQiang.setImageResource(R.mipmap.qiang_gray);
+        MyApplication.getMainThreadHandler().post(new Runnable() {
+            @Override
+            public void run() {
+                if (mLeftTime == 0) {
+                    if (mIvQiang != null) {
+                        mIvQiang.setImageResource(R.mipmap.qiang_gray);
 
-            }
-            if (mProduct != null) {
-                //会员价
-                mTvNowPrice.setText("￥" + mProduct.getPrice());
-                //原价
-                mTvCostPrice.setText("￥" + mProduct.getMarketPrice());
-                ((GoodsDetailUI) mSildContext).getRightSelectFragment().mTvGoodsPrice.setText(
-                        "￥" + mProduct.getPrice());
-                ((GoodsDetailUI) mSildContext).getRightSelectFragment().mTvPriceSaver.setText(
-                        "节省" + (mCartNewBean.getProduct().getMarketPrice() -
-                                mCartNewBean.getProduct().getPrice()) + "元");
-            }
-        }
+                    }
+                    if (mProduct != null) {
+                        //会员价
+                        mTvNowPrice.setText("￥" + mProduct.getPrice());
+                        //原价
+                        mTvCostPrice.setText("￥" + mProduct.getMarketPrice());
+                        ((GoodsDetailUI) mSildContext).getRightSelectFragment().mTvGoodsPrice.setText(
+                                "￥" + mProduct.getPrice());
+                        ((GoodsDetailUI) mSildContext).getRightSelectFragment().mTvPriceSaver.setText(
+                                "节省" + (mCartNewBean.getProduct().getMarketPrice() -
+                                        mCartNewBean.getProduct().getPrice()) + "元");
+                    }
+                }
 
-        if (mTvSurplusTime != null) {
-            if (mLeftTime >= 3600000) {
-                mTvSurplusTime.setText("剩余促销时间" + mLeftTime / 3600000 + "小时" + mLeftTime % 3600000 / 60000 + "分" +
-                        mLeftTime % 3600000 % 60000 / 1000 + "秒");
+                if (mTvSurplusTime != null) {
+                    if (mLeftTime >= 3600000) {
+                        mTvSurplusTime.setText("剩余促销时间" + mLeftTime / 3600000 + "小时" + mLeftTime % 3600000 / 60000 + "分" +
+                                mLeftTime % 3600000 % 60000 / 1000 + "秒");
 
-            } else if (mLeftTime >= 60000) {
-                mTvSurplusTime.setText("剩余促销时间" + mLeftTime / 60000 + "分" + mLeftTime % 60000 / 1000 + "秒");
-            } else {
-                mTvSurplusTime.setText("剩余促销时间" + mLeftTime / 1000 + "秒");
+                    } else if (mLeftTime >= 60000) {
+                        mTvSurplusTime.setText("剩余促销时间" + mLeftTime / 60000 + "分" + mLeftTime % 60000 / 1000 + "秒");
+                    } else {
+                        mTvSurplusTime.setText("剩余促销时间" + mLeftTime / 1000 + "秒");
+                    }
+                }
             }
-        }
+        });
+
     }
 
     /**
@@ -396,7 +396,6 @@ public class ContextDetailFragment extends BaseDetailFragment {
 
 
     /**
-     * 暂时不写了，还缺刷新ui
      *
      * @param leftTime
      */
