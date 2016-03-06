@@ -2,13 +2,11 @@ package com.jerry.jingdong.controller;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.TextView;
 
 import com.jerry.jingdong.base.BaseController;
 import com.jerry.jingdong.base.LoadingPager;
-import com.jerry.jingdong.utils.UIUtils;
+import com.jerry.jingdong.holder.item.LoginHolder;
 
 /**
  * 我的
@@ -46,10 +44,11 @@ public class MineController extends BaseController {
 	 */
 	@Override
 	protected View initSuccessView() {
-		TextView tv = new TextView(UIUtils.getContext());
-		tv.setText(getClass().getSimpleName());
-		tv.setTextSize(20);
-		tv.setGravity(Gravity.CENTER);
-		return tv;
+		/**
+		 * 临时显示
+		 */
+		LoginHolder holder = new LoginHolder();
+		return holder.mRootView;
+
 	}
 }
