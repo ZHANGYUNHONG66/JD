@@ -5,13 +5,14 @@
                 android:layout_height="match_parent">
 
     <com.jerry.jingdong.views.RatioLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:rlPicRatio="2.09"
-        app:rlRelative="width">
+        android:layout_width="wrap_content"
+        android:layout_height="130dp"
+        app:rlPicRatio="2.5"
+        app:rlRelative="height">
 
-        <RelativeLayout android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
             <!-- 轮播图 -->
             <android.support.v4.view.ViewPager
                 android:id="@+id/home_upview_viewpager"
@@ -31,5 +32,4 @@
             </LinearLayout>
         </RelativeLayout>
     </com.jerry.jingdong.views.RatioLayout>
-
 </RelativeLayout>

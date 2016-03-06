@@ -151,7 +151,7 @@ public class UpHolder extends BaseHolder<List<String>>
             ImageView iv = new ImageView(UIUtils.getContext());
 
             iv.setImageResource(mPics[position]);
-
+            iv.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
 
             container.addView(iv);
 

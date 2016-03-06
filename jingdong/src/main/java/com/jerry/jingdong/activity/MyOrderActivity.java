@@ -31,18 +31,18 @@ import butterknife.OnClick;
 public class MyOrderActivity extends FragmentActivity
         implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
     @Bind(R.id.myorder_btn_back)
-    Button     mMyorderBtnBack;
+    Button                            mMyorderBtnBack;
     @Bind(R.id.myorder_rg)
-    RadioGroup mMyorderRg;
+    RadioGroup                        mMyorderRg;
 
     @Bind(R.id.myorder_empty_container)
-    LinearLayout mMyorderEmptyContainer;
+    LinearLayout                      mMyorderEmptyContainer;
 
-    public static final int TYPE_TENMINUTE     = 1;
-    public static final int TYPE_TENMINUTE_AGO = 2;
-    public static final int TYPE_CANCEL        = 3;
+    public static final int           TYPE_TENMINUTE     = 1;
+    public static final int           TYPE_TENMINUTE_AGO = 2;
+    public static final int           TYPE_CANCEL        = 3;
 
-    private int mType = TYPE_TENMINUTE;
+    private int                       mType              = TYPE_TENMINUTE;
     private TenMinuteOrderFragment    mTenMinuteOrderFragment;
     private TenMinuteAgoOrderFragment mTenMinuteAgoOrderFragment;
     private CancelOrderFragment       mCancelOrderFragment;
@@ -82,12 +82,18 @@ public class MyOrderActivity extends FragmentActivity
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         switch (checkedId) {
         case R.id.myorder_rb_tenminute:// 近十分钟订单
+            mTenMinuteOrderFragment = (TenMinuteOrderFragment) FragmentFactory
+                    .createFragment(FragmentFactory.FRAGMENT_TENMINUTE);
             mType = TYPE_TENMINUTE;
             break;
         case R.id.myorder_rb_tenminuteago:// 十分钟前订单
+            mTenMinuteAgoOrderFragment = (TenMinuteAgoOrderFragment) FragmentFactory
+                    .createFragment(FragmentFactory.FRAGMENT_TENMINUTEAGO);
             mType = TYPE_TENMINUTE_AGO;
             break;
         case R.id.myorder_rb_cancel:// 取消订单
+            mCancelOrderFragment = (CancelOrderFragment) FragmentFactory
+                    .createFragment(FragmentFactory.FRAGMENT_CANCEL);
             mType = TYPE_CANCEL;
             break;
         default:
