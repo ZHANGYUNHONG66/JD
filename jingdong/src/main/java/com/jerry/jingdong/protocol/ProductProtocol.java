@@ -1,7 +1,7 @@
 package com.jerry.jingdong.protocol;
 
 import com.google.gson.Gson;
-import com.jerry.jingdong.entity.CartInfoBean;
+import com.jerry.jingdong.entity.CartNewBean;
 
 /**
  * Created by MiKoKatie on 2016/3/5 14:36.
@@ -11,7 +11,7 @@ import com.jerry.jingdong.entity.CartInfoBean;
  * @ 更新者  $Author$
  * @ 更新时间  $Date$
  */
-public class ProductProtocol extends BasePlusProtocol<CartInfoBean> {
+public class ProductProtocol extends BaseProtocol<CartNewBean> {
 
     @Override
     public String getInterfaceKey() {
@@ -19,8 +19,8 @@ public class ProductProtocol extends BasePlusProtocol<CartInfoBean> {
     }
 
     @Override
-    public CartInfoBean parseJsonString(String resultJsonString) {
-        return new Gson().fromJson(resultJsonString, CartInfoBean.class);
+    public CartNewBean parseJsonString(String resultJsonString) {
+        return new Gson().fromJson(resultJsonString, CartNewBean.class);
     }
 
 }
