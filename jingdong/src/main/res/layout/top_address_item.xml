@@ -87,7 +87,7 @@
             android:layout_marginTop="10dp"
             android:layout_weight="0"
             android:layout_gravity="center"
-            android:background="##FF180205"
+            android:background="#FF180205"
             android:orientation="horizontal">
 
             <RadioButton

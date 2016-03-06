@@ -68,17 +68,17 @@
             android:id="@+id/spin_province"
 
             android:layout_width="80dp"
-            android:layout_height="30" />
+            android:layout_height="30dp" />
 
         <Spinner
             android:id="@+id/spin_city"
-            android:layout_width="80"
-            android:layout_height="30" />
+            android:layout_width="80dp"
+            android:layout_height="30dp" />
 
         <Spinner
             android:id="@+id/spin_county"
             android:layout_width="80dp"
-            android:layout_height="30" />
+            android:layout_height="30dp" />
     </LinearLayout>
     <EditText
         android:layout_width="match_parent"
@@ -110,7 +110,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_weight="0"
                 android:layout_gravity="center"
-                android:background="##FF180205"
+                android:background="#FF180205"
                 android:orientation="horizontal">
 
                 <RadioButton
