@@ -1,6 +1,7 @@
 package com.jerry.jingdong.controller;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jerry.jingdong.R;
+import com.jerry.jingdong.activity.BalanceAccountsCenterActivity;
 import com.jerry.jingdong.application.MyApplication;
 import com.jerry.jingdong.base.BaseController;
 import com.jerry.jingdong.base.LoadingPager;
@@ -249,8 +251,11 @@ public class ShoppingController extends BaseController implements View.OnTouchLi
                 break;
             case R.id.cart_login_btn:
                 //点击了加入购物车
+                Intent intent = new Intent(UIUtils.getContext(), BalanceAccountsCenterActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                UIUtils.getContext().startActivity(intent);
                 Toast.makeText(UIUtils.getContext(), "点击了登陆", Toast.LENGTH_SHORT).show();
-                Login();
+//                Login();
                 break;
 
         }

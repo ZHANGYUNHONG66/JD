@@ -1,18 +1,13 @@
 package com.jerry.jingdong.activity;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -22,8 +17,11 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.jerry.jingdong.R;
 import com.jerry.jingdong.conf.MyConstants;
+import com.jerry.jingdong.dialog.DelveryDialog;
+import com.jerry.jingdong.dialog.PayWayDialog;
 import com.jerry.jingdong.entity.BalanceAccountCenterInfo;
 import com.jerry.jingdong.utils.UIUtils;
+import com.jerry.jingdong.views.MyDialog;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
@@ -44,7 +42,7 @@ import okhttp3.Response;
  * 创建时间:  2016/03/05 上午 8:41
  * 描述:      结算中心
  */
-public class BalanceAccountsCenterActivity extends Activity implements View.OnClickListener {
+public class BalanceAccountsCenterActivity extends Activity implements View.OnClickListener, MyDialog.OnMyChangeListener {
     private static final String TAG = "Activity";
     @Bind(R.id.balance_account_tv_back)
     TextView mBalanceAccountTvBack;
@@ -87,7 +85,6 @@ public class BalanceAccountsCenterActivity extends Activity implements View.OnCl
     private BalanceAccountCenterInfo mDatas;
     private BalanceAccountCenterInfo mAccountCenterInfo;
     private List<BalanceAccountCenterInfo.PaymentList> mPaymentList;
-    private AlertDialog mPayDialog;
     private List<BalanceAccountCenterInfo.DelveryList> mDeliveryList;
 
 
@@ -203,17 +200,25 @@ public class BalanceAccountsCenterActivity extends Activity implements View.OnCl
         switch (v.getId()) {
             case R.id.balance_account_tv_back://返回购物车
                 Toast.makeText(this, "返回购物车", Toast.LENGTH_SHORT).show();
+                finish();
                 break;
             case R.id.balance_account_rl_addres://添加地址
                 Toast.makeText(this, "添加地址", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.balance_account_rl_pay_way://选择支付方式
-//                Toast.makeText(this, "支付方式", Toast.LENGTH_SHORT).show();
-                createDialog2PayWay();
+                //支付方式列表
+                mPaymentList = mAccountCenterInfo.paymentList;
+                PayWayDialog payWayDialog = new PayWayDialog(BalanceAccountsCenterActivity.this, mPaymentList);
+                payWayDialog.setOnChangeListener(this,1);//传递的数值表示当前什么类型对话框，用于后面ui数据的变化
+                payWayDialog.show();
                 break;
             case R.id.balance_account_rl_time_way://选择送货方式和送货时间
-                Toast.makeText(this, "送货方式及送货时间", Toast.LENGTH_SHORT).show();
-                createDialog2TimeAndWay();
+//                Toast.makeText(this, "送货方式及送货时间", Toast.LENGTH_SHORT).show();
+//                createDialog2TimeAndWay();
+                mDeliveryList = mAccountCenterInfo.deliveryList;
+                DelveryDialog delveryDialog = new DelveryDialog(BalanceAccountsCenterActivity.this,mDeliveryList);
+                delveryDialog.setOnChangeListener(this,2);
+                delveryDialog.show();
                 break;
             case R.id.balance_account_rl_bill://索要发票
                 Toast.makeText(this, "发票", Toast.LENGTH_SHORT).show();
@@ -234,6 +239,7 @@ public class BalanceAccountsCenterActivity extends Activity implements View.OnCl
      * 提交订单
      */
     private void commitData() {
+
         new Thread() {
             @Override
             public void run() {
@@ -280,120 +286,17 @@ public class BalanceAccountsCenterActivity extends Activity implements View.OnCl
         }.start();
     }
 
-    /**
-     * 创建选择时间和送货方式的对话框
-     */
-    private void createDialog2TimeAndWay() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        View view = View.inflate(this, R.layout.time_way_dialog_view, null);
-        builder.setCustomTitle(view);
-        AlertDialog dialog = builder.create();
-        mDeliveryList = mAccountCenterInfo.deliveryList;
-        builder.setSingleChoiceItems(new TimeAndWayAdapter(), 0, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
 
-            }
-        });
-        builder.show();
-
-    }
-
-    /**
-     * 创建选择支付方式的对话框
-     */
-    private void createDialog2PayWay() {
-
-        final AlertDialog.Builder payBuilder = new AlertDialog.Builder(this);
-        View view = View.inflate(this, R.layout.pay_dialog_view, null);
-        payBuilder.setCustomTitle(view);
-        //支付方式列表
-        mPaymentList = mAccountCenterInfo.paymentList;
-        payBuilder.setSingleChoiceItems(new PayAdapter(), 0, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-            }
-        });
-        payBuilder.show();
-    }
-
-    class PayAdapter extends BaseAdapter {
-
-        @Override
-        public int getCount() {
-            if (mPaymentList != null) {
-                return mPaymentList.size();
-            }
-            return 0;
+    @Override
+    public void onChange(int position,int type) {
+//        Toast.makeText(this, "...", Toast.LENGTH_SHORT).show();
+        if(type == 1){
+            mBalanceAccountTvPayWay.setText(mPaymentList.get(position).des);
         }
 
-        @Override
-        public Object getItem(int position) {
-            if (mPaymentList != null) {
-                return mPaymentList.get(position);
-            }
-            return null;
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @Override
-        public View getView(final int position, View convertView, ViewGroup parent) {
-            View view = View.inflate(UIUtils.getContext(), R.layout.item_balanceaccount_center_pay_way, null);
-            TextView tv_pay_way = (TextView) view.findViewById(R.id.item_balanceaccount_tv_pay_way);
-            final ImageButton ivIsSelect = (ImageButton) view.findViewById(R.id.item_balanceaccount_iv_isSelect);
-            tv_pay_way.setText(mPaymentList.get(position).des);
-
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    mBalanceAccountTvPayWay.setText(mPaymentList.get(position).des);
-
-                }
-            });
-            return view;
+        if(type == 2){
+            mBalanceAccountTvTime.setText(mDeliveryList.get(position).des);
         }
     }
 
-    class TimeAndWayAdapter extends BaseAdapter {
-
-        @Override
-        public int getCount() {
-            if (mDeliveryList != null) {
-                return mDeliveryList.size();
-            }
-            return 0;
-        }
-
-        @Override
-        public Object getItem(int position) {
-            if (mDeliveryList != null) {
-                return mDeliveryList.get(position);
-            }
-            return null;
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @Override
-        public View getView(final int position, View convertView, ViewGroup parent) {
-            View view = View.inflate(UIUtils.getContext(), R.layout.item_balanceaccount_center_pay_way, null);
-            TextView tv_pay_way = (TextView) view.findViewById(R.id.item_balanceaccount_tv_pay_way);
-            tv_pay_way.setText(mDeliveryList.get(position).des);
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    mBalanceAccountTvTime.setText(mDeliveryList.get(position).des);
-                }
-            });
-            return view;
-        }
-    }
 }
