@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.jerry.jingdong"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest
+    package="com.jerry.jingdong"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
@@ -14,20 +15,20 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.Black.NoTitleBar">
         <activity android:name=".activity.SplashUi">
-<!--   <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>-->
-        </activity>
-        <activity android:name=".activity.MainUI">
-        </activity>
-        <activity android:name=".activity.BalanceAccountsCenterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".activity.MainUI">
+        </activity>
+        <activity android:name=".activity.BalanceAccountsCenterActivity">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>-->
         </activity>
         <activity android:name=".activity.BillInfoActivity"></activity>
         <activity android:name=".activity.CommitOrderActivity"></activity>

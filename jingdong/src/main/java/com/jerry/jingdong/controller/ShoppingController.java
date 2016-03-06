@@ -110,6 +110,7 @@ public class ShoppingController extends BaseController implements View.OnTouchLi
     @Bind(R.id.cart_root_fl)
     RelativeLayout mCartRootFl;
     private int mUserId;
+    private CartNewBean mCartNewBean;
 
 
     public ShoppingController(Context context) {
@@ -138,10 +139,13 @@ public class ShoppingController extends BaseController implements View.OnTouchLi
         mProductEntities = new ArrayList<>();
         try {
             HashMap<String, String> map = new HashMap<>();
-            map.put("pId", "1");
-            CartNewBean cartInfoBean = mProductProtocol.loadData(HttpRequest.HttpMethod.GET, map, null);
-            mProductEntities.add(cartInfoBean.product);
-            Log.d("CartFragment", cartInfoBean.response);
+            for (int i = 1; i <20; i++) {
+                map.put("pId", i++ + "");
+                mCartNewBean = mProductProtocol.loadData(HttpRequest.HttpMethod.GET, map, null);
+                mProductEntities.add(mCartNewBean.product);
+            }
+
+            Log.d("CartFragment", mCartNewBean.response);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -149,6 +153,7 @@ public class ShoppingController extends BaseController implements View.OnTouchLi
         }
 
         mIsLogin = MyApplication.isLogin();//拿到当前登录状态
+        Log.d("ShoppingController", "mIsLogin:" + mIsLogin);
 
         if (mIsLogin) { //已登录状态
             mCartParamsUtils = new CartParamsUtils();
@@ -161,9 +166,9 @@ public class ShoppingController extends BaseController implements View.OnTouchLi
 
             mCartProtocol = new CartProtocol();
             HashMap<String, String> map = new HashMap<>();
-            map.put("sku", mSku);
+            map.put("sku", "1:3:1,2,3,4|2:2:2,3");
             try {
-                mCartInfoBean = mCartProtocol.loadData(HttpRequest.HttpMethod.POST, map);
+                mCartInfoBean = mCartProtocol.loadData(HttpRequest.HttpMethod.POST, map,null);
                 if (mCartInfoBean != null) {
                     mCartEntities = mCartInfoBean.cart;
                     Log.d("CartFragment", mCartInfoBean.response);
@@ -365,8 +370,7 @@ public class ShoppingController extends BaseController implements View.OnTouchLi
 
     //登录中心
     private void Login() {
-        /*Intent intent = new Intent(UIUtils.getContext(), XXXActivity.class);
-        startActivityForResult(intent, 1);*/
+
     }
 
     private void setAllSelected() {
