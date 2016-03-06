@@ -51,6 +51,6 @@ public class HomeProductHolder extends BaseHolder<SaleProductBean.SaleInfoBean> 
         mItem_hotproduct_tv_price.setText("现价"+data.price);
         String picUrl = MyConstants.URL.BASEURL + data.pic.substring(1);
         Log.d("dvl", picUrl);
-        Picasso.with(UIUtils.getContext()).load(picUrl).error(R.drawable.q20).into(mItem_hotproduct_iv_product);
+        Picasso.with(UIUtils.getContext()).load(picUrl).error(R.drawable.ic_launcher).into(mItem_hotproduct_iv_product);
     }
 }

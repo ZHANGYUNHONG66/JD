@@ -2,6 +2,8 @@ package com.jerry.jingdong.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 
 import com.jerry.jingdong.R;
 import com.jerry.jingdong.fragment.ContentFragment;
@@ -23,13 +25,11 @@ public class MainUI extends FragmentActivity {
      * 初始化fragment
      */
     private void initFragment() {
-        android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentManager fragmentManager = getSupportFragmentManager();
 
-        android.support.v4.app.FragmentTransaction transaction = fragmentManager
-                .beginTransaction();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
 
-        transaction.add(R.id.fl_main_cantent, new ContentFragment(),
-                TAG_FRAGMENT_CONTENT);
+        transaction.add(R.id.fl_main_cantent, new ContentFragment(),TAG_FRAGMENT_CONTENT);
 
         transaction.commit();
     }
