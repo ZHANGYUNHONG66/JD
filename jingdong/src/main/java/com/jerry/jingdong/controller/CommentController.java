@@ -57,8 +57,8 @@ public class CommentController extends BaseController {
         SystemClock.sleep(2000);
         try {
             BrandProtocal brandProtocal = new BrandProtocal();
-            mBrandListBean = brandProtocal.loadData(HttpRequest.HttpMethod.GET, null);
 
+            mBrandListBean = brandProtocal.loadData(HttpRequest.HttpMethod.GET, null);
 
 
             if(mBrandListBean!=null){

@@ -16,8 +16,10 @@ import com.lidroid.xutils.http.ResponseStream;
 import com.lidroid.xutils.http.client.HttpRequest;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -44,13 +46,13 @@ public abstract class BaseProtocol<T> {
         }
 
         // 2.再磁盘-->存内存,返回
-        T t = loadDataFromLocal(key);
+        /*T t = loadDataFromLocal(key);
         if (t != null) {
             return t;
-        }
+        }*/
 
         // 3.最后网络-->存内存,存磁盘,返回
-        t = loadDataFromNet(method, params);
+        T t = loadDataFromNet(method, params);
 
         return t;
     }
@@ -154,7 +156,7 @@ public abstract class BaseProtocol<T> {
                     String key = entry.getKey();
                     String value = entry.getValue();
 
-                    if (key.equals("userid")) {
+                    if (key.equals("userid")){
                         postHead = key;
                         postValue = entry.getValue();
                         continue;
@@ -175,15 +177,17 @@ public abstract class BaseProtocol<T> {
                     responseStream = httpUtils.sendSync(HttpRequest.HttpMethod.GET, url, rparams);
 
                 } else if (method == HttpRequest.HttpMethod.POST) {
-                    if (postHead != null && postValue != null) {
+                    if(postHead!=null&&postValue!=null) {
                         rparams.addHeader(postHead, postValue);
                     }
-
 
                     responseStream = httpUtils.sendSync(HttpRequest.HttpMethod.POST, url, rparams);
                 }
             }
+
             result = responseStream.readString();
+            //Log.d("andy", result);
+
         } catch (HttpException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -194,7 +198,7 @@ public abstract class BaseProtocol<T> {
         String key = generateKey(params);
         app.getProtocolMap().put(key, result);
 
-       /* // 存本地
+        // 存本地
         File cacheFile = getCacheFile(key);
         BufferedWriter writer = null;
         try {
@@ -207,7 +211,7 @@ public abstract class BaseProtocol<T> {
             writer.write(result);
         } finally {
             IOUtils.close(writer);
-        }*/
+        }
 
 		/*=============== 2.接续网络请求回来的数据 ===============*/
         // 解析json

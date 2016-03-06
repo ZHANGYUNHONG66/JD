@@ -3,7 +3,7 @@ package com.jerry.jingdong.entity;
 import java.util.List;
 
 /**
- * Created by MiKoKatie on 2016/3/5 14:30.
+ * Created by MiKoKatie on 2016/3/5 20:31.
  *
  * @ 描述  ${TODO}
  * @ 版本  $Rev$
@@ -12,31 +12,43 @@ import java.util.List;
  */
 public class CartInfoBean {
 
-    public ProductEntity product;
+    public String response;
+    public int    totalCount;
+    public int    totalPoint;
+    public int    totalPrice;
 
-    public String        response;
+    public List<CartEntity> cart;
+    public List<String>     prom;
 
-    public static class ProductEntity {
-        public boolean      available;
-        public int          buyLimit;
-        public int          commentCount;
-        public int          id;
-        public String       inventoryArea;
-        public int          leftTime;
-        public int          limitPrice;
-        public int          marketPrice;
-        public String       name;
-        public int          price;
-        public int          score;
-        public List<String> bigPic;
-        public List<String> pics;
+    public static class CartEntity {
+        public int prodNum;
+        public boolean isSeleced = true;
 
-        public List<ProductBeanEntity> productProperty;
+        public boolean isSeleced() {
+            return isSeleced;
+        }
 
-        public static class ProductBeanEntity {
+        public void setSeleced(boolean seleced) {
+            isSeleced = seleced;
+        }
+
+        public ProductEntity product;
+
+        public static class ProductEntity {
+            public int    buyLimit;
             public int    id;
-            public String k;
-            public String v;
+            public String name;
+            public String number;
+            public String pic;
+            public int    price;
+
+            public List<ProductPropertyEntity> productProperty;
+
+            public static class ProductPropertyEntity {
+                public int    id;
+                public String k;
+                public String v;
+            }
         }
     }
 }

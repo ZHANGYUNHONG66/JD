@@ -7,3 +7,4 @@
 /captures
 /gradle
 /jingdong/libs/butterknife-6.0.0.jar
+/jingdong/src/main/java/com/jerry/jingdong/manager/OkHttpClientManager.java
