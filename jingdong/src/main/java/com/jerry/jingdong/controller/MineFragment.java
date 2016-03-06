@@ -34,6 +34,7 @@ public class MineFragment extends BaseFragment {
          */
         // LoginHolder holder = new LoginHolder();
         AccountCentreHolder holder = new AccountCentreHolder();
+//        holder.setDataAndRefreshView(null);
         return holder.mRootView;
 
     }

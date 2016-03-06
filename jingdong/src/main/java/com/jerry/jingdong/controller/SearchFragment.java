@@ -1,9 +1,11 @@
 package com.jerry.jingdong.controller;
 
 import android.view.View;
+import android.widget.TextView;
 
 import com.jerry.jingdong.base.BaseFragment;
 import com.jerry.jingdong.base.LoadingPager;
+import com.jerry.jingdong.utils.UIUtils;
 
 /**
  * 搜索
@@ -11,14 +13,16 @@ import com.jerry.jingdong.base.LoadingPager;
 
 public class SearchFragment extends BaseFragment {
 
-
     @Override
     public LoadingPager.LoadResultState initData() {
-        return null;
+
+        return LoadingPager.LoadResultState.SUCCESS;
     }
 
     @Override
     public View initSuccessView() {
-        return null;
+        TextView tv = new TextView(UIUtils.getContext());
+        tv.setText(getClass().getSimpleName());
+        return tv;
     }
 }

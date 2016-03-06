@@ -1,39 +1,34 @@
 package com.jerry.jingdong.fragment;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.view.PagerAdapter;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.RadioGroup;
+
+import com.jerry.jingdong.R;
+import com.jerry.jingdong.base.BaseFragment;
+import com.jerry.jingdong.factory.TabFragmentFactory;
+import com.jerry.jingdong.utils.UIUtils;
+import com.jerry.jingdong.views.LazyViewPager;
+import com.jerry.jingdong.views.NoScrollViewPager;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-import com.jerry.jingdong.R;
-import com.jerry.jingdong.base.BaseFragment;
-import com.jerry.jingdong.controller.CommentFragment;
-import com.jerry.jingdong.controller.HomeFragment;
-import com.jerry.jingdong.controller.MineFragment;
-import com.jerry.jingdong.controller.SearchFragment;
-import com.jerry.jingdong.controller.ShoppingFragment;
-import com.jerry.jingdong.utils.UIUtils;
-import com.jerry.jingdong.views.NoScrollViewPager;
-
-public class ContentFragment extends Fragment {
+public class ContentFragment extends Fragment implements LazyViewPager.OnPageChangeListener {
 
     @Bind(R.id.content_rg)
-    RadioGroup                 mContentRg;
+    RadioGroup        mContentRg;
     @Bind(R.id.content_viewPager)
-    NoScrollViewPager          mContentViewPager;
+    NoScrollViewPager mContentViewPager;
 
-    private int                mCurrRbIndex   = -1;
-    private List<BaseFragment> mBaseFragments = new ArrayList<>();
-
+    private int mCurrRbIndex = -1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,26 +44,26 @@ public class ContentFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         initData();
+
+        initListener();
     }
 
     public void initData() {
-
-        mBaseFragments.add(new HomeFragment());
-         mBaseFragments.add(new SearchFragment());
-         mBaseFragments.add(new CommentFragment());
-         mBaseFragments.add(new ShoppingFragment());
-         mBaseFragments.add(new MineFragment());
-
         // 设置预加载的页面数
         mContentViewPager.setOffscreenPageLimit(0);
 
         // 给ViePager设置适配器
-        mContentViewPager.setAdapter(new MyAdapter());
+        mContentViewPager.setAdapter(
+                new MyAdapter(getActivity().getSupportFragmentManager()));
 
         // 初始化选中首页
         mContentRg.check(R.id.content_rb_home);
+
     }
 
+    /**
+     * 初始化监听
+     */
     public void initListener() {
 
         mContentRg.setOnCheckedChangeListener(
@@ -93,30 +88,66 @@ public class ContentFragment extends Fragment {
                                 mCurrRbIndex = 4;
                                 break;
                         }
-
                         mContentViewPager.setCurrentItem(mCurrRbIndex);
+                    }
+                });
 
+        mContentViewPager.setOnPageChangeListener(this);
+
+        mContentViewPager.getViewTreeObserver().addOnGlobalLayoutListener(
+                new ViewTreeObserver.OnGlobalLayoutListener() {
+                    @Override
+                    public void onGlobalLayout() {
+                        ContentFragment.this.onPageSelected(0);
+                        mContentViewPager.getViewTreeObserver()
+                                .removeGlobalOnLayoutListener(this);
                     }
                 });
     }
 
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 
-    private class MyAdapter extends PagerAdapter {
-        @Override
-        public int getCount() {
-            return 0;
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        BaseFragment fragment = TabFragmentFactory.createFragment(position);
+        if (fragment != null && fragment.mLoadingPager != null) {
+            Log.d("0000", "3333333" );
+            fragment.mLoadingPager.triggerLoadData();
+        }
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
+    }
+
+    private class MyAdapter extends FragmentPagerAdapter {
+        public MyAdapter(FragmentManager fm) {
+            super(fm);
         }
 
         @Override
-        public boolean isViewFromObject(View view, Object object) {
-            return false;
+        public int getCount() {
+
+            return mContentRg.getChildCount();
         }
+
+        @Override
+        public Fragment getItem(int position) {
+
+            BaseFragment fragment = TabFragmentFactory.createFragment(position);
+
+            return fragment;
+        }
+
     }
 
 }

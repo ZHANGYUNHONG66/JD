@@ -25,20 +25,21 @@ import java.util.List;
 //http://localhost:8080/market/hotproduct?page=0&pageNum=20&orderby=saleDown
 public class HotProductActivity extends AppCompatActivity {
 
-    private ListView                mListView;
-    private SaleProductBean         mData;
-    private LoadingPager            mLoadingPager;
-    private HotProductProtocol      mHotProductProtocol;
-    private HashMap<String, String> mParamsMap;
-    private int mPageIndex = 0;//url的参数page 第几页  每次加载更多 ++1
-    private        String             mInterfaceKey;
-    private static HotProductActivity Tag; //标记
+    private ListView                  mListView;
+    private SaleProductBean           mData;
+    private LoadingPager              mLoadingPager;
+    private HotProductProtocol        mHotProductProtocol;
+    private HashMap<String, String>   mParamsMap;
+    private int                       mPageIndex = 0;     // url的参数page 第几页
+                                                          // 每次加载更多 ++1
+    private String                    mInterfaceKey;
+    private static HotProductActivity Tag;                // 标记
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //setContentView(R.layout.activity_hot_product);
+        // setContentView(R.layout.activity_hot_product);
 
         mInterfaceKey = getIntent().getStringExtra("interfaceKey");
 
@@ -71,22 +72,24 @@ public class HotProductActivity extends AppCompatActivity {
             MyApplication app = (MyApplication) UIUtils.getContext();
 
             mParamsMap = new HashMap<>();
-            mParamsMap.put("page", mPageIndex + "");//第几页
-            mParamsMap.put("pageNum", "10");//每页个数
-            mParamsMap.put("orderby", "saleDown");//排序
-            SaleProductBean saleProductBean = mHotProductProtocol.loadData(HttpRequest.HttpMethod.GET, mParamsMap);
+            mParamsMap.put("page", mPageIndex + "");// 第几页
+            mParamsMap.put("pageNum", "10");// 每页个数
+            mParamsMap.put("orderby", "saleDown");// 排序
+            SaleProductBean saleProductBean = mHotProductProtocol
+                    .loadData(HttpRequest.HttpMethod.GET, mParamsMap);
             if (saleProductBean == null) {
                 return LoadingPager.LoadResultState.EMPTY;
             }
-            if (saleProductBean.productList == null || saleProductBean.productList.size() == 0) {
+            if (saleProductBean.productList == null
+                    || saleProductBean.productList.size() == 0) {
                 return LoadingPager.LoadResultState.EMPTY;
             }
             mData = saleProductBean;
 
-          /*  *//**模拟数据*//*
-            SaleProductBean saleProductBean = hotProductProtocol.parseJsonString("");
-            mData = saleProductBean;*/
-
+            /*
+             * 模拟数据 SaleProductBean saleProductBean =
+             * hotProductProtocol.parseJsonString(""); mData = saleProductBean;
+             */
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -96,7 +99,8 @@ public class HotProductActivity extends AppCompatActivity {
     }
 
     private View initSuccessView() {
-        View rootView = View.inflate(UIUtils.getContext(), R.layout.activity_hot_product, null);
+        View rootView = View.inflate(UIUtils.getContext(),
+                R.layout.activity_hot_product, null);
         mListView = (ListView) rootView.findViewById(R.id.home_hotproduct_lv);
 
         ImageView headIv = new ImageView(UIUtils.getContext());
@@ -111,7 +115,6 @@ public class HotProductActivity extends AppCompatActivity {
     }
 
     class MyListAdapter extends SuperBaseAdapter<SaleProductBean.SaleInfoBean> {
-
 
         public MyListAdapter(AbsListView absListView, List datas) {
             super(absListView, datas);
@@ -128,13 +131,15 @@ public class HotProductActivity extends AppCompatActivity {
         }
 
         @Override
-        public List<SaleProductBean.SaleInfoBean> loadMoreData() throws IOException {
+        public List<SaleProductBean.SaleInfoBean> loadMoreData()
+                throws IOException {
             SaleProductBean saleProductBean = null;
             try {
                 mParamsMap.put("page", ++mPageIndex + "");
-                saleProductBean = mHotProductProtocol.loadData(HttpRequest.HttpMethod.GET, mParamsMap);
-                //return saleProductBean.productList;
-                //mDatas.addAll(saleProductBean.productList);
+                saleProductBean = mHotProductProtocol
+                        .loadData(HttpRequest.HttpMethod.GET, mParamsMap);
+                // return saleProductBean.productList;
+                // mDatas.addAll(saleProductBean.productList);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -142,12 +147,12 @@ public class HotProductActivity extends AppCompatActivity {
         }
     }
 
-    //触发加载数据
+    // 触发加载数据
     private void initData() {
         mLoadingPager.triggerLoadData();
     }
 
-    //关闭自己
+    // 关闭自己
     public static void finishSelf() {
         if (Tag != null) {
             Tag.finish();

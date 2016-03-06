@@ -34,7 +34,7 @@ public class MainUI extends FragmentActivity {
         transaction.add(R.id.fl_main_title, new TitleFragment(),
                 TAG_FRAGMENT_TITLE);
 
-        transaction.add(R.id.fl_main_cantent, new ContentFragment(),
+        transaction.add(R.id.fl_main_content, new ContentFragment(),
                 TAG_FRAGMENT_CONTENT);
 
         transaction.commit();

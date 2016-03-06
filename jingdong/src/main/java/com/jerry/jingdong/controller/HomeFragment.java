@@ -1,12 +1,8 @@
 package com.jerry.jingdong.controller;
 
-import android.content.Context;
 import android.os.SystemClock;
 import android.view.View;
 import android.widget.FrameLayout;
-
-import butterknife.Bind;
-import butterknife.ButterKnife;
 
 import com.jerry.jingdong.R;
 import com.jerry.jingdong.base.BaseFragment;
@@ -15,6 +11,9 @@ import com.jerry.jingdong.holder.home.DownHolder;
 import com.jerry.jingdong.holder.home.MiddleHolder;
 import com.jerry.jingdong.holder.home.UpHolder;
 import com.jerry.jingdong.utils.UIUtils;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 public class HomeFragment extends BaseFragment {
 
