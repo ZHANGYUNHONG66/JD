@@ -1,6 +1,7 @@
 package com.jerry.jingdong.controller;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jerry.jingdong.R;
+import com.jerry.jingdong.activity.BalanceAccountsCenterActivity;
 import com.jerry.jingdong.application.MyApplication;
 import com.jerry.jingdong.base.BaseController;
 import com.jerry.jingdong.base.LoadingPager;
@@ -109,7 +111,7 @@ public class ShoppingController extends BaseController implements View.OnTouchLi
     FrameLayout    mCartBottomFl;
     @Bind(R.id.cart_root_fl)
     RelativeLayout mCartRootFl;
-    private int mUserId;
+    private int         mUserId;
     private CartNewBean mCartNewBean;
 
 
@@ -132,7 +134,7 @@ public class ShoppingController extends BaseController implements View.OnTouchLi
         mProductEntities = new ArrayList<>();
         try {
             HashMap<String, String> map = new HashMap<>();
-            for (int i = 1; i <20; i++) {
+            for (int i = 1; i < 20; i++) {
                 map.put("pId", i++ + "");
                 mCartNewBean = mProductProtocol.loadData(HttpRequest.HttpMethod.GET, map, null);
                 mProductEntities.add(mCartNewBean.product);
@@ -161,7 +163,7 @@ public class ShoppingController extends BaseController implements View.OnTouchLi
             HashMap<String, String> map = new HashMap<>();
             map.put("sku", "1:3:1,2,3,4|2:2:2,3");
             try {
-                mCartInfoBean = mCartProtocol.loadData(HttpRequest.HttpMethod.POST, map,null);
+                mCartInfoBean = mCartProtocol.loadData(HttpRequest.HttpMethod.POST, map, null);
                 if (mCartInfoBean != null) {
                     mCartEntities = mCartInfoBean.cart;
                     Log.d("CartFragment", mCartInfoBean.response);
@@ -249,8 +251,11 @@ public class ShoppingController extends BaseController implements View.OnTouchLi
                 break;
             case R.id.cart_login_btn:
                 //点击了加入购物车
+                Intent intent = new Intent(UIUtils.getContext(), BalanceAccountsCenterActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                UIUtils.getContext().startActivity(intent);
                 Toast.makeText(UIUtils.getContext(), "点击了登陆", Toast.LENGTH_SHORT).show();
-                Login();
+//                Login();
                 break;
 
         }

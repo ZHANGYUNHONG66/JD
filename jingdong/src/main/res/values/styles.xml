@@ -97,6 +97,20 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
+
+    <!--自定义对话框-->
+    <style name="locationstyles" parent="@android:style/Theme.Dialog">
+    <!--    <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        &lt;!&ndash; 阴影效果 &ndash;&gt;
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowIsTranslucent">true</item>-->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 对话框外面点击关闭 -->
+       <!-- <item name="android:windowCloseOnTouchOutside">true</item>-->
+    </style>
     <!--*********结算中心样式  end*********-->
 
     <!--自定义订单详情页面TextEdit左边样式-->

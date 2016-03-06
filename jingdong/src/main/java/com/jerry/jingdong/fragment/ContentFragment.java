@@ -1,9 +1,4 @@
 package com.jerry.jingdong.fragment;
-/*
- * @创建      Jerry
- * @创建时间   2016/2/5 16:10
- * @描述      内容区域对应的Fragment
- */
 
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
@@ -38,6 +33,7 @@ public class ContentFragment extends BaseFragment {
 
     private int                  mCurrRbIndex     = -1;
     private List<BaseController> mBaseControllers = new ArrayList<>();
+
 
     @Override
     public View initView() {
@@ -136,6 +132,7 @@ public class ContentFragment extends BaseFragment {
             container.addView(rootView);
 
             controller.mLoadingPager.triggerLoadData();
+
 
             return rootView;
         }

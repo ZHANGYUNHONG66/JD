@@ -23,6 +23,7 @@
             />
     </RelativeLayout>
     <ListView
+        android:background="#fff"
         android:id="@+id/dialog_view_lv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></ListView>

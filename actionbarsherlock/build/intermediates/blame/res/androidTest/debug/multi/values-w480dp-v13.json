@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "E:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-w480dp-v13\\values-w480dp-v13.xml",
+        "outputFile": "E:\\Android_protect\\JingDong\\actionbarsherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-w480dp-v13\\values-w480dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 106
                 },
                 "from": {
-                    "file": "E:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\values-w480dp-v13\\values-w480dp-v13.xml",
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\values-w480dp-v13\\values-w480dp-v13.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 179
                 },
                 "from": {
-                    "file": "E:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\values-w480dp-v13\\values-w480dp-v13.xml",
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\values-w480dp-v13\\values-w480dp-v13.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -49,7 +49,7 @@
                     "endOffset": 241
                 },
                 "from": {
-                    "file": "E:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\values-w480dp-v13\\values-w480dp-v13.xml",
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\values-w480dp-v13\\values-w480dp-v13.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

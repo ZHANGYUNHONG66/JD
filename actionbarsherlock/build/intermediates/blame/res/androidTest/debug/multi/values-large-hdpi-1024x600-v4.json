@@ -119,7 +119,7 @@
         ]
     },
     {
-        "outputFile": "E:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-large-hdpi-1024x600-v4\\values-large-hdpi-1024x600-v4.xml",
+        "outputFile": "E:\\Android_protect\\JingDong\\actionbarsherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-large-hdpi-1024x600-v4\\values-large-hdpi-1024x600-v4.xml",
         "map": [
             {
                 "to": {
@@ -130,7 +130,7 @@
                     "endOffset": 113
                 },
                 "from": {
-                    "file": "E:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\values-large-hdpi-1024x600-v4\\values-large-hdpi-1024x600-v4.xml",
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\values-large-hdpi-1024x600-v4\\values-large-hdpi-1024x600-v4.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -149,7 +149,7 @@
                     "endOffset": 182
                 },
                 "from": {
-                    "file": "E:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\values-large-hdpi-1024x600-v4\\values-large-hdpi-1024x600-v4.xml",
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\values-large-hdpi-1024x600-v4\\values-large-hdpi-1024x600-v4.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -168,7 +168,7 @@
                     "endOffset": 252
                 },
                 "from": {
-                    "file": "E:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\values-large-hdpi-1024x600-v4\\values-large-hdpi-1024x600-v4.xml",
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\values-large-hdpi-1024x600-v4\\values-large-hdpi-1024x600-v4.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -187,7 +187,7 @@
                     "endOffset": 318
                 },
                 "from": {
-                    "file": "E:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\values-large-hdpi-1024x600-v4\\values-large-hdpi-1024x600-v4.xml",
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\values-large-hdpi-1024x600-v4\\values-large-hdpi-1024x600-v4.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -206,7 +206,7 @@
                     "endOffset": 385
                 },
                 "from": {
-                    "file": "E:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\values-large-hdpi-1024x600-v4\\values-large-hdpi-1024x600-v4.xml",
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\values-large-hdpi-1024x600-v4\\values-large-hdpi-1024x600-v4.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -225,7 +225,7 @@
                     "endOffset": 448
                 },
                 "from": {
-                    "file": "E:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\values-large-hdpi-1024x600-v4\\values-large-hdpi-1024x600-v4.xml",
+                    "file": "E:\\Android_protect\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\values-large-hdpi-1024x600-v4\\values-large-hdpi-1024x600-v4.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,

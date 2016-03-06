@@ -81,11 +81,12 @@
 
                 <Button
                     android:id="@+id/cart_nogoods_btn"
-                    android:layout_width="match_parent"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/cart_nogoods_iv"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
                     android:background="@mipmap/cart_regist_bg"
                     android:text="随便溜达"
                     android:textColor="#fff"/>
