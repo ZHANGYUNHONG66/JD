@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF810E1F">
+
+
+    <ImageView
+        android:id="@+id/tab_iv_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:src="@drawable/daohang_tiaozhuan_dianji"/>
+
+    <TextView
+        android:id="@+id/tab_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="地址列表"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/address_manage_selector"
+        />
+
+   </RelativeLayout>
+   <TextView
+       android:id="@+id/et_name"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="姓名:"/>
+    <TextView
+        android:id="@+id/et_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="电话:"/>
+    <TextView
+        android:id="@+id/et_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="地址:"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+        <LinearLayout
+            android:id="@+id/main_tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:background="#FF180205"
+            android:orientation="horizontal">
+            <RadioGroup
+                android:id="@+id/content_tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="0"
+                android:layout_gravity="center"
+                android:background="#FF180205"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/content_rb_home"
+                    style="@style/TabStyle"
+                    android:drawableTop="@drawable/tab_home_selector"
+
+                    android:text="首页"
+                    />
+
+                <RadioButton
+                    android:id="@+id/content_rb_newscenter"
+                    style="@style/TabStyle"
+                    android:drawableTop="@drawable/tab_search_selector"
+
+                    android:text="搜索"
+                    />
+
+                <RadioButton
+                    android:id="@+id/content_rb_smart"
+                    style="@style/TabStyle"
+                    android:drawableTop="@drawable/tab_brank_selector"
+
+                    android:text="品牌"
+                    />
+
+                <RadioButton
+                    android:id="@+id/content_rb_gov"
+                    style="@style/TabStyle"
+                    android:drawableTop="@drawable/tab_shopping_selector"
+
+                    android:text="购物车"
+                    />
+
+                <RadioButton
+                    android:id="@+id/content_rb_setting"
+                    style="@style/TabStyle"
+                    android:drawableTop="@drawable/tab_mine_selector"
+                    android:text="我的"
+                    />
+
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>

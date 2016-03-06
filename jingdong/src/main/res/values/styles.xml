@@ -56,4 +56,19 @@
         <item name="android:textColor">@color/myorder_rb_textselector</item>
     </style>
 
+
+        <style name="TabStyle">
+            <item name="android:layout_width">0dp</item>
+            <item name="android:layout_height">wrap_content</item>
+            <item name="android:layout_weight">1</item>
+            <item name="android:layout_gravity">center</item>
+            <item name="android:button">@null</item>
+            <item name="android:background">@android:color/transparent</item>
+            <item name="android:gravity">center</item>
+            <item name="android:layout_marginBottom">3dp</item>
+            <item name="android:textColor">@color/tab_text_selector</item>
+        </style>
+
+
+
 </resources>
