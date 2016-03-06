@@ -14,16 +14,20 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.Black.NoTitleBar">
         <activity android:name=".activity.SplashUi">
-   <intent-filter>
+<!--   <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+            </intent-filter>-->
         </activity>
         <activity android:name=".activity.MainUI">
         </activity>
         <activity android:name=".activity.BalanceAccountsCenterActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
 
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity android:name=".activity.BillInfoActivity"></activity>
         <activity android:name=".activity.CommitOrderActivity"></activity>
