@@ -28,6 +28,12 @@
         android:textColor="#ffffff"
         android:textSize="24sp"
         />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        />
 
    </RelativeLayout>
    <TextView

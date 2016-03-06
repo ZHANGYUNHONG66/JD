@@ -1,14 +1,10 @@
 package com.jerry.jingdong.holder;
 
-import android.os.SystemClock;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.jerry.jingdong.R;
-import com.jerry.jingdong.application.MyApplication;
 import com.jerry.jingdong.base.BaseHolder;
-import com.jerry.jingdong.factory.ThreadPoolProxyFactory;
 import com.jerry.jingdong.utils.UIUtils;
 
 import butterknife.Bind;
@@ -26,15 +22,11 @@ public class LoadMoreHolder extends BaseHolder<Integer> {
     public static final int LOADDATA_RETRY   = 1;         // 加载更多失败，点击重试的状态
     public static final int LOADDATA_NONE    = 2;         // 没有加载更多的状态
 
-    private boolean         pointShow        = true;      // 是否变化加载更多中的文字的点
-    private int             pointCount       = 1;         // 加载更多文字变化的点的个数
-
     @Bind(R.id.item_loadmore_container_loading)
     LinearLayout            mItemLoadmoreContainerLoading;
     @Bind(R.id.item_loadmore_container_retry)
     LinearLayout            mItemLoadmoreContainerRetry;
-    @Bind(R.id.item_loadmore_tv_loading)
-    TextView                mItemLoadmoreTvLoading;
+
 
     @Override
     protected void refreshView(Integer data) {
@@ -48,22 +40,14 @@ public class LoadMoreHolder extends BaseHolder<Integer> {
         switch (data) {
         case LOADDATA_LOADING:
             mItemLoadmoreContainerLoading.setVisibility(View.VISIBLE);
-            pointShow = true;
             break;
         case LOADDATA_RETRY:
-            // 加载数据完成，不管成功与否都会更新这个的状态，停止下面文字点的循环
-            pointShow = false;
             mItemLoadmoreContainerRetry.setVisibility(View.VISIBLE);
             break;
         case LOADDATA_NONE:
-            // 加载数据完成，不管成功与否都会更新这个的状态，停止下面文字点的循环
-            pointShow = false;
             break;
         }
 
-        if (pointShow) {
-            initLoadingMoreTextPoint();
-        }
     }
 
     @Override
@@ -75,38 +59,4 @@ public class LoadMoreHolder extends BaseHolder<Integer> {
         return rootView;
     }
 
-    /**
-     * 初始化加载更多的文本末尾点的增加循环
-     */
-    private void initLoadingMoreTextPoint() {
-
-        ThreadPoolProxyFactory.createNormalThreadPool().execute(new Runnable() {
-            @Override
-            public void run() {
-                while (pointShow) {
-                    String points = "";
-
-                    for (int i = 0; i < (pointCount % 6) + 1; i++) {
-                        points += ".";
-                    }
-                    pointCount++;
-
-                    SystemClock.sleep(500);
-
-                    final String mess = "加载更多数据" + points;
-
-                    MyApplication.getMainThreadHandler().post(new Runnable() {
-                        @Override
-                        public void run() {
-                            mItemLoadmoreTvLoading.setText(mess);
-                        }
-                    });
-                }
-            }
-        });
-    }
-
-    public void stopTextPointThread() {
-        pointShow = false;
-    }
 }

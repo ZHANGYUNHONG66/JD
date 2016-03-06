@@ -1,21 +1,21 @@
 package com.jerry.jingdong.activity;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.jerry.jingdong.R;
 import com.jerry.jingdong.factory.FragmentFactory;
-import com.jerry.jingdong.fragment.OrderBaseFragment;
-import com.jerry.jingdong.views.LazyViewPager;
-import com.jerry.jingdong.views.NoScrollViewPager;
+import com.jerry.jingdong.fragment.CancelOrderFragment;
+import com.jerry.jingdong.fragment.TenMinuteAgoOrderFragment;
+import com.jerry.jingdong.fragment.TenMinuteOrderFragment;
+import com.jerry.jingdong.utils.UIUtils;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -28,28 +28,24 @@ import butterknife.OnClick;
  * @工程名: JingDong
  * @描述: TODO
  */
-public class MyOrderActivity extends AppCompatActivity
+public class MyOrderActivity extends FragmentActivity
         implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
     @Bind(R.id.myorder_btn_back)
-    Button                         mMyorderBtnBack;
+    Button     mMyorderBtnBack;
     @Bind(R.id.myorder_rg)
-    RadioGroup                     mMyorderRg;
-    @Bind(R.id.myorder_viewpager)
-    NoScrollViewPager              mMyorderViewpager;
+    RadioGroup mMyorderRg;
+
     @Bind(R.id.myorder_empty_container)
-    LinearLayout                   mMyorderEmptyContainer;
+    LinearLayout mMyorderEmptyContainer;
 
-    public static final int        TYPE_TENMINUTE     = 1;
-    public static final int        TYPE_TENMINUTE_AGO = 2;
-    public static final int        TYPE_CANCEL        = 3;
+    public static final int TYPE_TENMINUTE     = 1;
+    public static final int TYPE_TENMINUTE_AGO = 2;
+    public static final int TYPE_CANCEL        = 3;
 
-    private int                    mType              = TYPE_TENMINUTE;
-
-    private MyPageAdapter          mPagerAdapter;
-    private MyOnPageChangeListener mListener;
-
-    private String[]               mTabTitles         = { "近十分钟订单", "10分钟前订单",
-            "已取消的订单" };
+    private int mType = TYPE_TENMINUTE;
+    private TenMinuteOrderFragment    mTenMinuteOrderFragment;
+    private TenMinuteAgoOrderFragment mTenMinuteAgoOrderFragment;
+    private CancelOrderFragment       mCancelOrderFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,36 +53,26 @@ public class MyOrderActivity extends AppCompatActivity
         setContentView(R.layout.my_order_form);
         ButterKnife.bind(this);
 
-        initData();
+        initView();
 
         initListener();
     }
 
-    private void initData() {
-        mPagerAdapter = new MyPageAdapter(getSupportFragmentManager());
+    private void initView() {
+        mTenMinuteOrderFragment = (TenMinuteOrderFragment) FragmentFactory
+                .createFragment(FragmentFactory.FRAGMENT_TENMINUTE);
+        mTenMinuteAgoOrderFragment = (TenMinuteAgoOrderFragment) FragmentFactory
+                .createFragment(FragmentFactory.FRAGMENT_TENMINUTEAGO);
+        mCancelOrderFragment = (CancelOrderFragment) FragmentFactory
+                .createFragment(FragmentFactory.FRAGMENT_CANCEL);
 
-        mMyorderViewpager.setAdapter(mPagerAdapter);
+        changeFragment(1);
     }
 
     private void initListener() {
         mMyorderBtnBack.setOnClickListener(this);
 
         mMyorderRg.setOnCheckedChangeListener(this);
-        mListener = new MyOnPageChangeListener();
-        mMyorderViewpager.setOnPageChangeListener(mListener);
-
-        // 手动选中首页让首页在一进入应用就加载数据，添加ViewPager的布局监听，当布局完成后再加载数据
-        mMyorderViewpager.getViewTreeObserver().addOnGlobalLayoutListener(
-                new ViewTreeObserver.OnGlobalLayoutListener() {
-                    @Override
-                    public void onGlobalLayout() {
-                        // 优化LoadingPager首页未加载
-                        mListener.onPageSelected(0);
-
-                        mMyorderViewpager.getViewTreeObserver()
-                                .removeGlobalOnLayoutListener(this);
-                    }
-                });
     }
 
     /**
@@ -107,8 +93,30 @@ public class MyOrderActivity extends AppCompatActivity
         default:
             break;
         }
+        changeFragment(mType);
+    }
 
-        mListener.onPageSelected(mType);
+    private void changeFragment(int type) {
+        // 1.获得fragment管理器
+        FragmentManager fm = getSupportFragmentManager();
+
+        // 2.开启事务
+        FragmentTransaction transaction = fm.beginTransaction();
+
+        // 3.替换内容
+        if (type == TYPE_TENMINUTE) {
+            transaction.replace(R.id.myorder_frame_container,
+                    mTenMinuteOrderFragment);
+        } else if (type == TYPE_TENMINUTE_AGO) {
+            transaction.replace(R.id.myorder_frame_container,
+                    mTenMinuteAgoOrderFragment);
+        } else if (type == TYPE_CANCEL) {
+            transaction.replace(R.id.myorder_frame_container,
+                    mCancelOrderFragment);
+        }
+
+        // 4.提交事务
+        transaction.commit();
     }
 
     /**
@@ -116,54 +124,8 @@ public class MyOrderActivity extends AppCompatActivity
      */
     @OnClick(R.id.myorder_btn_back)
     public void onClick(View v) {
-
+        Toast.makeText(UIUtils.getContext(), "点击了返回按钮", Toast.LENGTH_SHORT)
+                .show();
     }
 
-    private class MyOnPageChangeListener
-            implements LazyViewPager.OnPageChangeListener {
-        @Override
-        public void onPageScrolled(int position, float positionOffset,
-                int positionOffsetPixels) {
-
-        }
-
-        @Override
-        public void onPageSelected(int position) {
-            // 优化数据触发加载时机，当对应的tab页被选中时再初始化数据
-            OrderBaseFragment fragment = FragmentFactory
-                    .createFragment(position);
-            if (fragment != null && fragment.mLoadingPager != null) {
-                fragment.mLoadingPager.triggerLoadData();
-            }
-        }
-
-        @Override
-        public void onPageScrollStateChanged(int state) {
-
-        }
-    }
-
-    private class MyPageAdapter extends FragmentPagerAdapter {
-
-        public MyPageAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            Fragment fragment = FragmentFactory.createFragment(position);
-
-            return fragment;
-        }
-
-        @Override
-        public int getCount() {
-            return 3;
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return "";
-        }
-    }
 }

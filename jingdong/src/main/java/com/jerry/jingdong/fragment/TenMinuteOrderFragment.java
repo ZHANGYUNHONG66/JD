@@ -1,5 +1,6 @@
 package com.jerry.jingdong.fragment;
 
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.ListView;
@@ -36,6 +37,11 @@ public class TenMinuteOrderFragment extends OrderBaseFragment {
             mDatas.add(data);
         }
 
+//        OkHttpClient httpClient = new OkHttpClient();
+//        RequestBody body;
+//        String url;
+//        Request request = new Request.Builder().post(body).url(url).build();
+
         return LoadingPager.LoadResultState.SUCCESS;
     }
 
@@ -57,11 +63,12 @@ public class TenMinuteOrderFragment extends OrderBaseFragment {
          */
         @Override
         public List<OrderInfo> loadMoreData() throws IOException {
+            SystemClock.sleep(2000);
             mDatas = new ArrayList();
             SimpleDateFormat dateFormat = new SimpleDateFormat(
                     "yyyy/MM/dd HH:mm:ss");
             for (int i = 0; i < 20; i++) {
-                String time = String.valueOf(new Random().nextInt());
+                String time = String.valueOf(new Random().nextInt()+2);
 
                 OrderInfo data = new OrderInfo("1231" + i, getClass().getSimpleName(),
                         dateFormat.format(new Date(Long.parseLong(time))), "20" + i, 1);

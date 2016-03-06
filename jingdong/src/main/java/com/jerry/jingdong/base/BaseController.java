@@ -3,6 +3,7 @@ package com.jerry.jingdong.base;
 import android.content.Context;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -35,7 +36,7 @@ public abstract class BaseController {
     public FrameLayout    mFlContentContainer;
 
     // 首页标题搜索栏的两个子View
-    public TextView       mHomeSearchTv;
+    public EditText       mHomeSearchTv;
     public ImageButton    mHomeSearchBtn;
 
     public BaseController(Context context) {
@@ -64,7 +65,7 @@ public abstract class BaseController {
         mLlDaohangSearchContainer = (LinearLayout) view
                 .findViewById(R.id.base_controller_ll_daohang_searchcontainer);
 
-        mHomeSearchTv = (TextView) view
+        mHomeSearchTv = (EditText) view
                 .findViewById(R.id.home_daohang_search_tv);
         mHomeSearchBtn = (ImageButton) view
                 .findViewById(R.id.home_daohang_search_btn);
