@@ -1,4 +1,4 @@
-package com.jerry.jingdong.holder.item;
+package com.jerry.jingdong.holder.mine;
 
 import android.content.SharedPreferences;
 import android.text.TextUtils;
@@ -17,7 +17,10 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * Created by Administrator on 2016/3/5.
+ * @创建者: yangyin
+ * @包名: com.jerry.jingdong.base
+ * @工程名: JingDong
+ * @描述: 登录页面
  */
 public class LoginHolder extends BaseHolder<Class> {
     @Bind(R.id.login_activity_et_username)
@@ -35,10 +38,10 @@ public class LoginHolder extends BaseHolder<Class> {
 
     @Override
     public View initRootView() {
-        mView = View.inflate(UIUtils.getContext(), R.layout.activity_login, null);
+        mView = View.inflate(UIUtils.getContext(), R.layout.login_view, null);
         ButterKnife.bind(this, mView);
 
-        mLoginActivityTvLogin.setClickable(true);
+//        mLoginActivityTvLogin.setClickable(true);
 
         //创建SharedPreferences对象
         mSp = UIUtils.getContext().getSharedPreferences("data", 0);
@@ -72,6 +75,7 @@ public class LoginHolder extends BaseHolder<Class> {
             //点击后,将标记打成true
             saveLoginFlag(true);
             loginStatus(true);
+
             /**
              * 将数据存储到数据库的逻辑代码
              */
