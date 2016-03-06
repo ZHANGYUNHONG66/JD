@@ -99,4 +99,21 @@
     </style>
     <!--*********结算中心样式  end*********-->
 
+    <!--自定义订单详情页面TextEdit左边样式-->
+    <style name="orderTextEditLeftStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+
+    <!--自定义订单详情页面TextEdit左边样式-->
+    <style name="orderTextEditRightStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
 </resources>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <!--搜索-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@drawable/daohang_title">
+
+        <LinearLayout
+            android:id="@+id/ll_daohang_searchcontainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:src="@drawable/mystreet"/>
+
+            <EditText
+                android:id="@+id/daohang_search_edit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_weight="3"
+                android:background="@drawable/daohang_search_text_shape"
+                android:drawableRight="@drawable/search_ico"
+                android:gravity="center_vertical"
+                android:hint="请输入要搜索的内容"
+                android:lines="1"
+                android:padding="3dp"
+                android:textSize="14sp"/>
+
+            <ImageButton
+                android:id="@+id/daohang_search_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="3dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:scaleType="centerInside"
+                android:src="@drawable/daohang_btn_search_selector"/>
+
+        </LinearLayout>
+
+
+        <!--标题-->
+        <RelativeLayout
+            android:id="@+id/rl_daohang_titlecontainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <Button
+                android:id="@+id/daohang_btn_left"
+                style="@style/ButtonStyle"
+                android:layout_marginLeft="3dp"
+                android:text="返回"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/daohang_btn_right"
+                style="@style/ButtonStyle"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="3dp"
+                android:text="去结算"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/daohang_tv_title"
+                style="@style/MyTitleStyle"
+                android:text="促销快报"
+                />
+        </RelativeLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

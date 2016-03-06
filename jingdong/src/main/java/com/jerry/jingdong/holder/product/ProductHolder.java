@@ -1,6 +1,7 @@
 package com.jerry.jingdong.holder.product;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -14,6 +15,8 @@ import com.jerry.jingdong.entity.CartNewBean;
 import com.jerry.jingdong.utils.UIUtils;
 import com.jerry.jingdong.views.RatioLayout;
 import com.lidroid.xutils.BitmapUtils;
+
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -60,6 +63,12 @@ public class ProductHolder extends BaseHolder<CartNewBean.ProductEntity> {
     @Override
     public void refreshView(CartNewBean.ProductEntity data) {
         productEntity = data;
+
+        List<String> pics = data.pics;
+        for (String pic : pics) {
+            Log.d("ProductHolder", pic);
+        }
+
         String picUrl = MyConstants.URL.BASEURL + data.pics.get(0);
         BitmapUtils bitmapUtils = new BitmapUtils(UIUtils.getContext());
         bitmapUtils.display(mItemProductlistIvIcon, picUrl);

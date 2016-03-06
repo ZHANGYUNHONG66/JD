@@ -32,20 +32,6 @@ public class CommentController extends BaseController {
         super(context);
     }
 
-    /**
-     * 初始化导航栏
-     */
-    @Override
-    public void initTitle() {
-
-    }
-
-    @Override
-    public View initCommonView() {
-
-
-        return super.initCommonView();
-    }
 
     /**
      * 在子线程中加载数据

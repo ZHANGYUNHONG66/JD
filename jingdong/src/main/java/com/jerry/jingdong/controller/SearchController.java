@@ -1,8 +1,4 @@
-package com.jerry.jingdong.controller;/*
-                                      * @创建者     Jerry
-                                      * @创建时间   2016/2/5 21:58
-                                      * @描述      分类
-                                      */
+package com.jerry.jingdong.controller;
 
 import android.content.Context;
 import android.os.SystemClock;
@@ -10,11 +6,10 @@ import android.view.View;
 import android.widget.Button;
 
 import com.jerry.jingdong.R;
-import com.jerry.jingdong.activity.MyOrderActivity;
 import com.jerry.jingdong.base.BaseController;
 import com.jerry.jingdong.base.LoadingPager;
-import com.jerry.jingdong.utils.ActivityUtils;
 import com.jerry.jingdong.utils.UIUtils;
+import com.jerry.jingdong.views.TitleView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -26,19 +21,13 @@ import butterknife.OnClick;
 
 public class SearchController extends BaseController {
 
+    @Bind(R.id.title_daohang)
+    TitleView mTitleDaohang;
     @Bind(R.id.btn_toMyOrder)
-    Button mToMyorder;
+    Button    mBtnToMyOrder;
 
     public SearchController(Context context) {
         super(context);
-    }
-
-    /**
-     * 初始化导航栏
-     */
-    @Override
-    public void initTitle() {
-
     }
 
     /**
@@ -59,11 +48,16 @@ public class SearchController extends BaseController {
     protected View initSuccessView() {
         View view = View.inflate(UIUtils.getContext(), R.layout.aa, null);
         ButterKnife.bind(this, view);
+
+        mTitleDaohang.getTvTitle().setText("搜索");
         return view;
     }
 
     @OnClick(R.id.btn_toMyOrder)
     public void toMyOrder(View v) {
-        ActivityUtils.notActivity2Activity(MyOrderActivity.class);
+        OrderController controller = new OrderController(UIUtils.getContext());
+        controller.mLoadingPager.triggerLoadData();
+        initContentView();
     }
+
 }

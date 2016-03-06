@@ -24,4 +24,7 @@ public class DownHolder extends BaseHolder<String> {
     protected void refreshView(String data) {
 
     }
+
+
+
 }

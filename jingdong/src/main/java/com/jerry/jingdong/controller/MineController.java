@@ -4,13 +4,13 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.SystemClock;
 import android.view.View;
-import android.widget.Toast;
 
 import com.jerry.jingdong.R;
 import com.jerry.jingdong.base.BaseController;
 import com.jerry.jingdong.base.LoadingPager;
 import com.jerry.jingdong.holder.mine.LoginHolder;
 import com.jerry.jingdong.utils.UIUtils;
+import com.jerry.jingdong.holder.mine.AccountCentreHolder;
 
 /**
  * 我的
@@ -21,6 +21,9 @@ public class MineController extends BaseController {
     SharedPreferences mSp;
     private Boolean mIsLogin;
 
+	public MineController(Context context) {
+		super(context);
+	}
 
     public MineController(Context context) {
         super(context);
@@ -42,6 +45,16 @@ public class MineController extends BaseController {
     public void onLeftBtnClick() {
         Toast.makeText(UIUtils.getContext(), "返回已点击", Toast.LENGTH_SHORT).show();
     }
+	/**
+	 * 在子线程中加载数据
+	 *
+	 * @return
+	 */
+	@Override
+	public LoadingPager.LoadResultState initData() {
+		SystemClock.sleep(2000);
+		return LoadingPager.LoadResultState.SUCCESS;
+	}
 
     /**
      * 设置左边按钮是否可见，有的页面没有按钮，通过该方法设置,默认不可见

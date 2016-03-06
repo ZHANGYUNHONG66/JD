@@ -1,6 +1,5 @@
 package com.jerry.jingdong.holder.mine;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 import android.view.View;
@@ -10,8 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jerry.jingdong.R;
-import com.jerry.jingdong.activity.ForgetPasswordView;
-import com.jerry.jingdong.activity.RegisterAccountView;
+import com.jerry.jingdong.application.MyApplication;
 import com.jerry.jingdong.base.BaseHolder;
 import com.jerry.jingdong.utils.UIUtils;
 
@@ -96,8 +94,6 @@ public class LoginHolder extends BaseHolder<Class> {
             //如果是登录状态,点击后就将标记打成false
             saveLoginFlag(false);
             loginStatus(false);
-
-
         }
     }
 
@@ -114,6 +110,7 @@ public class LoginHolder extends BaseHolder<Class> {
      * @param isLogin
      */
     public void saveLoginFlag(boolean isLogin) {
+        MyApplication.setIsLogin(isLogin);
         SharedPreferences.Editor editor = mSp.edit();
         editor.putBoolean("isLogin", isLogin);
         editor.commit();
