@@ -1,5 +1,8 @@
 package com.jerry.jingdong.utils;
 
+import com.jerry.jingdong.base.LoadingPager;
+
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -17,6 +20,7 @@ public class HttpsUtils {
      * @return
      */
     public static String getUrlParamsByMap(Map<String, Object> map) {
+
         if (map == null) {
             return "";
         }
@@ -30,5 +34,28 @@ public class HttpsUtils {
             s = s.substring(0, s.length() - 1);
         }
         return s;
+    }
+
+    /**
+     * 校验请求网络返回的数据的状态
+     */
+    public LoadingPager.LoadResultState checkState(Object resObj) {
+        if (resObj == null) {
+            return LoadingPager.LoadResultState.EMPTY;
+        }
+
+        if (resObj instanceof List) {
+            if (((List) resObj).size() == 0) {
+                return LoadingPager.LoadResultState.EMPTY;
+            }
+        }
+
+        if (resObj instanceof Map) {
+            if (((Map) resObj).size() == 0) {
+                return LoadingPager.LoadResultState.EMPTY;
+            }
+        }
+
+        return LoadingPager.LoadResultState.SUCCESS;
     }
 }

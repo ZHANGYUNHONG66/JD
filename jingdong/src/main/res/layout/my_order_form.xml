@@ -33,18 +33,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:orientation="horizontal">
             <RadioButton
-                android:id="@+id/myorder_rb_onemonth"
+                android:id="@+id/myorder_rb_tenminute"
                 style="@style/RadioButtonStyle"
                 android:background="@drawable/myorder_rb_onemonth_selector"
                 android:checked="true"
                 android:text="近一个月订单"/>
 
             <RadioButton
-                android:id="@+id/myorder_rb_monthago"
+                android:id="@+id/myorder_rb_tenminuteago"
                 style="@style/RadioButtonStyle"
                 android:background="@drawable/myorder_rb_monthago_selector"
                 android:text="一个月前订单"/>
@@ -62,10 +62,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ListView
-            android:id="@+id/myorder_listview"
+        <com.jerry.jingdong.views.NoScrollViewPager
+            android:id="@+id/myorder_viewpager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></ListView>
+            android:layout_height="match_parent">
+
+        </com.jerry.jingdong.views.NoScrollViewPager>
 
         <LinearLayout
             android:id="@+id/myorder_empty_container"
@@ -73,6 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
+            android:visibility="gone"
             android:orientation="vertical">
             <ImageView
                 android:layout_width="wrap_content"

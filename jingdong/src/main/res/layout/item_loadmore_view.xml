@@ -15,11 +15,9 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/item_loadmore_iv_loading"
+        <ProgressBar
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/btn_refresh"/>
+            android:layout_height="wrap_content"/>
 
         <TextView
             android:id="@+id/item_loadmore_tv_loading"

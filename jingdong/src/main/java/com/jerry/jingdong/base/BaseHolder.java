@@ -13,7 +13,7 @@ public abstract class BaseHolder<HOLDERBEANTYPE> {
     // 持有一个根布局
     public View           mRootView;
 
-    public HOLDERBEANTYPE mData;
+    public HOLDERBEANTYPE mDatas;
 
     /**
      * 使用构造方法初始化视图，并进行tag绑定
@@ -30,7 +30,7 @@ public abstract class BaseHolder<HOLDERBEANTYPE> {
      * @param data
      */
     public void setDataAndRefreshView(HOLDERBEANTYPE data) {
-        mData = data;
+        mDatas = data;
 
         refreshView(data);
     }

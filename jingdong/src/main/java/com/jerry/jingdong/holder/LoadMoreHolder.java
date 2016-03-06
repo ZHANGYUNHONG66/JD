@@ -2,15 +2,13 @@ package com.jerry.jingdong.holder;
 
 import android.os.SystemClock;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.RotateAnimation;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.jerry.jingdong.R;
 import com.jerry.jingdong.application.MyApplication;
 import com.jerry.jingdong.base.BaseHolder;
+import com.jerry.jingdong.factory.ThreadPoolProxyFactory;
 import com.jerry.jingdong.utils.UIUtils;
 
 import butterknife.Bind;
@@ -35,8 +33,6 @@ public class LoadMoreHolder extends BaseHolder<Integer> {
     LinearLayout            mItemLoadmoreContainerLoading;
     @Bind(R.id.item_loadmore_container_retry)
     LinearLayout            mItemLoadmoreContainerRetry;
-    @Bind(R.id.item_loadmore_iv_loading)
-    ImageView               mItemLoadmoreIvLoading;
     @Bind(R.id.item_loadmore_tv_loading)
     TextView                mItemLoadmoreTvLoading;
 
@@ -52,6 +48,7 @@ public class LoadMoreHolder extends BaseHolder<Integer> {
         switch (data) {
         case LOADDATA_LOADING:
             mItemLoadmoreContainerLoading.setVisibility(View.VISIBLE);
+            pointShow = true;
             break;
         case LOADDATA_RETRY:
             // 加载数据完成，不管成功与否都会更新这个的状态，停止下面文字点的循环
@@ -63,6 +60,10 @@ public class LoadMoreHolder extends BaseHolder<Integer> {
             pointShow = false;
             break;
         }
+
+        if (pointShow) {
+            initLoadingMoreTextPoint();
+        }
     }
 
     @Override
@@ -71,22 +72,16 @@ public class LoadMoreHolder extends BaseHolder<Integer> {
                 R.layout.item_loadmore_view, null);
         ButterKnife.bind(this, rootView);
 
-        initLoadingMoreAnimation();
-
         return rootView;
     }
 
     /**
-     * 初始化加载更多动画，给图片和文字添加动画效果
+     * 初始化加载更多的文本末尾点的增加循环
      */
-    private void initLoadingMoreAnimation() {
-        RotateAnimation ra = new RotateAnimation(0, 360,
-                Animation.RELATIVE_TO_SELF, .5f, Animation.RELATIVE_TO_SELF,
-                .5f);
+    private void initLoadingMoreTextPoint() {
 
-        mItemLoadmoreIvLoading.startAnimation(ra);
-
-        new Thread() {
+        ThreadPoolProxyFactory.createNormalThreadPool().execute(new Runnable() {
+            @Override
             public void run() {
                 while (pointShow) {
                     String points = "";
@@ -107,7 +102,11 @@ public class LoadMoreHolder extends BaseHolder<Integer> {
                         }
                     });
                 }
-            };
-        }.start();
+            }
+        });
+    }
+
+    public void stopTextPointThread() {
+        pointShow = false;
     }
 }
