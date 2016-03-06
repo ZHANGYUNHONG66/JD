@@ -41,8 +41,7 @@ public class ContentFragment extends BaseFragment {
 
     @Override
     public View initView() {
-        View view = View.inflate(UIUtils.getContext(),
-                R.layout.fragment_content, null);
+        View view = View.inflate(UIUtils.getContext(), R.layout.fragment_content, null);
         ButterKnife.bind(this, view);
         return view;
     }

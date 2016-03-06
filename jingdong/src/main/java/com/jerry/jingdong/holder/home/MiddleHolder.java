@@ -1,5 +1,6 @@
 package com.jerry.jingdong.holder.home;
 
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jerry.jingdong.R;
+import com.jerry.jingdong.activity.HotProductActivity;
 import com.jerry.jingdong.base.BaseHolder;
 import com.jerry.jingdong.utils.UIUtils;
 
@@ -60,14 +62,20 @@ public class MiddleHolder<T> extends BaseHolder
      * GridView条目点击事件监听
      */
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position,
-            long id) {
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = null;
         switch (position) {
         case 0:// 热门单品
-
+            intent = new Intent(UIUtils.getContext(), HotProductActivity.class);
+            intent.putExtra("interfaceKey","hotproduct");
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            UIUtils.getContext().startActivity(intent);
             break;
         case 1:// 新品上架
-
+            intent = new Intent(UIUtils.getContext(), HotProductActivity.class);
+            intent.putExtra("interfaceKey","newproduct");
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            UIUtils.getContext().startActivity(intent);
             break;
         case 2:// 限时抢购
 

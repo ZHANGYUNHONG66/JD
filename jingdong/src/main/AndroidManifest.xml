@@ -36,6 +36,8 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".activity.GoodsDetailUI">
         </activity>
+        <activity android:name=".activity.HotProductActivity">
+        </activity>
     </application>
 
 </manifest>
