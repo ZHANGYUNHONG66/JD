@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#fff"
+              android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/daohang_title">
+                <TextView
+                    android:id="@+id/balance_account_tv_back"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:text="购物车"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="bottom"
+                    android:layout_marginBottom="3dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="结算中心"
+                    android:textColor="#000"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    />
+            </RelativeLayout>
+
+
+            <!--收货地址-->
+            <RelativeLayout
+                android:id="@+id/balance_account_rl_addres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    style="@style/BlanceAccountLinearLayoutStyle"
+                    >
+
+                    <TextView
+                        style="@style/BlanceAccountAddressTextStyle"
+                        android:text="收货地址"
+                        android:textSize="18sp"/>
+
+                    <TextView
+                        style="@style/BlanceAccountAddressTextStyle"
+                        android:layout_marginTop="3dp"
+                        android:id="@+id/balance_account_tv_name"
+                        />
+
+                    <TextView
+                        android:id="@+id/balance_account_tv_phone"
+                        style="@style/BlanceAccountAddressTextStyle"
+                        android:layout_marginTop="3dp"
+                        android:text="13568974569"
+                        />
+
+                    <TextView
+                        android:id="@+id/balance_account_tv_addres"
+                        style="@style/BlanceAccountAddressTextStyle"
+                        android:layout_marginTop="3dp"
+                        android:text="深圳市宝安区长丰工业园"
+                        android:textSize="16sp"/>
+                </LinearLayout>
+
+                <ImageButton
+                    style="@style/BlanceAccountIvStyle"
+                    android:background="@android:color/transparent"
+                    />
+
+            </RelativeLayout>
+
+            <!--支付方式-->
+            <RelativeLayout
+                android:id="@+id/balance_account_rl_pay_way"
+                style="@style/BlanceAccountLinearLayoutStyle"
+                android:background="@drawable/neirongfengekuang">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/BlanceAccountAddressTextStyle"
+                        android:text="支付方式"
+                        android:textColor="#000"
+                        android:textSize="18sp"
+                        />
+
+                    <TextView
+                        style="@style/BlanceAccountAddressTextStyle"
+                        android:layout_marginTop="3dp"
+                        android:text="货到付款-现金支付(货到付款)"
+                        android:textColor="#000"
+                        android:textSize="14sp"
+                        android:id="@+id/balance_account_tv_pay_way"
+                        />
+                </LinearLayout>
+
+                <ImageButton
+                    style="@style/BlanceAccountIvStyle"
+                    android:layout_marginRight="1dp"
+                    android:background="@android:color/transparent"
+
+                    />
+            </RelativeLayout>
+
+
+            <!--送货时间与送货方式-->
+            <RelativeLayout
+                android:id="@+id/balance_account_rl_time_way"
+                style="@style/BlanceAccountLinearLayoutStyle"
+                android:background="@drawable/neirongfengekuang">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/BlanceAccountAddressTextStyle"
+                        android:text="送货时间与送货方式"
+                        android:textColor="#000"
+                        android:textSize="18sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/balance_account_tv_time"
+                        style="@style/BlanceAccountAddressTextStyle"
+                        android:layout_marginTop="3dp"
+                        android:text="送货时间:仅双休日送货"
+                        android:textColor="#000"
+                        android:textSize="14sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/balance_account_tv_deliver_goods_way"
+                        style="@style/BlanceAccountAddressTextStyle"
+                        android:layout_marginTop="3dp"
+                        android:text="送货方式:快递"
+                        android:textColor="#000"
+                        android:textSize="14sp"
+                        />
+                </LinearLayout>
+
+                <ImageButton
+                    style="@style/BlanceAccountIvStyle"
+                    android:layout_marginRight="1dp"
+                    android:background="@android:color/transparent"
+                    />
+            </RelativeLayout>
+
+            <!--索要发票-->
+            <RelativeLayout
+                android:id="@+id/balance_account_rl_bill"
+                style="@style/BlanceAccountLinearLayoutStyle"
+                android:background="@drawable/neirongfengekuang">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/BlanceAccountAddressTextStyle"
+                        android:text="索要发票"
+                        android:textColor="#000"
+                        android:textSize="18sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/balance_account_tv_bill_type"
+                        style="@style/BlanceAccountAddressTextStyle"
+                        android:layout_marginTop="3dp"
+                        android:text="个人/服饰"
+                        android:textColor="#000"
+                        android:textSize="14sp"
+                        />
+
+                </LinearLayout>
+
+                <ImageButton
+                    style="@style/BlanceAccountIvStyle"
+                    android:layout_marginRight="1dp"
+                    android:background="@android:color/transparent"
+                    />
+            </RelativeLayout>
+
+            <!--商品明细-->
+            <TextView
+                style="@style/BlanceAccountAddressTextStyle"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="商品明细"
+                android:textColor="#000"
+                android:textSize="18sp"
+                />
+
+            <RelativeLayout
+                android:id="@+id/balance_account_rl_product_detial"
+                style="@style/BlanceAccountLinearLayoutStyle"
+                android:background="@drawable/neirongfengekuang">
+
+                <LinearLayout
+                    android:id="@+id/balance_account_ll_iv_product_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/shangpinxiangqing_lunbotu"
+                        />
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="5dp"
+                        android:src="@drawable/shangpinxiangqing_lunbotu"
+                        />
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="5dp"
+                        android:src="@drawable/shangpinxiangqing_lunbotu"
+                        />
+
+                    <TextView
+                        android:id="@+id/balance_account_tv_product_num"
+                        style="@style/BlanceAccountAddressTextStyle"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="3dp"
+                        android:text="共三件"
+                        android:textColor="#000"
+                        android:textSize="14sp"
+                        />
+                </LinearLayout>
+
+                <ImageButton
+                    style="@style/BlanceAccountIvStyle"
+                    android:layout_marginRight="1dp"
+                    android:background="@android:color/transparent"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/balance_account_rl_pay_money"
+                style="@style/BlanceAccountLinearLayoutStyle"
+                android:background="@drawable/neirongfengekuang">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                style="@style/BlanceAccountAddressTextStyle"
+                                android:text="商品金额"
+                                android:textColor="#000"
+                                android:textSize="18sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/balance_account_tv_product_money"
+                                style="@style/BlanceAccountAddressTextStyle"
+                                android:layout_alignParentRight="true"
+                                android:text="￥123"
+                                android:textColor="#f00"
+                                android:textSize="16sp"
+                                />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                style="@style/BlanceAccountAddressTextStyle"
+                                android:layout_marginTop="3dp"
+                                android:text="运费"
+                                android:textColor="#000"
+                                android:textSize="14sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/balance_account_tv_freight"
+                                style="@style/BlanceAccountAddressTextStyle"
+                                android:layout_alignParentRight="true"
+                                android:text="+￥0.00"
+                                android:textColor="#f00"
+                                android:textSize="16sp"
+                                />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <ImageButton
+                        style="@style/BlanceAccountIvStyle"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="1dp"
+                        android:background="@android:color/transparent"
+                        />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                style="@style/BlanceAccountAddressTextStyle"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="您已享受到以下信息"
+                android:textColor="#000"
+                android:textSize="18sp"
+                />
+
+            <LinearLayout
+                android:id="@+id/balance_account_ll_enjoy_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/xuanzheyouhuijian_moren">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="50优惠券"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/balance_account_btn_commit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="35dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/tijiaodingdan_anniu_moren"
+                android:text="提交订单"
+                android:textColor="#fff"/>
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
