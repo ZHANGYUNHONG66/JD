@@ -64,6 +64,7 @@
             <item name="android:button">@null</item>
             <item name="android:background">@android:color/transparent</item>
             <item name="android:gravity">center</item>
+            <item name="android:layout_marginBottom">3dp</item>
             <item name="android:textColor">@color/tab_text_selector</item>
         </style>
 

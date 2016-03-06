@@ -8,88 +8,50 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FF810E1F"
-        >
-
-        <ImageView
-            android:id="@+id/tab_iv_menu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="8dp"
-            android:src="@drawable/daohang_tiaozhuan_dianji"/>
-
-        <TextView
-            android:id="@+id/tab_tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="新增地址"
-            android:textColor="#ffffff"
-            android:textSize="24sp"
-            />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:text="保存"
-            android:textColor="#ffffff"
-
-            android:src="@drawable/daohang_baocun_anniu_tingliuciye_dianji"
-            />
+        android:background="#FF810E1F">
 
 
-    </RelativeLayout>
-    <EditText
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/tab_iv_menu"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@null"
-        android:padding="13dp"
-         android:text="收货人：（必填）"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:src="@drawable/daohang_tiaozhuan_dianji"/>
 
+    <TextView
+        android:id="@+id/tab_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="地址列表"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
         />
-    <EditText
-        android:layout_width="match_parent"
+    <ImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="手机号码：（必填）"/>
-    <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/address_manage_selector"
+        />
+
+   </RelativeLayout>
+   <TextView
+       android:id="@+id/et_name"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="姓名:"/>
+    <TextView
+        android:id="@+id/et_phone"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp" >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="省市区"
-            android:textStyle="bold"
-            android:textSize="24sp"/>
-        <Spinner
-            android:id="@+id/spin_province"
-
-            android:layout_width="80dp"
-            android:layout_height="30" />
-
-        <Spinner
-            android:id="@+id/spin_city"
-            android:layout_width="80"
-            android:layout_height="30" />
-
-        <Spinner
-            android:id="@+id/spin_county"
-            android:layout_width="80dp"
-            android:layout_height="30" />
-    </LinearLayout>
-    <EditText
-        android:layout_width="match_parent"
+        android:text="电话:"/>
+    <TextView
+        android:id="@+id/et_address"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="详细地址：（必填）"/>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
-
-    </RelativeLayout>
+        android:text="地址:"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -158,5 +120,4 @@
         </LinearLayout>
 
     </RelativeLayout>
-
 </LinearLayout>
