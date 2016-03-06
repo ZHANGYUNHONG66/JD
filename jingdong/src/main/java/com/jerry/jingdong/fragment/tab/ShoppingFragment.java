@@ -1,4 +1,4 @@
-package com.jerry.jingdong.controller;
+package com.jerry.jingdong.fragment.tab;
 
 import android.content.Intent;
 import android.os.SystemClock;

@@ -1,11 +1,11 @@
 package com.jerry.jingdong.factory;
 
 import com.jerry.jingdong.base.BaseFragment;
-import com.jerry.jingdong.controller.CommentFragment;
-import com.jerry.jingdong.controller.HomeFragment;
-import com.jerry.jingdong.controller.MineFragment;
-import com.jerry.jingdong.controller.SearchFragment;
-import com.jerry.jingdong.controller.ShoppingFragment;
+import com.jerry.jingdong.fragment.tab.CommentFragment;
+import com.jerry.jingdong.fragment.tab.HomeFragment;
+import com.jerry.jingdong.fragment.tab.MineFragment;
+import com.jerry.jingdong.fragment.tab.SearchFragment;
+import com.jerry.jingdong.fragment.tab.ShoppingFragment;
 
 import java.util.HashMap;
 import java.util.Map;

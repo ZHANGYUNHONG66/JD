@@ -1,4 +1,4 @@
-package com.jerry.jingdong.controller;
+package com.jerry.jingdong.fragment.tab;
 
 import android.view.View;
 import android.widget.TextView;
