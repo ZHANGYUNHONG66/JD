@@ -8,14 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import com.jerry.jingdong.R;
 import com.jerry.jingdong.factory.FragmentFactory;
 import com.jerry.jingdong.fragment.CancelOrderFragment;
 import com.jerry.jingdong.fragment.TenMinuteAgoOrderFragment;
 import com.jerry.jingdong.fragment.TenMinuteOrderFragment;
-import com.jerry.jingdong.utils.UIUtils;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -130,8 +128,7 @@ public class MyOrderActivity extends FragmentActivity
      */
     @OnClick(R.id.myorder_btn_back)
     public void onClick(View v) {
-        Toast.makeText(UIUtils.getContext(), "点击了返回按钮", Toast.LENGTH_SHORT)
-                .show();
+
     }
 
 }

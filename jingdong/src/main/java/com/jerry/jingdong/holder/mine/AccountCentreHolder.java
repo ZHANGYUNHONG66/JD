@@ -5,7 +5,9 @@ import android.view.View;
 import com.jerry.jingdong.R;
 import com.jerry.jingdong.base.BaseHolder;
 import com.jerry.jingdong.utils.UIUtils;
+import com.jerry.jingdong.views.TitleView;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
@@ -16,12 +18,14 @@ import butterknife.ButterKnife;
  */
 public class AccountCentreHolder extends BaseHolder<Class> {
 
+    @Bind(R.id.title_daohang)
+    TitleView mTitleDaohang;
 
     @Override
     public View initRootView() {
-        View mView = View.inflate(UIUtils.getContext(), R.layout.account_centre_view, null);
+        View mView = View.inflate(UIUtils.getContext(),
+                R.layout.account_centre_view, null);
         ButterKnife.bind(this, mView);
-
 
         return mView;
     }

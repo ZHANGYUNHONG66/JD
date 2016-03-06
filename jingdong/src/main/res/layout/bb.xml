@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp">
+
+        <RadioGroup
+            android:id="@+id/myorder_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/myorder_rb_tenminute"
+                style="@style/RadioButtonStyle"
+                android:background="@drawable/myorder_rb_onemonth_selector"
+                android:checked="true"
+                android:text="近一个月订单"/>
+
+            <RadioButton
+                android:id="@+id/myorder_rb_tenminuteago"
+                style="@style/RadioButtonStyle"
+                android:background="@drawable/myorder_rb_monthago_selector"
+                android:text="一个月前订单"/>
+
+            <RadioButton
+                android:id="@+id/myorder_rb_cancel"
+                style="@style/RadioButtonStyle"
+                android:background="@drawable/myorder_rb_cancel_selector"
+                android:text="已取消的订单"/>
+
+        </RadioGroup>
+    </RelativeLayout>
+
+</LinearLayout>

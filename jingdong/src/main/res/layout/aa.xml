@@ -4,6 +4,11 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
+    <com.jerry.jingdong.views.TitleView
+        android:id="@+id/title_daohang"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"></com.jerry.jingdong.views.TitleView>
+
     <Button
         android:id="@+id/btn_toMyOrder"
         android:layout_width="match_parent"

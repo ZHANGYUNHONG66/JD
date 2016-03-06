@@ -116,13 +116,6 @@ public class ShoppingController extends BaseController implements View.OnTouchLi
         super(context);
     }
 
-    /**
-     * 初始化导航栏
-     */
-    @Override
-    public void initTitle() {
-        mTvTitle.setText("杨哥的购物车");
-    }
 
     /**
      * 在子线程中加载数据

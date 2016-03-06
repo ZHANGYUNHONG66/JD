@@ -12,6 +12,7 @@ import com.jerry.jingdong.holder.home.DownHolder;
 import com.jerry.jingdong.holder.home.MiddleHolder;
 import com.jerry.jingdong.holder.home.UpHolder;
 import com.jerry.jingdong.utils.UIUtils;
+import com.jerry.jingdong.views.TitleView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -24,21 +25,11 @@ public class HomeController extends BaseController {
     FrameLayout mHomeContentMiddleContainer;
     @Bind(R.id.home_content_down_container)
     FrameLayout mHomeContentDownContainer;
+    @Bind(R.id.title_daohang)
+    TitleView   mTitleDaohang;
 
     public HomeController(Context context) {
         super(context);
-    }
-
-    /**
-     * 初始化导航栏,使用本页面的搜索导航栏，将原来的gone掉
-     */
-    @Override
-    public void initTitle() {
-        // 隐藏原来的导航栏
-        mRlDaohangTitleContainer.setVisibility(View.GONE);
-
-        mLlDaohangSearchContainer.setVisibility(View.VISIBLE);
-
     }
 
     /**
@@ -60,6 +51,8 @@ public class HomeController extends BaseController {
         View homeView = View.inflate(UIUtils.getContext(),
                 R.layout.home_content_view, null);
         ButterKnife.bind(this, homeView);
+
+        mTitleDaohang.isTitleDaohang(false);
 
         // TODO：三个页面需要设置数据
         UpHolder upHolder = new UpHolder();
