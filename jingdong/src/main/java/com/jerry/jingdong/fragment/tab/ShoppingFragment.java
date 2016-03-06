@@ -159,55 +159,55 @@ public class ShoppingFragment extends BaseFragment implements View.OnTouchListen
 
             mCartProtocol = new CartProtocol();
             HashMap<String, String> map = new HashMap<>();
-        map.put("sku", "1:3:1,2,3,4|2:2:2,3");
-        try {
-        mCartInfoBean = mCartProtocol.loadData(HttpRequest.HttpMethod.POST, map, null);
-        if (mCartInfoBean != null) {
-        mCartEntities = mCartInfoBean.cart;
-        Log.d("CartFragment", mCartInfoBean.response);
-        }
-        return LoadingPager.LoadResultState.SUCCESS;
-        } catch (Exception e) {
-        e.printStackTrace();
-        return LoadingPager.LoadResultState.ERROR;
-        }
+            map.put("sku", "1:3:1,2,3,4|2:2:2,3");
+            try {
+                mCartInfoBean = mCartProtocol.loadData(HttpRequest.HttpMethod.POST, map, null);
+                if (mCartInfoBean != null) {
+                    mCartEntities = mCartInfoBean.cart;
+                    Log.d("CartFragment", mCartInfoBean.response);
+                }
+                return LoadingPager.LoadResultState.SUCCESS;
+            } catch (Exception e) {
+                e.printStackTrace();
+                return LoadingPager.LoadResultState.ERROR;
+            }
         } else {
-        //没登录，显示本地数据
-        return LoadingPager.LoadResultState.SUCCESS;
+            //没登录，显示本地数据
+            return LoadingPager.LoadResultState.SUCCESS;
         }
-        }
+    }
 
-/**
- * 初始化请求成功后的内容视图
- */
-@Override
-public View initSuccessView() {
+    /**
+     * 初始化请求成功后的内容视图
+     */
+    @Override
+    public View initSuccessView() {
         View view = LayoutInflater.from(UIUtils.getContext())
-        .inflate(R.layout.fragment_cart, null);
+                .inflate(R.layout.fragment_cart, null);
         ButterKnife.bind(this, view);
 
         // 根据返回值确定是否显示登陆项,
         if (mIsLogin) {
-        // 已经登陆
-        mCartLoginLl.setVisibility(View.GONE);
-        // 在根据集合mCartEntities是否有值，去判断是否应该显示结算和商品栏显示项目
-        if (mCartEntities != null) {
-        // 有数据时，隐藏
-        mCartNogoodsLl.setVisibility(View.GONE);
-        // 有数据时显示结算界面
-        mCartAccountsRl.setVisibility(View.VISIBLE);
-        } else {
+            // 已经登陆
+            mCartLoginLl.setVisibility(View.GONE);
+            // 在根据集合mCartEntities是否有值，去判断是否应该显示结算和商品栏显示项目
+            if (mCartEntities != null) {
+                // 有数据时，隐藏
+                mCartNogoodsLl.setVisibility(View.GONE);
+                // 有数据时显示结算界面
+                mCartAccountsRl.setVisibility(View.VISIBLE);
+            } else {
 
-        mCartNogoodsLl.setVisibility(View.VISIBLE);
-        mCartAccountsRl.setVisibility(View.GONE);
-        mCartDeleteRl.setVisibility(View.GONE);
-        }
+                mCartNogoodsLl.setVisibility(View.VISIBLE);
+                mCartAccountsRl.setVisibility(View.GONE);
+                mCartDeleteRl.setVisibility(View.GONE);
+            }
         } else { // 未登陆时，购物车未空
-        mCartLoginLl.setVisibility(View.VISIBLE);
+            mCartLoginLl.setVisibility(View.VISIBLE);
 
-        mCartNogoodsLl.setVisibility(View.VISIBLE);
-        mCartAccountsRl.setVisibility(View.GONE);
-        mCartDeleteRl.setVisibility(View.GONE);
+            mCartNogoodsLl.setVisibility(View.VISIBLE);
+            mCartAccountsRl.setVisibility(View.GONE);
+            mCartDeleteRl.setVisibility(View.GONE);
         }
         mAdapter = new MyAdapter();
         mCartGoodsShowLv.setAdapter(mAdapter);
@@ -219,351 +219,351 @@ public View initSuccessView() {
         setAllMoney();
 
         return view;
-        }
+    }
 
-@OnClick(value = {R.id.cart_delete_iv, R.id.cart_select_iv,
-        R.id.cart_goto_accounts_btn, R.id.cart_nogoods_btn,
-        R.id.cart_delete_btn, R.id.cart_favorite_btn,
-        R.id.cart_login_btn})
-public void click(View view) {
+    @OnClick(value = {R.id.cart_delete_iv, R.id.cart_select_iv,
+            R.id.cart_goto_accounts_btn, R.id.cart_nogoods_btn,
+            R.id.cart_delete_btn, R.id.cart_favorite_btn,
+            R.id.cart_login_btn})
+    public void click(View view) {
         switch (view.getId()) {
-        case R.id.cart_select_iv:
-        case R.id.cart_delete_iv:
-        //点击了全选
-        setAllSelected();
-        break;
-        case R.id.cart_goto_accounts_btn:
-        //点击了结算
-        setGoToAccpunts();
-        break;
-        case R.id.cart_nogoods_btn:
-        //点击了随便逛逛
-        setGoToHome();
-        break;
-        case R.id.cart_delete_btn:
-        //点击了删除
-        setDeleteData();
-        break;
-        case R.id.cart_favorite_btn:
-        //点击了加入购物车
-        setAddFavorite();
-        break;
-        case R.id.cart_login_btn:
-        //点击了加入购物车
-        Intent intent = new Intent(UIUtils.getContext(), BalanceAccountsCenterActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        UIUtils.getContext().startActivity(intent);
-        Toast.makeText(UIUtils.getContext(), "点击了登陆", Toast.LENGTH_SHORT).show();
-        //                Login();
-        break;
+            case R.id.cart_select_iv:
+            case R.id.cart_delete_iv:
+                //点击了全选
+                setAllSelected();
+                break;
+            case R.id.cart_goto_accounts_btn:
+                //点击了结算
+                setGoToAccpunts();
+                break;
+            case R.id.cart_nogoods_btn:
+                //点击了随便逛逛
+                setGoToHome();
+                break;
+            case R.id.cart_delete_btn:
+                //点击了删除
+                setDeleteData();
+                break;
+            case R.id.cart_favorite_btn:
+                //点击了加入购物车
+                setAddFavorite();
+                break;
+            case R.id.cart_login_btn:
+                //点击了加入购物车
+                Intent intent = new Intent(UIUtils.getContext(), BalanceAccountsCenterActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                UIUtils.getContext().startActivity(intent);
+                Toast.makeText(UIUtils.getContext(), "点击了登陆", Toast.LENGTH_SHORT).show();
+                //                Login();
+                break;
 
         }
-        }
+    }
 
-private void setGoToAccpunts() {
+    private void setGoToAccpunts() {
         Toast.makeText(UIUtils.getContext(), "结算", Toast.LENGTH_SHORT).show();
-        }
+    }
 
-private void setGoToHome() {
+    private void setGoToHome() {
 
-        }
+    }
 
-private void setDeleteData() {
+    private void setDeleteData() {
 
         ListIterator<CartInfoBean.CartEntity> cartEntityListIterator = mCartEntities.listIterator();
         int num = mCartEntities.size();
         while (cartEntityListIterator.hasNext()) {
-        CartInfoBean.CartEntity cartEntity = cartEntityListIterator.next();
-        if (cartEntity.isSeleced()) {
-        String pid = cartEntity.product.id + "";
-        String number = 1 + "";
-        String color = "2";
-        String size = "1";
-        mCartParamsUtils.deleteCart(pid, number, color, size);
-        cartEntityListIterator.remove();
-        }
+            CartInfoBean.CartEntity cartEntity = cartEntityListIterator.next();
+            if (cartEntity.isSeleced()) {
+                String pid = cartEntity.product.id + "";
+                String number = 1 + "";
+                String color = "2";
+                String size = "1";
+                mCartParamsUtils.deleteCart(pid, number, color, size);
+                cartEntityListIterator.remove();
+            }
         }
         if (mCartEntities != null) {
-        if (num == mCartEntities.size()) {
-        Toast.makeText(UIUtils.getContext(), "亲，你还没选定哦", Toast.LENGTH_SHORT).show();
-        return;
-        }
+            if (num == mCartEntities.size()) {
+                Toast.makeText(UIUtils.getContext(), "亲，你还没选定哦", Toast.LENGTH_SHORT).show();
+                return;
+            }
         }
         //等于零，说明已经全部删除了
         if (mCartEntities.size() == 0) {
-        setEdit();
-        mCartNogoodsLl.setVisibility(View.VISIBLE);
-        mCartAccountsRl.setVisibility(View.GONE);
-        mCartDeleteRl.setVisibility(View.GONE);
+            setEdit();
+            mCartNogoodsLl.setVisibility(View.VISIBLE);
+            mCartAccountsRl.setVisibility(View.GONE);
+            mCartDeleteRl.setVisibility(View.GONE);
         }
         mAdapter.notifyDataSetChanged();
 
-        }
+    }
 
-private void setEdit() {
+    private void setEdit() {
 
         if (!mIsLogin) {
-        Toast.makeText(UIUtils.getContext(), "亲，你还没登陆哟", Toast.LENGTH_SHORT).show();
-        return;
+            Toast.makeText(UIUtils.getContext(), "亲，你还没登陆哟", Toast.LENGTH_SHORT).show();
+            return;
         }
         if (mCartAccountsRl.getVisibility() == View.INVISIBLE) {
-        for (int i = 0; i < mCartEntities.size(); i++) {
-        mCartEntities.get(i).setSeleced(true);
-        }
-        //设置全选建
-        mCartSelectIv.setSelected(true);
-        mCartDeleteRl.setVisibility(View.INVISIBLE);
-        mCartAccountsRl.setVisibility(View.VISIBLE);
-        setAllMoney();
+            for (int i = 0; i < mCartEntities.size(); i++) {
+                mCartEntities.get(i).setSeleced(true);
+            }
+            //设置全选建
+            mCartSelectIv.setSelected(true);
+            mCartDeleteRl.setVisibility(View.INVISIBLE);
+            mCartAccountsRl.setVisibility(View.VISIBLE);
+            setAllMoney();
         } else if (mCartAccountsRl.getVisibility() == View.VISIBLE) {
-        mCartSelectIv.setSelected(false);
-        for (int i = 0; i < mCartEntities.size(); i++) {
-        mCartEntities.get(i).setSeleced(false);
-        }
-        mCartAccountsRl.setVisibility(View.INVISIBLE);
-        mCartDeleteRl.setVisibility(View.VISIBLE);
+            mCartSelectIv.setSelected(false);
+            for (int i = 0; i < mCartEntities.size(); i++) {
+                mCartEntities.get(i).setSeleced(false);
+            }
+            mCartAccountsRl.setVisibility(View.INVISIBLE);
+            mCartDeleteRl.setVisibility(View.VISIBLE);
         }
         mAdapter.notifyDataSetChanged();
 
-        }
+    }
 
-//加入购物车
-private void setAddFavorite() {
+    //加入购物车
+    private void setAddFavorite() {
         if (MyApplication.isLogin()) {
-        mUserId = MyApplication.getmUserId();
-        addCollect();
+            mUserId = MyApplication.getmUserId();
+            addCollect();
         }
        /* else {
             Intent intent = new Intent(getContext(), XXXActivity.class);
             startActivityForResult(intent, 0);
         }*/
-        }
+    }
 
-private void addCollect() {
+    private void addCollect() {
         HttpUtils httpUtils = new HttpUtils();
         for (int i = 0; i < mCartEntities.size(); i++) {
-        if (!mCartEntities.get(i).isSeleced()) {
-        continue;
-        } else {
-        RequestParams requestParams = new RequestParams();
-        requestParams.addHeader("userid", mUserId + "");
-        String url = MyConstants.URL.PRODUCT + "/favorites?pId=" + mCartEntities.get(i).product.id;
-        httpUtils.send(HttpRequest.HttpMethod.GET, url, requestParams, new RequestCallBack<Object>() {
-@Override
-public void onSuccess(ResponseInfo<Object> responseInfo) {
-        if (responseInfo.statusCode == 200 || responseInfo.statusCode == 0) {
-        Toast.makeText(UIUtils.getContext(), "收藏成功", Toast.LENGTH_SHORT).show();
-        }
-        }
+            if (!mCartEntities.get(i).isSeleced()) {
+                continue;
+            } else {
+                RequestParams requestParams = new RequestParams();
+                requestParams.addHeader("userid", mUserId + "");
+                String url = MyConstants.URL.PRODUCT + "/favorites?pId=" + mCartEntities.get(i).product.id;
+                httpUtils.send(HttpRequest.HttpMethod.GET, url, requestParams, new RequestCallBack<Object>() {
+                    @Override
+                    public void onSuccess(ResponseInfo<Object> responseInfo) {
+                        if (responseInfo.statusCode == 200 || responseInfo.statusCode == 0) {
+                            Toast.makeText(UIUtils.getContext(), "收藏成功", Toast.LENGTH_SHORT).show();
+                        }
+                    }
 
-@Override
-public void onFailure(HttpException e, String s) {
-        e.printStackTrace();
+                    @Override
+                    public void onFailure(HttpException e, String s) {
+                        e.printStackTrace();
+                    }
+                });
+            }
         }
-        });
-        }
-        }
-        }
+    }
 
-//登录中心
-private void Login() {
+    //登录中心
+    private void Login() {
 
-        }
+    }
 
-private void setAllSelected() {
+    private void setAllSelected() {
         if (mCartEntities == null) {
-        return;
+            return;
         }
         ListAdapter adapter = mCartGoodsShowLv.getAdapter();
         if (mCartSelectIv.isSelected() || mCartDeleteIv.isSelected()) {
-        mCartSelectIv.setSelected(false);
-        mCartDeleteIv.setSelected(false);
+            mCartSelectIv.setSelected(false);
+            mCartDeleteIv.setSelected(false);
         } else {
-        mCartSelectIv.setSelected(true);
-        mCartDeleteIv.setSelected(true);
+            mCartSelectIv.setSelected(true);
+            mCartDeleteIv.setSelected(true);
         }
         for (int i = 0; i < mCartEntities.size(); i++) {
-        CartInfoBean.CartEntity cartEntity = (CartInfoBean.CartEntity) adapter.getItem(i);
-        cartEntity.setSeleced(mCartSelectIv.isSelected());
+            CartInfoBean.CartEntity cartEntity = (CartInfoBean.CartEntity) adapter.getItem(i);
+            cartEntity.setSeleced(mCartSelectIv.isSelected());
         }
         mAdapter.notifyDataSetChanged();
         //重新刷新结算
         setAllMoney();
-        }
+    }
 
-private void setItemSelectedListener() {
+    private void setItemSelectedListener() {
 
-        }
+    }
 
-private void setAllMoney() {
+    private void setAllMoney() {
         if (mCartEntities == null) {
-        return;
+            return;
         }
 
         ListAdapter adapter = mCartGoodsShowLv.getAdapter();
         int sum = 0;
         for (int i = 0; i < mCartEntities.size(); i++) {
-        CartInfoBean.CartEntity cartEntity = (CartInfoBean.CartEntity) adapter.getItem(i);
-        if (!cartEntity.isSeleced()) {
-        continue;
-        }
-        int prodNum = cartEntity.prodNum;
-        int price = cartEntity.product.price;
-        sum += prodNum * price;
+            CartInfoBean.CartEntity cartEntity = (CartInfoBean.CartEntity) adapter.getItem(i);
+            if (!cartEntity.isSeleced()) {
+                continue;
+            }
+            int prodNum = cartEntity.prodNum;
+            int price = cartEntity.product.price;
+            sum += prodNum * price;
         }
         mCartAllTv.setText("合计:￥" + sum + ".00");
         mCartTotalTv.setText("总计:￥" + sum + ".00");
         //设置全选符号
         if (!mCartSelectIv.isSelected()) {
-        int count = 0;
-        for (int i = 0; i < mCartEntities.size(); i++) {
-        if (mCartEntities.get(i).isSeleced()) {
-        count++;
-        }
-        }
+            int count = 0;
+            for (int i = 0; i < mCartEntities.size(); i++) {
+                if (mCartEntities.get(i).isSeleced()) {
+                    count++;
+                }
+            }
 
-        if (count == mCartEntities.size()) {
-        mCartSelectIv.setSelected(true);
-        } else if (count == 0) {
-        mCartSelectIv.setSelected(false);
+            if (count == mCartEntities.size()) {
+                mCartSelectIv.setSelected(true);
+            } else if (count == 0) {
+                mCartSelectIv.setSelected(false);
+            }
         }
-        }
-        }
+    }
 
 
-/**
- * @param v
- * @param event
- * @return
- * @des 消费事件
- */
-@Override
-public boolean onTouch(View v, MotionEvent event) {
+    /**
+     * @param v
+     * @param event
+     * @return
+     * @des 消费事件
+     */
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
         return true;
-        }
-
-private class MyAdapter extends BaseAdapter {
-
-    private CartHolder         mCartHolder;
-    private CartInterestHolder mCartInterestHolder;
-    private ProductHolder      mProductHolder;
-
-    @Override
-    public int getCount() {
-        if (mProductEntities != null && mCartEntities != null) {
-            return mProductEntities.size() + mCartEntities.size() + 1;
-        } else if (mCartEntities != null) {
-            return mCartEntities.size() + 1;
-        } else if (mProductEntities != null) {
-            return mProductEntities.size() + 1;
-        }
-        return 1;
     }
 
-    @Override
-    public Object getItem(int position) {
-        if (mCartEntities == null) {
-            if (position == 0) {
-                return View.inflate(UIUtils.getContext(), R.layout.fragment_cart_item_division, null);
-            } else {
-                return mProductEntities.get(position - mProductEntities.size() - 1);
+    private class MyAdapter extends BaseAdapter {
+
+        private CartHolder         mCartHolder;
+        private CartInterestHolder mCartInterestHolder;
+        private ProductHolder      mProductHolder;
+
+        @Override
+        public int getCount() {
+            if (mProductEntities != null && mCartEntities != null) {
+                return mProductEntities.size() + mCartEntities.size() + 1;
+            } else if (mCartEntities != null) {
+                return mCartEntities.size() + 1;
+            } else if (mProductEntities != null) {
+                return mProductEntities.size() + 1;
             }
-        } else {
-            if (position < mCartEntities.size()) {
-                return mCartEntities.get(position);
-            } else if (position == mCartEntities.size()) {
-                return View.inflate(UIUtils.getContext(), R.layout.fragment_cart_item_division, null);
-            } else {
-                return mProductEntities.get(position - mProductEntities.size() - 1);
-            }
+            return 1;
         }
-    }
 
-    @Override
-    public long getItemId(int position) {
-        return position;
-    }
-
-    @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
-        if (getItemViewType(position) == CART_NORMAL) {
-            mCartHolder = null;
-            convertView = null;
-            if (convertView == null) {
-                //显示正常视图
-                mCartHolder = new CartHolder(mCartGoodsShowLv);
-                mCartHolder.refreshView(mCartEntities.get(position));
-            } else {
-                mCartHolder = (CartHolder) convertView.getTag();
-            }
-            //添加观察者
-            mCartHolder.setOnDataChangeListener(new CartHolder.OnDataChangeListener() {
-                @Override
-                public void onChanged() {
-                    setAllMoney();
+        @Override
+        public Object getItem(int position) {
+            if (mCartEntities == null) {
+                if (position == 0) {
+                    return View.inflate(UIUtils.getContext(), R.layout.fragment_cart_item_division, null);
+                } else {
+                    return mProductEntities.get(position - mProductEntities.size() - 1);
                 }
-
-                @Override
-                public void onDelete() {
-                    mCartEntities.remove(position);
-                    mAdapter.notifyDataSetChanged();
+            } else {
+                if (position < mCartEntities.size()) {
+                    return mCartEntities.get(position);
+                } else if (position == mCartEntities.size()) {
+                    return View.inflate(UIUtils.getContext(), R.layout.fragment_cart_item_division, null);
+                } else {
+                    return mProductEntities.get(position - mProductEntities.size() - 1);
                 }
-            });
-            convertView = mCartHolder.mRootView;
-        } else if (getItemViewType(position) == CART_INTEREST) {
-            mCartInterestHolder = null;
-            convertView = null;
-            if (convertView == null) {
-                //显示正常视图
-                mCartInterestHolder = new CartInterestHolder();
-            } else {
-                mCartInterestHolder = (CartInterestHolder) convertView.getTag();
-            }
-            convertView = mCartInterestHolder.mRootView;
-        } else if (getItemViewType(position) == CART_LOADMORE) {
-            mProductHolder = null;
-            convertView = null;
-            if (convertView == null) {
-                //显示正常视图
-                mProductHolder = new ProductHolder();
-                mProductHolder.refreshView(mProductEntities.get(mCartEntities == null ? position - 1 : position - 1 - mCartEntities.size()));
-            } else {
-                mProductHolder = (ProductHolder) convertView.getTag();
-            }
-            convertView = mProductHolder.mRootView;
-        }
-
-        return convertView;
-    }
-
-    //获取视图种类
-    @Override
-    public int getViewTypeCount() {
-        return super.getViewTypeCount();
-    }
-
-    //每个视图的类型
-    @Override
-    public int getItemViewType(int position) {
-        if (mCartEntities == null) {
-            if (position == 0) {
-                return CART_INTEREST;
-            } else {
-                return CART_LOADMORE;
-            }
-        } else {
-            if (position < mCartEntities.size()) {
-                //显示购物车中的物品视图
-                return CART_NORMAL;
-
-            } else if (position == mCartEntities.size()) {
-                //你可能还想要视图
-                return CART_INTEREST;
-            } else {
-                //加载更多视图
-                return CART_LOADMORE;
             }
         }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(final int position, View convertView, ViewGroup parent) {
+            if (getItemViewType(position) == CART_NORMAL) {
+                mCartHolder = null;
+                convertView = null;
+                if (convertView == null) {
+                    //显示正常视图
+                    mCartHolder = new CartHolder(mCartGoodsShowLv);
+                    mCartHolder.refreshView(mCartEntities.get(position));
+                } else {
+                    mCartHolder = (CartHolder) convertView.getTag();
+                }
+                //添加观察者
+                mCartHolder.setOnDataChangeListener(new CartHolder.OnDataChangeListener() {
+                    @Override
+                    public void onChanged() {
+                        setAllMoney();
+                    }
+
+                    @Override
+                    public void onDelete() {
+                        mCartEntities.remove(position);
+                        mAdapter.notifyDataSetChanged();
+                    }
+                });
+                convertView = mCartHolder.mRootView;
+            } else if (getItemViewType(position) == CART_INTEREST) {
+                mCartInterestHolder = null;
+                convertView = null;
+                if (convertView == null) {
+                    //显示正常视图
+                    mCartInterestHolder = new CartInterestHolder();
+                } else {
+                    mCartInterestHolder = (CartInterestHolder) convertView.getTag();
+                }
+                convertView = mCartInterestHolder.mRootView;
+            } else if (getItemViewType(position) == CART_LOADMORE) {
+                mProductHolder = null;
+                convertView = null;
+                if (convertView == null) {
+                    //显示正常视图
+                    mProductHolder = new ProductHolder();
+                    mProductHolder.refreshView(mProductEntities.get(mCartEntities == null ? position - 1 : position - 1 - mCartEntities.size()));
+                } else {
+                    mProductHolder = (ProductHolder) convertView.getTag();
+                }
+                convertView = mProductHolder.mRootView;
+            }
+
+            return convertView;
+        }
+
+        //获取视图种类
+        @Override
+        public int getViewTypeCount() {
+            return super.getViewTypeCount();
+        }
+
+        //每个视图的类型
+        @Override
+        public int getItemViewType(int position) {
+            if (mCartEntities == null) {
+                if (position == 0) {
+                    return CART_INTEREST;
+                } else {
+                    return CART_LOADMORE;
+                }
+            } else {
+                if (position < mCartEntities.size()) {
+                    //显示购物车中的物品视图
+                    return CART_NORMAL;
+
+                } else if (position == mCartEntities.size()) {
+                    //你可能还想要视图
+                    return CART_INTEREST;
+                } else {
+                    //加载更多视图
+                    return CART_LOADMORE;
+                }
+            }
+        }
     }
-}
 }

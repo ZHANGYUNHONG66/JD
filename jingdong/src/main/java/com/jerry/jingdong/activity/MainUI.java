@@ -1,6 +1,7 @@
 package com.jerry.jingdong.activity;
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -16,7 +17,7 @@ public class MainUI extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(null);
         // 告诉它内容的区域
         setContentView(R.layout.fragment_main_content);
 
@@ -64,4 +65,8 @@ public class MainUI extends FragmentActivity {
         return titleFragment;
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+//        super.onSaveInstanceState(outState, outPersistentState);
+    }
 }
