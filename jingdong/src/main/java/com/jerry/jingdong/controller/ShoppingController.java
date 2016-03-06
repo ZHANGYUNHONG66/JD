@@ -26,6 +26,9 @@ import com.jerry.jingdong.base.LoadingPager;
 import com.jerry.jingdong.conf.MyConstants;
 import com.jerry.jingdong.entity.CartInfoBean;
 import com.jerry.jingdong.entity.CartNewBean;
+import com.jerry.jingdong.holder.cart.CartHolder;
+import com.jerry.jingdong.holder.cart.CartInterestHolder;
+import com.jerry.jingdong.holder.product.ProductHolder;
 import com.jerry.jingdong.protocol.CartProtocol;
 import com.jerry.jingdong.protocol.ProductProtocol;
 import com.jerry.jingdong.utils.CartParamsUtils;
@@ -47,12 +50,13 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- *
- */
+
 public class ShoppingController extends BaseController implements View.OnTouchListener {
 
-    private ProductProtocol                 mProductProtocol;
+    private ProductProtocol mProductProtocol;
+    private static final int CART_NORMAL   = 0;
+    private static final int CART_INTEREST = 1;
+    private static final int CART_LOADMORE = 2;
     private List<CartNewBean.ProductEntity> mProductEntities;//商品集合
     private List<CartInfoBean.CartEntity>   mCartEntities;
     private boolean                         mIsLogin;
@@ -188,7 +192,7 @@ public class ShoppingController extends BaseController implements View.OnTouchLi
         if (mIsLogin) {
             //已经登陆
             mCartLoginLl.setVisibility(View.GONE);
-            //在根据集合mCarentityList是否有值，去判断是否应该显示结算和商品栏显示项目
+            //在根据集合mCartEntities是否有值，去判断是否应该显示结算和商品栏显示项目
             if (mCartEntities != null) {
                 //有数据时，隐藏
                 mCartNogoodsLl.setVisibility(View.GONE);
@@ -440,24 +444,128 @@ public class ShoppingController extends BaseController implements View.OnTouchLi
 
     private class MyAdapter extends BaseAdapter {
 
+        private CartHolder         mCartHolder;
+        private CartInterestHolder mCartInterestHolder;
+        private ProductHolder      mProductHolder;
+
         @Override
         public int getCount() {
-            return 0;
+            if (mProductEntities != null && mCartEntities != null) {
+                return mProductEntities.size() + mCartEntities.size() + 1;
+            } else if (mCartEntities != null) {
+                return mCartEntities.size() + 1;
+            } else if (mProductEntities != null) {
+                return mProductEntities.size() + 1;
+            }
+            return 1;
         }
 
         @Override
         public Object getItem(int position) {
-            return null;
+            if (mCartEntities == null) {
+                if (position == 0) {
+                    return View.inflate(UIUtils.getContext(), R.layout.fragment_cart_item_division, null);
+                } else {
+                    return mProductEntities.get(position - mProductEntities.size() - 1);
+                }
+            } else {
+                if (position < mCartEntities.size()) {
+                    return mCartEntities.get(position);
+                } else if (position == mCartEntities.size()) {
+                    return View.inflate(UIUtils.getContext(), R.layout.fragment_cart_item_division, null);
+                } else {
+                    return mProductEntities.get(position - mProductEntities.size() - 1);
+                }
+            }
         }
 
         @Override
         public long getItemId(int position) {
-            return 0;
+            return position;
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            return null;
+        public View getView(final int position, View convertView, ViewGroup parent) {
+            if (getItemViewType(position) == CART_NORMAL) {
+                mCartHolder = null;
+                convertView = null;
+                if (convertView == null) {
+                    //显示正常视图
+                    mCartHolder = new CartHolder(mCartGoodsShowLv);
+                    mCartHolder.refreshHolderView(mCartEntities.get(position));
+                } else {
+                    mCartHolder = (CartHolder) convertView.getTag();
+                }
+                //添加观察者
+                mCartHolder.setOnDataChangeListener(new CartHolder.OnDataChangeListener() {
+                    @Override
+                    public void onChanged() {
+                        setAllMoney();
+                    }
+
+                    @Override
+                    public void onDelete() {
+                        mCartEntities.remove(position);
+                        mAdapter.notifyDataSetChanged();
+                    }
+                });
+                convertView = mCartHolder.mRootView;
+            } else if (getItemViewType(position) == CART_INTEREST) {
+                mCartInterestHolder = null;
+                convertView = null;
+                if (convertView == null) {
+                    //显示正常视图
+                    mCartInterestHolder = new CartInterestHolder();
+                } else {
+                    mCartInterestHolder = (CartInterestHolder) convertView.getTag();
+                }
+                convertView = mCartInterestHolder.mRootView;
+            } else if (getItemViewType(position) == CART_LOADMORE) {
+                mProductHolder = null;
+                convertView = null;
+                if (convertView == null) {
+                    //显示正常视图
+                    mProductHolder = new ProductHolder();
+                    mProductHolder.refreshView(mProductEntities.get(mCartEntities == null ? position - 1 : position - 1 - mCartEntities.size()));
+                } else {
+                    mProductHolder = (ProductHolder) convertView.getTag();
+                }
+                convertView = mProductHolder.mRootView;
+            }
+            //根据结果返回结果
+            //模拟已经登陆了
+
+            return convertView;
+        }
+
+        //获取视图种类
+        @Override
+        public int getViewTypeCount() {
+            return super.getViewTypeCount();
+        }
+
+        //每个视图的类型
+        @Override
+        public int getItemViewType(int position) {
+            if (mCartEntities == null) {
+                if (position == 0) {
+                    return CART_INTEREST;
+                } else {
+                    return CART_LOADMORE;
+                }
+            } else {
+                if (position < mCartEntities.size()) {
+                    //显示购物车中的物品视图
+                    return CART_NORMAL;
+
+                } else if (position == mCartEntities.size()) {
+                    //你可能还想要视图
+                    return CART_INTEREST;
+                } else {
+                    //加载更多视图
+                    return CART_LOADMORE;
+                }
+            }
         }
     }
 }

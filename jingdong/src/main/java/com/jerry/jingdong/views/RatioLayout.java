@@ -7,6 +7,7 @@ import android.widget.FrameLayout;
 
 import com.jerry.jingdong.R;
 
+
 /**
  * @创建者: Jerry
  * @创建时间: 2016/3/6 12:37
@@ -20,12 +21,12 @@ public class RatioLayout extends FrameLayout {
     public static final int RELATIVE_HEIGHT = 1;             // 已知高度,动态的计算宽度
     public int              mCurState       = RELATIVE_WIDTH;
 
-    public void setCurState(int curState) {
-        mCurState = curState;
-    }
-
     public void setPicRatio(float picRatio) {
         mPicRatio = picRatio;
+    }
+
+    public void setCurState(int curState) {
+        mCurState = curState;
     }
 
     public RatioLayout(Context context) {
@@ -39,10 +40,8 @@ public class RatioLayout extends FrameLayout {
         TypedArray typedArray = context.obtainStyledAttributes(attrs,
                 R.styleable.RatioLayout);
 
-        mCurState = typedArray.getInt(R.styleable.RatioLayout_rlRelative,
-                RELATIVE_WIDTH);
-        mPicRatio = typedArray.getFloat(R.styleable.RatioLayout_rlPicRatio,
-                1.0f);
+        mCurState = typedArray.getInt(R.styleable.RatioLayout_rlRelative,RELATIVE_WIDTH);
+        mPicRatio = typedArray.getFloat(R.styleable.RatioLayout_rlPicRatio,1.0f);
 
         typedArray.recycle();
     }
