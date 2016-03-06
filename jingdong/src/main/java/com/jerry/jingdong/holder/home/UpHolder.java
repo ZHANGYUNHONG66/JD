@@ -67,10 +67,9 @@ public class UpHolder extends BaseHolder<List<String>>
 
             // 获得布局参数对象
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                    UIUtils.dp2px(10), UIUtils.dp2px(10));
+                    UIUtils.dp2px(7), UIUtils.dp2px(7));
             if (i != 0)
-                params.leftMargin = UIUtils.dp2px(5);
-            params.bottomMargin = UIUtils.dp2px(10);
+                params.leftMargin = UIUtils.dp2px(3);
 
             // 添加到点的容器
             mHomeUpviewPointContainer.addView(indicator, params);
@@ -150,9 +149,9 @@ public class UpHolder extends BaseHolder<List<String>>
             position = position % mPics.length;
 
             ImageView iv = new ImageView(UIUtils.getContext());
-            iv.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
 
             iv.setImageResource(mPics[position]);
+            iv.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
 
             container.addView(iv);
 

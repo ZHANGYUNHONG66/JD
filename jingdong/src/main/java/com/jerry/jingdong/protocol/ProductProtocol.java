@@ -11,7 +11,7 @@ import com.jerry.jingdong.entity.CartNewBean;
  * @ 更新者  $Author$
  * @ 更新时间  $Date$
  */
-public class ProductProtocol extends BaseProtocol<CartNewBean> {
+public class ProductProtocol extends BasePlusProtocol<CartNewBean> {
 
     @Override
     public String getInterfaceKey() {

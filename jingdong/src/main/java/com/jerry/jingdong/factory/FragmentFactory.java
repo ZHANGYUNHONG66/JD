@@ -28,11 +28,11 @@ public class FragmentFactory {
 
     public static OrderBaseFragment createFragment(int position) {
         OrderBaseFragment fragment = null;
-        // 判断内存中是否有存在的fragment实例，有就直接从内存中拿
-        if (mFragments.containsKey(position)) {
-            fragment = mFragments.get(position);
-            return fragment;
-        }
+//        // 判断内存中是否有存在的fragment实例，有就直接从内存中拿
+//        if (mFragments.containsKey(position)) {
+//            fragment = mFragments.get(position);
+//            return fragment;
+//        }
 
         switch (position) {
             case FRAGMENT_TENMINUTE:

@@ -1,6 +1,5 @@
 package com.jerry.jingdong.base;
 
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
@@ -70,6 +69,7 @@ public abstract class SuperBaseAdapter<ITEMBEANTYPE> extends MyBaseAdapter
                 holder.setDataAndRefreshView(LoadMoreHolder.LOADDATA_NONE);
             }
         } else {
+            System.out.println("11111111111111111"+holder.getClass().getSimpleName());
             holder.setDataAndRefreshView(mDatas.get(position));
         }
 
@@ -141,10 +141,8 @@ public abstract class SuperBaseAdapter<ITEMBEANTYPE> extends MyBaseAdapter
                         notifyDataSetChanged();
                     }
 
-                    Log.d("1111", "加载更多数据完成更新UI" );
                     // 更新UI-->LoadMoreHolder
                     mLoadMoreHolder.setDataAndRefreshView(mState);
-                    mLoadMoreHolder.stopTextPointThread();
                 }
             });
 

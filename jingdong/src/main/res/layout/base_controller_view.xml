@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout android:id="@+id/content_layout_container"
+              xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical">
 
+    <!--title-->
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="53dp"
+        android:layout_height="46dp"
         android:background="@drawable/daohang_title">
 
         <LinearLayout
             android:id="@+id/base_controller_ll_daohang_searchcontainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingLeft="3dp"
@@ -28,18 +32,18 @@
                 android:src="@drawable/mystreet"/>
 
             <EditText
-                android:lines="1"
                 android:id="@+id/home_daohang_search_tv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
                 android:layout_centerInParent="true"
                 android:layout_weight="3"
                 android:background="@drawable/daohang_search_text_shape"
                 android:drawableRight="@drawable/search_ico"
                 android:gravity="center_vertical"
                 android:hint="请输入要搜索的内容"
-                android:padding="3dp"/>
+                android:lines="1"
+                android:padding="3dp"
+                android:textSize="14sp"/>
 
             <ImageButton
                 android:id="@+id/home_daohang_search_btn"
@@ -83,6 +87,7 @@
 
     </FrameLayout>
 
+    <!--内容-->
     <FrameLayout
         android:id="@+id/base_controller_fl_content"
         android:layout_width="match_parent"

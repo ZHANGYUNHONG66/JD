@@ -3,6 +3,7 @@ package com.jerry.jingdong.base;
 import android.content.Context;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -20,12 +21,12 @@ import com.jerry.jingdong.utils.UIUtils;
  * @描述: ViewPager五个页面的基类
  */
 public abstract class BaseController {
-    public Context        mContext;
-    public View           mRootView;
+    public Context mContext;
+    public View    mRootView;
 
-    public TextView       mTvTitle;
-    public Button         mBtnLeft, mBtnRight;
-    public LoadingPager   mLoadingPager;
+    public TextView mTvTitle;
+    public Button   mBtnLeft, mBtnRight;
+    public LoadingPager mLoadingPager;
 
     // 普通标题栏容器
     public RelativeLayout mRlDaohangTitleContainer;
@@ -35,8 +36,9 @@ public abstract class BaseController {
     public FrameLayout    mFlContentContainer;
 
     // 首页标题搜索栏的两个子View
-    public TextView       mHomeSearchTv;
-    public ImageButton    mHomeSearchBtn;
+    public EditText    mHomeSearchEdit;
+    public ImageButton mHomeSearchBtn;
+    public View        mBaseView;
 
     public BaseController(Context context) {
         this.mContext = context;
@@ -47,26 +49,27 @@ public abstract class BaseController {
      * 初始化标题栏
      */
     public View initCommonView() {
-        View view = View.inflate(UIUtils.getContext(),
+        mBaseView = View.inflate(UIUtils.getContext(),
                 R.layout.base_controller_view, null);
 
         // 找孩子,因为子类无法继承使用注解方式的成员变量，所以使用findview
-        mTvTitle = (TextView) view.findViewById(R.id.base_controller_tv_title);
-        mBtnLeft = (Button) view.findViewById(R.id.base_controller_btn_left);
-        mBtnRight = (Button) view.findViewById(R.id.base_controller_btn_right);
-        mFlContentContainer = (FrameLayout) view
+        mTvTitle = (TextView) mBaseView.findViewById(R.id.base_controller_tv_title);
+        mBtnLeft = (Button) mBaseView.findViewById(R.id.base_controller_btn_left);
+        mBtnRight = (Button) mBaseView.findViewById(R.id.base_controller_btn_right);
+        mFlContentContainer = (FrameLayout) mBaseView
                 .findViewById(R.id.base_controller_fl_content);
 
+
         // 普通标题栏容器
-        mRlDaohangTitleContainer = (RelativeLayout) view
+        mRlDaohangTitleContainer = (RelativeLayout) mBaseView
                 .findViewById(R.id.base_controller_rl_daohang_titlecontainer);
         // 首页搜索栏容器
-        mLlDaohangSearchContainer = (LinearLayout) view
+        mLlDaohangSearchContainer = (LinearLayout) mBaseView
                 .findViewById(R.id.base_controller_ll_daohang_searchcontainer);
 
-        mHomeSearchTv = (TextView) view
+        mHomeSearchEdit = (EditText) mBaseView
                 .findViewById(R.id.home_daohang_search_tv);
-        mHomeSearchBtn = (ImageButton) view
+        mHomeSearchBtn = (ImageButton) mBaseView
                 .findViewById(R.id.home_daohang_search_btn);
 
         mFlContentContainer.addView(initContentView());
@@ -92,7 +95,7 @@ public abstract class BaseController {
 
         initTitle();
 
-        return view;
+        return mBaseView;
     }
 
     /**

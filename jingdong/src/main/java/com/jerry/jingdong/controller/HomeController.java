@@ -38,6 +38,7 @@ public class HomeController extends BaseController {
         mRlDaohangTitleContainer.setVisibility(View.GONE);
 
         mLlDaohangSearchContainer.setVisibility(View.VISIBLE);
+
     }
 
     /**

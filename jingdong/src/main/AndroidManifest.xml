@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    package="com.jerry.jingdong"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-  <uses-permission android:name="android.permission.INTERNET"/>
+<manifest package="com.jerry.jingdong"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
     <application
         android:name=".application.MyApplication"
         android:allowBackup="true"
@@ -15,7 +18,7 @@
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>-->
+            </intent-filter>
         </activity>
         <activity android:name=".activity.MainUI">
         </activity>
@@ -28,6 +31,11 @@
         </activity>
         <activity android:name=".activity.BillInfoActivity"></activity>
         <activity android:name=".activity.CommitOrderActivity"></activity>
+        <activity
+            android:name=".activity.MyOrderActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".activity.GoodsDetailUI">
+        </activity>
     </application>
 
 </manifest>

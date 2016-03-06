@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:clickable="false"
+              android:focusable="false"
+                >
+<TextView
+    android:layout_marginTop="5dp"
+    android:layout_width="fill_parent"
+    android:layout_height="20dp"
+    android:background="#22000000"
+    android:clickable="false"
+    android:focusable="false"/>
+    <LinearLayout
+        android:clickable="false"
+        android:focusable="false"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:background="#6000"
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="1dp"/>
+        <TextView
+            android:textColor="#000"
+            android:gravity="center"
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="你可能还想要"/>
+        <TextView
+            android:layout_marginRight="10dp"
+            android:background="#6000"
+        android:layout_width="0dip"
+        android:layout_weight="1"
+        android:layout_height="1dp"/>
+    </LinearLayout>
+</LinearLayout>

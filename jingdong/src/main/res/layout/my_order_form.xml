@@ -62,12 +62,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.jerry.jingdong.views.NoScrollViewPager
-            android:id="@+id/myorder_viewpager"
+        <FrameLayout
+            android:id="@+id/myorder_frame_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </com.jerry.jingdong.views.NoScrollViewPager>
+                     android:layout_height="match_parent"></FrameLayout>
 
         <LinearLayout
             android:id="@+id/myorder_empty_container"

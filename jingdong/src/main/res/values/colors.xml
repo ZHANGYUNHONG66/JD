@@ -3,4 +3,32 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="category_first_text">#FF7E7E7E</color>
+    <color name="categery_second_text">#f7f7f7</color>
+    <color name="tint">#FEFECE</color>
+    <color name="pink">#dcc0c6</color>
+    <color name="base_pink">#FF8FB7</color>
+    <color name="qing">#d7f1d9</color>
+    <color name="categery_bg_normal">#FFFFFF</color>
+
+    <color name="tab_indicator_selected">#FF4081</color>
+    <color name="tab_text_selected">#FF4081</color>
+    <color name="tab_text_normal">#787878</color>
+    <color name="category_bg_first">#efff8fa2</color>
+    <color name="colorWhite">#fff</color>
+    <color name="colorBlack">#000</color>
+
+    <color name="colorGobuyNomarl">#f0f</color>
+    <color name="colorGobuyPresess">#f9f</color>
+    <color name="colorAddbuyCarNomarl">#888</color>
+    <color name="colorAddbuyCarPresess">#ccc</color>
+    <color name="colorAddFavoriteNomarl">#fff</color>
+    <color name="colorAddFavoritePresess">#999</color>
+    <color name="colorTextNomlar">#787878</color>
+    <color name="colorRed">#f33</color>
+
+    <!--标题栏背景色-->
+    <color name="title_bg_color">#FF8FB7</color>
+
+    <color name="gray">#CCC</color>
 </resources>

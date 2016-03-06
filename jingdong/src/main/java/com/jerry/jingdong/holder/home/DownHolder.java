@@ -1,9 +1,8 @@
 package com.jerry.jingdong.holder.home;
 
-import android.view.Gravity;
 import android.view.View;
-import android.widget.TextView;
 
+import com.jerry.jingdong.R;
 import com.jerry.jingdong.base.BaseHolder;
 import com.jerry.jingdong.utils.UIUtils;
 
@@ -17,17 +16,12 @@ import com.jerry.jingdong.utils.UIUtils;
 public class DownHolder extends BaseHolder<String> {
     @Override
     public View initRootView() {
-        TextView tv = new TextView(UIUtils.getContext());
-        tv.setText(getClass().getSimpleName());
-        tv.setGravity(Gravity.CENTER);
-        tv.setTextSize(30);
-        return tv;
+        View view = View.inflate(UIUtils.getContext(), R.layout.home_down_view, null);
+        return view;
     }
 
     @Override
     protected void refreshView(String data) {
 
     }
-
-
 }
