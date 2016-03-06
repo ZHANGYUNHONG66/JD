@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#740B1D"
+    tools:context=".activity.HotProductActivity"
+    android:orientation="vertical">
+
+    <!-- <com.jerry.jingdong.views.RatioLayout
+         android:layout_width="match_parent"
+         android:layout_height="100dp"></com.jerry.jingdong.views.RatioLayout>-->
+    <ListView
+        android:id="@+id/home_hotproduct_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:dividerHeight="5dp"
+        android:footerDividersEnabled="true"
+         >
+        <!--android:divider="@drawable/listfengexian"-->
+    </ListView>
+</LinearLayout>

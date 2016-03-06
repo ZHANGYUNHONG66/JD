@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="horizontal">
+
+    <!--<com.jerry.jingdong.views.RatioLayout
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        app:rlRelative="height"
+        app:rlPicRatio="0.7">-->
+
+        <ImageView
+            android:scaleType="center"
+            android:id="@+id/item_hotproduct_iv_product"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            />
+    <!--</com.jerry.jingdong.views.RatioLayout>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/item_hotproduct_tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/item_hotproduct_tv__marketprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/item_hotproduct_tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/item_hotproduct_iv_buy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>

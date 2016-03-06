@@ -1,5 +1,7 @@
 package com.jerry.jingdong.holder.cart;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.widget.Toast;
 
 import com.jerry.jingdong.R;
 import com.jerry.jingdong.activity.GoodsDetailUI;
+import com.jerry.jingdong.application.MyApplication;
 import com.jerry.jingdong.base.BaseHolder;
 import com.jerry.jingdong.conf.MyConstants;
 import com.jerry.jingdong.entity.CartInfoBean;
@@ -115,17 +118,14 @@ public class CartHolder extends BaseHolder<CartInfoBean.CartEntity> implements V
                             }
                         });
                     }
-
                 });
-
-
             }
         });
         return view;
     }
 
     @Override
-    public void refreshView(CartInfoBean.CartEntity cartEntity) {
+    public void refreshView(final CartInfoBean.CartEntity cartEntity) {
         mCartEntity = cartEntity;
         //设置勾选状态
         if (cartEntity.isSeleced()) {
@@ -184,7 +184,6 @@ public class CartHolder extends BaseHolder<CartInfoBean.CartEntity> implements V
                     //证明是尺寸
                     sizeSb.append(productPropertyEntity.v + ",");
                 }
-
             }
             //颜色
             mItemNormalColorTv.setText(UIUtils.getString(R.string.color) + colorSb.toString() + ";");
@@ -201,7 +200,7 @@ public class CartHolder extends BaseHolder<CartInfoBean.CartEntity> implements V
                     public void onClick(View v) {
                         Intent intent = new Intent(UIUtils.getContext(), GoodsDetailUI.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        intent.putExtra("pid", mCartEntity.product.id);
+                        intent.putExtra("pid", cartEntity.product.id);
                         UIUtils.getContext().startActivity(intent);
                     }
                 }
@@ -210,6 +209,61 @@ public class CartHolder extends BaseHolder<CartInfoBean.CartEntity> implements V
 
     @Override
     public void onClick(View v) {
+        switch (v.getId()) {
+            //增加
+            case R.id.item_normal_add_ib:
+                addNum();
+                break;
+            //减少
+            case R.id.item_normal_lessen_ib:
+                lessenNum();
+                break;
+            //更多
+            case R.id.item_normal_showmore_ib:
+                Toast.makeText(UIUtils.getContext(), "更多", Toast.LENGTH_SHORT).show();
+                //                delete();
+                break;
+            //选择
+            case R.id.item_normal_select_iv:
+                selectItem();
+                break;
+        }
+
+    }
+
+    private void delete() {
+        // 显示标题和内容：
+        final AlertDialog.Builder dialog = new AlertDialog.Builder(UIUtils.getContext());
+        dialog.setTitle("删除提示 !")
+                .setMessage("亲，你确定要删除吗 ？")
+                .show();
+        //返回地址列表
+        dialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                mOnDataChangeListener.onDelete();
+                mCartUtils.clearData(MyApplication.getmUserId() + "");
+                dialog.cancel();
+            }
+        });
+
+        dialog.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+    }
+
+    private void selectItem() {
+
+    }
+
+    private void lessenNum() {
+
+    }
+
+    private void addNum() {
 
     }
 

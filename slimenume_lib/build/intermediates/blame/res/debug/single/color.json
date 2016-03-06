@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\debug\\color\\abs__primary_text_holo_light.xml",
+        "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\color\\abs__primary_text_holo_light.xml"
+    },
+    {
+        "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\debug\\color\\abs__primary_text_disable_only_holo_dark.xml",
+        "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\color\\abs__primary_text_disable_only_holo_dark.xml"
+    },
+    {
+        "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\debug\\color\\abs__primary_text_holo_dark.xml",
+        "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\color\\abs__primary_text_holo_dark.xml"
+    },
+    {
+        "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\debug\\color\\abs__primary_text_disable_only_holo_light.xml",
+        "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\color\\abs__primary_text_disable_only_holo_light.xml"
+    }
+]

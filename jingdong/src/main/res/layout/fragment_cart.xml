@@ -31,7 +31,6 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/cart_login_button_bg_selector"
-                    android:padding="5dp"
                     android:text="登陆"
                     android:textColor="#fff"/>
 
@@ -82,12 +81,11 @@
 
                 <Button
                     android:id="@+id/cart_nogoods_btn"
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/cart_nogoods_iv"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:layout_marginTop="20dp"
                     android:background="@mipmap/cart_regist_bg"
                     android:text="随便溜达"
                     android:textColor="#fff"/>
