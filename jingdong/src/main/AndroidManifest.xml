@@ -14,29 +14,29 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.Black.NoTitleBar">
         <activity android:name=".activity.SplashUi">
-<!--   <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>-->
-        </activity>
-        <activity android:name=".activity.MainUI">
-        </activity>
-        <activity android:name=".activity.BalanceAccountsCenterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.BillInfoActivity"></activity>
-        <activity android:name=".activity.CommitOrderActivity"></activity>
+        <activity android:name=".activity.MainUI">
+        </activity>
+        <activity android:name=".activity.BalanceAccountsCenterActivity">
+        </activity>
+        <activity android:name=".activity.BillInfoActivity"/>
+        <activity android:name=".activity.CommitOrderActivity"/>
         <activity
             android:name=".activity.MyOrderActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".activity.GoodsDetailUI">
         </activity>
         <activity android:name=".activity.HotProductActivity">
+        </activity>
+        <activity android:name=".activity.AccountCentre"/>
+        <activity android:name=".activity.RegisterAccountView">
+        </activity>
+        <activity android:name=".activity.ForgetPasswordView">
         </activity>
     </application>
 

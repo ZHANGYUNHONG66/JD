@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"/>
 
     <Button
+        android:id="@+id/account_contre_btn_quit"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="40dp"
