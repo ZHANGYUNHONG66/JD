@@ -1,1 +1,1 @@
-include ':jingdong', ':slimenume_lib', ':actionbarsherlock'
+include ':jingdong', ':slimenume_lib'
