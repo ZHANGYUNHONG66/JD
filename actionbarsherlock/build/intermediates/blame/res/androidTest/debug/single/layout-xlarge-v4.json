@@ -1,10 +1,18 @@
 [
     {
+        "merged": "E:\\Android_protect\\JingDong\\actionbarsherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-xlarge-v4\\abs__screen_action_bar.xml",
+        "source": "E:\\Android_protect\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\layout-xlarge-v4\\abs__screen_action_bar.xml"
+    },
+    {
         "merged": "J:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-xlarge-v4\\abs__screen_action_bar_overlay.xml",
         "source": "J:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\layout-xlarge-v4\\abs__screen_action_bar_overlay.xml"
     },
     {
         "merged": "J:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-xlarge-v4\\abs__screen_action_bar.xml",
         "source": "J:\\AndroidStudioProjects\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\layout-xlarge-v4\\abs__screen_action_bar.xml"
+    },
+    {
+        "merged": "E:\\Android_protect\\JingDong\\actionbarsherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-xlarge-v4\\abs__screen_action_bar_overlay.xml",
+        "source": "E:\\Android_protect\\JingDong\\actionbarsherlock\\build\\intermediates\\bundles\\debug\\res\\layout-xlarge-v4\\abs__screen_action_bar_overlay.xml"
     }
 ]

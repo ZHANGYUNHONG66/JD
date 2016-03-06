@@ -13,8 +13,8 @@ import com.jerry.jingdong.utils.UIUtils;
  * @描述: ViewPager五个页面的基类
  */
 public abstract class BaseController {
-    public Context mContext;
-    public View    mRootView;
+    public Context      mContext;
+    public View         mRootView;
 
     public LoadingPager mLoadingPager;
 
@@ -23,9 +23,6 @@ public abstract class BaseController {
         this.mRootView = initContentView();
     }
 
-    /**
-     * 初始化内容区域,子类必须实现
-     */
     public View initContentView() {
         if (mLoadingPager == null) {
             mLoadingPager = new LoadingPager(UIUtils.getContext()) {
@@ -43,7 +40,6 @@ public abstract class BaseController {
 
         return mLoadingPager;
     }
-
 
     /**
      * 在子线程中加载数据，子类必须实现

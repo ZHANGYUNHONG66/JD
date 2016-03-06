@@ -50,24 +50,35 @@ public class TitleView extends RelativeLayout implements View.OnClickListener {
         }
     }
 
-    public EditText getDaohangSearchEdit() {
+    /**
+     * 链式调用
+     */
+    public TitleView setDaohangSearchEdit(EditText daohangSearchEdit) {
+        mDaohangSearchEdit = daohangSearchEdit;
+        return this;
+    }
+
+    public TitleView setBtnLeft(Button btnLeft) {
+        mBtnLeft = btnLeft;
+        return this;
+    }
+
+    public TitleView setBtnRight(Button btnRight) {
+        mBtnRight = btnRight;
+        return this;
+    }
+
+    /**
+     * 返回输入框实例
+     */
+    public EditText getEditText() {
         return mDaohangSearchEdit;
     }
 
-    public ImageButton getDaohangSearchBtn() {
-        return mDaohangSearchBtn;
-    }
+    public TitleView setTvTitle(TextView tvTitle) {
+        mTvTitle = tvTitle;
+        return this;
 
-    public Button getBtnLeft() {
-        return mBtnLeft;
-    }
-
-    public Button getBtnRight() {
-        return mBtnRight;
-    }
-
-    public TextView getTvTitle() {
-        return mTvTitle;
     }
 
     public TitleView(Context context) {
@@ -122,20 +133,20 @@ public class TitleView extends RelativeLayout implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-        case R.id.daohang_btn_left:
-            mListener.onLeftBtnClick();
-            break;
+            case R.id.daohang_btn_left:
+                mListener.onLeftBtnClick();
+                break;
 
-        case R.id.daohang_btn_right:
-            mListener.onRightBtnClick();
-            break;
+            case R.id.daohang_btn_right:
+                mListener.onRightBtnClick();
+                break;
 
-        case R.id.daohang_search_btn:
-            mListener.onSearchBtnClick();
-            break;
+            case R.id.daohang_search_btn:
+                mListener.onSearchBtnClick();
+                break;
 
-        default:
-            break;
+            default:
+                break;
         }
     }
 
