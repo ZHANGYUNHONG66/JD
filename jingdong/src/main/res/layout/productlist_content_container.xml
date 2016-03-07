@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#740B1D">
+
+        <ImageView
+            android:id="@+id/productlist_title_iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="2dp"
+            android:padding="14dp"
+            android:src="@drawable/selector_back_arrow"/>
+
+        <TextView
+            android:id="@+id/productlist_title_tv_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="5dp"
+            android:text="三级分类名"
+            android:textColor="#fff"
+            android:textSize="22sp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:background="@drawable/selector_tintpink_bg">
+
+            <TextView
+                android:id="@+id/productlist_title_tv_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="3dp"
+                android:background="@drawable/selector_btn_bg2"
+                android:text="筛选"
+                android:textColor="#fff"
+                android:textSize="18sp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RadioGroup
+        android:id="@+id/productlist_sort_rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/productlist_sort_tv_default"
+            style="@style/productlist_rb_style"
+            android:tag="综合▲"
+            android:text="综合▼"/>
+
+        <RadioButton
+            android:id="@+id/productlist_sort_tv_sale"
+            style="@style/productlist_rb_style"
+            android:tag="销量▲"
+            android:text="销量▼"/>
+
+        <RadioButton
+            android:id="@+id/productlist_sort_tv_price"
+            style="@style/productlist_rb_style"
+            android:tag="价格▲"
+            android:text="价格▼"/>
+
+        <RadioButton
+            android:id="@+id/productlist_sort_tv_comment"
+            style="@style/productlist_rb_style"
+            android:tag="评价▲"
+            android:text="评价▼"/>
+
+        <RadioButton
+            android:id="@+id/productlist_sort_tv_shelves"
+            style="@style/productlist_rb_style"
+            android:tag="时间▲"
+            android:text="时间▼"/>
+
+    </RadioGroup>
+
+    <FrameLayout
+        android:id="@+id/fl_productlist_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        android:orientation="vertical">
+
+    </FrameLayout>
+</LinearLayout>

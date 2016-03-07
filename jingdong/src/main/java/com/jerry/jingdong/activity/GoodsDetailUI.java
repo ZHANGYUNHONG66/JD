@@ -34,6 +34,7 @@ public class GoodsDetailUI extends SlidingFragmentActivity {
     public static final String TAG_RIGHT_SELECT = "tag_right_select";
     public int mPid;
     public final static String PID  = "pid";
+    public final static String FROM  = "from";
 
     /*public final static String FROM = "from";*/
 
@@ -43,7 +44,7 @@ public class GoodsDetailUI extends SlidingFragmentActivity {
     private Context     mSildContext;
 
     public interface From {
-
+        int CATEGORY  = 1;
         String FROM = "key";
     }
 
@@ -158,7 +159,7 @@ public class GoodsDetailUI extends SlidingFragmentActivity {
      */
     public DetailContextFragment getContentFragment() {
         FragmentManager supportFragmentManager = getSupportFragmentManager();
-        DetailContextFragment DetailContextFragment = (DetailContextFragment) supportFragmentManager.findFragmentByTag(TAG_MAIN_CONTENT);
-        return DetailContextFragment;
+        DetailContextFragment detailContextFragment = (DetailContextFragment) supportFragmentManager.findFragmentByTag(TAG_MAIN_CONTENT);
+        return detailContextFragment;
     }
 }

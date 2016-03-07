@@ -22,15 +22,15 @@ import java.util.List;
  */
 public abstract class SuperBaseAdapter<ITEMBEANTYPE> extends MyBaseAdapter
         implements AdapterView.OnItemClickListener {
-    public static final int  VIEWTYPE_LOADMORE = 0; // 加载更多的条目类型
-    public static final int  VIEWTYPE_NORMAL   = 1; // 普通的条目类型
-    public static final int  VIEWTYPE_TITLE    = 2; // 普通的条目类型
+    public static final int VIEWTYPE_LOADMORE = 0; // 加载更多的条目类型
+    public static final int VIEWTYPE_NORMAL   = 1; // 普通的条目类型
+    public static final int VIEWTYPE_TITLE    = 2; // 普通的条目类型
 
-    private static final int PAGERSIZE         = 20;
-    private LoadMoreTask     mLoadMoreTask;
-    private AbsListView      mAbsListView;
-    private int              mState;
-    private LoadMoreHolder   mLoadMoreHolder;
+    private static final int PAGERSIZE = 20;
+    private LoadMoreTask   mLoadMoreTask;
+    private AbsListView    mAbsListView;
+    private int            mState;
+    private LoadMoreHolder mLoadMoreHolder;
 
     public SuperBaseAdapter(AbsListView absListView, List datas) {
         super(datas);
@@ -69,7 +69,7 @@ public abstract class SuperBaseAdapter<ITEMBEANTYPE> extends MyBaseAdapter
                 holder.setDataAndRefreshView(LoadMoreHolder.LOADDATA_NONE);
             }
         } else {
-            System.out.println("11111111111111111"+holder.getClass().getSimpleName());
+            System.out.println("11111111111111111" + holder.getClass().getSimpleName());
             holder.setDataAndRefreshView(mDatas.get(position));
         }
 
@@ -77,6 +77,7 @@ public abstract class SuperBaseAdapter<ITEMBEANTYPE> extends MyBaseAdapter
     }
 
     /*------------------ 添加加载更多逻辑 -------------------*/
+
     /**
      * 是否要加载更多数据，让子类选择性实现，默认没有加载更多数据
      *
@@ -152,20 +153,19 @@ public abstract class SuperBaseAdapter<ITEMBEANTYPE> extends MyBaseAdapter
     }
 
     /**
+     * @return
+     * @throws IOException:抛出异常让调用处根据抛出的异常进行相应的处理
      * @des 在子线程中加载更多数据，不知道子类要加载的具体数据，交给子类实现
      * @des 不是每个子类都有加载更多数据，让子类选择性实现
-     * @throws IOException:抛出异常让调用处根据抛出的异常进行相应的处理
-     * @return
      */
     public List<ITEMBEANTYPE> loadMoreData() throws IOException {
         return null;
     }
 
     /**
+     * @return
      * @des 获得加载更多holder的方法，因为不知道子类要返回什么样的holder，所以让子类去实现
      * @des 不是每个子类都有加载更多，所以让子类选择性实现
-     *
-     * @return
      */
     public BaseHolder getLoadHolder() {
         if (mLoadMoreHolder == null) {
@@ -187,8 +187,7 @@ public abstract class SuperBaseAdapter<ITEMBEANTYPE> extends MyBaseAdapter
     /**
      * 获得当前条目的视图类型，在getView方法中根据类型显示不同的视图
      *
-     * @param position
-     *            当前条目
+     * @param position 当前条目
      * @return 0 — getViewTypeCount()-1之间
      */
     @Override
@@ -225,14 +224,14 @@ public abstract class SuperBaseAdapter<ITEMBEANTYPE> extends MyBaseAdapter
     /**
      * 用于子类创建具体的Holder给getView方法
      *
-     * @return BaseHolder
      * @param position
+     * @return BaseHolder
      */
     public abstract BaseHolder getSpacialHolder(int position);
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,
-            long id) {
+                            long id) {
         if (parent instanceof ListView) {
             position = position - ((ListView) parent).getHeaderViewsCount();
         }
@@ -250,8 +249,10 @@ public abstract class SuperBaseAdapter<ITEMBEANTYPE> extends MyBaseAdapter
     /**
      * 普通条目的点击事件，传递给子类实现,子类选择性实现
      */
-    public void onNormalItenClick(AdapterView<?> parent, View view,
-            int position, long id) {
+    public void onNormalItenClick(AdapterView<?> parent, View view, int position, long id) {
 
+    }
+
+    public void dealWithDatasInGridView() {
     }
 }

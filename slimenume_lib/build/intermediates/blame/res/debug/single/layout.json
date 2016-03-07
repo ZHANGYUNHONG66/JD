@@ -1,5 +1,9 @@
 [
     {
+        "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\debug\\layout\\slidingmenumain.xml",
+        "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\res\\layout\\slidingmenumain.xml"
+    },
+    {
         "merged": "D:\\asWorkSpace\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\debug\\layout\\slidingmenumain.xml",
         "source": "D:\\asWorkSpace\\JingDong\\slimenume_lib\\res\\layout\\slidingmenumain.xml"
     },

@@ -5,7 +5,7 @@ import com.jerry.jingdong.fragment.tab.BrandFragment;
 import com.jerry.jingdong.fragment.tab.HomeFragment;
 import com.jerry.jingdong.fragment.tab.MineFragment;
 import com.jerry.jingdong.fragment.tab.SearchFragment;
-import com.jerry.jingdong.fragment.tab.ShoppingFragment;
+import com.jerry.jingdong.fragment.tab.CartFragment;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -50,7 +50,7 @@ public class TabFragmentFactory {
             fragment = new BrandFragment();
             break;
         case FRAGMENT_SHOPPING:
-            fragment = new ShoppingFragment();
+            fragment = new CartFragment();
             break;
         case FRAGMENT_MINE:
             fragment = new MineFragment();

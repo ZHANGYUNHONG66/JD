@@ -26,6 +26,9 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+/**
+ *
+ */
 public class CommentFragment extends BaseDetailFragment {
 
     private static final String TAG = "commentFragment";

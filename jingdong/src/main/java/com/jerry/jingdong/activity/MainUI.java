@@ -1,6 +1,7 @@
 package com.jerry.jingdong.activity;
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -23,7 +24,7 @@ public class MainUI extends FragmentActivity
     public NoScrollViewPager mContentViewPager;
     public TitleView         mMainTitleview;
 
-    public int               mCurrRbIndex = -1;
+    public int mCurrRbIndex = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,31 +68,13 @@ public class MainUI extends FragmentActivity
      */
     public void initListener() {
 
-        mContentRg.setOnCheckedChangeListener(
-                new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup group,
-                            int checkedId) {
-                        switch (checkedId) {// 首页
-                        case R.id.content_rb_home:
-                            mCurrRbIndex = 0;
-                            break;
-                        case R.id.content_rb_search:// 搜索
-                            mCurrRbIndex = 1;
-                            break;
-                        case R.id.content_rb_comment:// 品牌
-                            mCurrRbIndex = 2;
-                            break;
-                        case R.id.content_rb_shopping:// 购物车
-                            mCurrRbIndex = 3;
-                            break;
-                        case R.id.content_rb_mine:// 我的
-                            mCurrRbIndex = 4;
-                            break;
-                        }
-                        mContentViewPager.setCurrentItem(mCurrRbIndex);
-                    }
-                });
+        mContentRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                changeGroupAndView(checkedId, 0);
+            }
+        });
 
         mContentViewPager.setOnPageChangeListener(this);
 
@@ -107,9 +90,53 @@ public class MainUI extends FragmentActivity
                 });
     }
 
+    public void changeGroupAndView(int checkedId, int curposition) {
+        if (checkedId != 0) {
+            switch (checkedId) {// 首页
+                case R.id.content_rb_home:
+                    mCurrRbIndex = 0;
+                    break;
+                case R.id.content_rb_search:// 搜索
+                    mCurrRbIndex = 1;
+                    break;
+                case R.id.content_rb_comment:// 品牌
+                    mCurrRbIndex = 2;
+                    break;
+                case R.id.content_rb_shopping:// 购物车
+                    mCurrRbIndex = 3;
+                    break;
+                case R.id.content_rb_mine:// 我的
+                    mCurrRbIndex = 4;
+                    break;
+            }
+            mContentViewPager.setCurrentItem(mCurrRbIndex);
+        } else {
+            //肯定，就是根据position来改变，viewpager的位置了
+            int rbId = 0;
+            switch (curposition) {
+                case 0:
+                    rbId = R.id.content_rb_home;
+                    break;
+                case 1:
+                    rbId = R.id.content_rb_search;
+                    break;
+                case 2:
+                    rbId = R.id.content_rb_comment;
+                    break;
+                case 3:
+                    rbId = R.id.content_rb_shopping;
+                    break;
+                case 4:
+                    rbId = R.id.content_rb_mine;
+                    break;
+            }
+            mContentRg.check(rbId);
+        }
+    }
+
     @Override
     public void onPageScrolled(int position, float positionOffset,
-            int positionOffsetPixels) {
+                               int positionOffsetPixels) {
 
     }
 
@@ -154,5 +181,16 @@ public class MainUI extends FragmentActivity
 
             return fragment;
         }
+    }
+
+    /**
+     * 不保存实例状态
+     *
+     * @param outState
+     * @param outPersistentState
+     */
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        /*super.onSaveInstanceState(outState, outPersistentState);*/
     }
 }

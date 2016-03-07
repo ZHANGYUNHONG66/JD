@@ -3,8 +3,8 @@
     android:shape="rectangle">
     <!-- 设置角落的样式 -->
     <corners android:radius="4dp"/>
-	<!-- 设置边框的 宽度 .  -->
-	<stroke android:width="4dp" android:color="#ffcccc"/>
+    <!-- 设置边框的 宽度 .  -->
+	<stroke android:width="2dp" android:color="#ffcccc"/>
 	<!-- 设置整个区域的固定颜色  -->
 	<solid  android:color="#ccccff"/>
 	<!-- 设置 padding 的大小  -->

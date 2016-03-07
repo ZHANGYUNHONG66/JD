@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
        android:shape="rectangle">
+    <!-- 设置角落的样式 -->
     <corners android:radius="4dp"/>
+    <!-- 设置整个区域的固定颜色  -->
+    <!--<solid  android:color="#ccccff"/>-->
+    <!-- 设置边框的 宽度 .  -->
     <stroke
         android:width="2dp"
         android:color="#ffcccc"/>
+    <!-- 设置 padding 的大小  -->
+    <!--<padding
+        android:bottom="8dp"
+        android:left="8dp"
+        android:right="8dp"
+        android:top="8dp"/>-->
 </shape>

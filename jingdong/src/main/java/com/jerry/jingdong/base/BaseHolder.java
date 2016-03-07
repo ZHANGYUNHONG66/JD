@@ -48,4 +48,12 @@ public abstract class BaseHolder<HOLDERBEANTYPE> {
      * @param data
      */
     protected abstract void refreshView(HOLDERBEANTYPE data);
+
+
+    public void initView() {
+    }
+
+    public void initView(int position) {
+        initView();
+    }
 }

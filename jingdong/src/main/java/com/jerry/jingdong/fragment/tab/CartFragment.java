@@ -59,7 +59,7 @@ import butterknife.OnClick;
  * @工程名: JingDong
  * @描述: TODO
  */
-public class ShoppingFragment extends BaseFragment implements View.OnTouchListener {
+public class CartFragment extends BaseFragment implements View.OnTouchListener {
 
     private ProductProtocol mProductProtocol;
     private static final int CART_NORMAL   = 0;
@@ -122,7 +122,7 @@ public class ShoppingFragment extends BaseFragment implements View.OnTouchListen
 
     @Override
     public void initTitle() {
-        ((MainUI) getActivity()).mMainTitleview.setTvTitle("购物车");
+        ((MainUI) getActivity()).mMainTitleview.setTvTitle("杨哥的购物车");
     }
 
     /**
@@ -132,16 +132,12 @@ public class ShoppingFragment extends BaseFragment implements View.OnTouchListen
      */
     @Override
     public LoadingPager.LoadResultState initData() {
-
-
         SystemClock.sleep(2000);
-
         mProductProtocol = new ProductProtocol();
-
         mProductEntities = new ArrayList<>();
         try {
             HashMap<String, String> map = new HashMap<>();
-            for (int i = 1; i < 20; i++) {
+            for (int i = 1; i < 2; i++) {
                 map.put("pId", i++ + "");
                 mCartNewBean = mProductProtocol.loadData(HttpRequest.HttpMethod.GET, map, null);
                 mProductEntities.add(mCartNewBean.product);
@@ -262,7 +258,7 @@ public class ShoppingFragment extends BaseFragment implements View.OnTouchListen
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 UIUtils.getContext().startActivity(intent);
                 Toast.makeText(UIUtils.getContext(), "点击了登陆", Toast.LENGTH_SHORT).show();
-                //                Login();
+                //Login();
                 break;
 
         }
@@ -273,7 +269,7 @@ public class ShoppingFragment extends BaseFragment implements View.OnTouchListen
     }
 
     private void setGoToHome() {
-
+        ((MainUI) getActivity()).changeGroupAndView(2,2);//回到首页
     }
 
     private void setDeleteData() {
