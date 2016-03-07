@@ -55,6 +55,11 @@ public class HomeFragment extends BaseFragment
             R.drawable.neirong_tuijianpinpai_anniu_tiaozhuan_moren,
             R.drawable.neirong_shangpinfenlei_anniu_tiaozhuan_moren };
 
+    @Override
+    public void initTitle() {
+
+    }
+
     /**
      * 在子线程中加载数据
      *

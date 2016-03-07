@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.jerry.jingdong.R;
+import com.jerry.jingdong.activity.MainUI;
 import com.jerry.jingdong.base.BaseFragment;
 import com.jerry.jingdong.base.LoadingPager;
 import com.jerry.jingdong.conf.MyConstants;
@@ -28,6 +29,10 @@ public class CommentFragment extends BaseFragment {
     private ImageView mImageView;
 
 
+    @Override
+    public void initTitle() {
+        ((MainUI) getActivity()).mMainTitleview.setTvTitle("品牌");
+    }
 
     /**
      * 在子线程中加载数据
@@ -36,6 +41,8 @@ public class CommentFragment extends BaseFragment {
      */
     @Override
     public LoadingPager.LoadResultState initData() {
+
+
         SystemClock.sleep(2000);
         try {
             BrandProtocal brandProtocal = new BrandProtocal();

@@ -20,6 +20,9 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
+
+        initTitle();
+
         // 优化LoadingPager重复创建
         if (mLoadingPager == null) {
             mLoadingPager = new LoadingPager(UIUtils.getContext()) {
@@ -44,6 +47,7 @@ public abstract class BaseFragment extends Fragment {
         return mLoadingPager;
     }
 
+    public abstract void initTitle();
 
     /**
      * 校验请求网络返回的数据的状态
