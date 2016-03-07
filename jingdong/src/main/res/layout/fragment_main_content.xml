@@ -1,9 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/fl_main_cantent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff">
+    android:orientation="vertical">
 
-</FrameLayout>
+    <com.jerry.jingdong.views.TitleView
+        android:id="@+id/main_titleview"
+        android:layout_width="match_parent"
+        android:layout_height="46dp">
+    </com.jerry.jingdong.views.TitleView>
+
+    <FrameLayout
+        android:id="@+id/fragement_content_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1
+        ">
+        <com.jerry.jingdong.views.NoScrollViewPager
+            android:id="@+id/main_viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        </com.jerry.jingdong.views.NoScrollViewPager>
+    </FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/main_radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@drawable/caidan_dibulan"
+        android:orientation="horizontal"
+        android:paddingTop="7dp">
+
+        <RadioButton
+            android:id="@+id/content_rb_home"
+            style="@style/rb_content_style"
+            android:drawableTop="@drawable/content_rb_home_selector"
+            android:text="首页"/>
+
+        <RadioButton
+            android:id="@+id/content_rb_search"
+            style="@style/rb_content_style"
+            android:drawableTop="@drawable/content_rb_search_selector"
+            android:text="搜索"/>
+
+        <RadioButton
+            android:id="@+id/content_rb_comment"
+            style="@style/rb_content_style"
+            android:drawableTop="@drawable/content_rb_comment_selector"
+            android:text="品牌"/>
+
+        <RadioButton
+            android:id="@+id/content_rb_shopping"
+            style="@style/rb_content_style"
+            android:drawableTop="@drawable/content_rb_shopping_selector"
+            android:text="购物车"/>
+
+        <RadioButton
+            android:id="@+id/content_rb_mine"
+            style="@style/rb_content_style"
+            android:drawableTop="@drawable/content_rb_mine_selector"
+            android:text="我的"/>
+    </RadioGroup>
+
+</LinearLayout>

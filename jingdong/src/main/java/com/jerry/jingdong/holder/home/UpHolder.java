@@ -1,5 +1,6 @@
 package com.jerry.jingdong.holder.home;
 
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.MotionEvent;
@@ -39,6 +40,10 @@ public class UpHolder extends BaseHolder<List<String>>
             R.drawable.top_show_pic6, R.drawable.top_show_pic7 };
 
     private AutoScrollTask mAutoScrollTask;
+
+    public UpHolder(FragmentActivity activity) {
+
+    }
 
     @Override
     public View initRootView() {

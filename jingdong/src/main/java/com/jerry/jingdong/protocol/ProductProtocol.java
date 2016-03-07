@@ -3,6 +3,8 @@ package com.jerry.jingdong.protocol;
 import com.google.gson.Gson;
 import com.jerry.jingdong.entity.CartNewBean;
 
+import okhttp3.OkHttpClient;
+
 /**
  * Created by MiKoKatie on 2016/3/5 14:36.
  *
@@ -15,6 +17,8 @@ public class ProductProtocol extends BasePlusProtocol<CartNewBean> {
 
     @Override
     public String getInterfaceKey() {
+        OkHttpClient okHttpClient=new OkHttpClient();
+
         return "product";
     }
 

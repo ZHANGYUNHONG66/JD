@@ -14,6 +14,7 @@
     {
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__ic_menu_moreoverflow_normal_holo_dark.png",
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__ic_menu_moreoverflow_normal_holo_dark.png"
+<<<<<<< Updated upstream
     },
     {
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__textfield_search_default_holo_dark.9.png",
@@ -26,6 +27,12 @@
     {
         "merged": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__list_divider_holo_light.9.png",
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__list_divider_holo_light.9.png"
+=======
+>>>>>>> Stashed changes
+    },
+    {
+        "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__textfield_search_default_holo_dark.9.png",
+        "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__textfield_search_default_holo_dark.9.png"
     },
     {
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__cab_background_top_holo_light.9.png",
@@ -36,6 +43,7 @@
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__spinner_ab_focused_holo_dark.9.png"
     },
     {
+<<<<<<< Updated upstream
         "merged": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__ab_share_pack_holo_light.9.png",
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__ab_share_pack_holo_light.9.png"
     },
@@ -44,6 +52,8 @@
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__list_selector_disabled_holo_light.9.png"
     },
     {
+=======
+>>>>>>> Stashed changes
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__progress_primary_holo_dark.9.png",
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__progress_primary_holo_dark.9.png"
     },
@@ -80,10 +90,13 @@
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__ic_go_search_api_holo_light.png"
     },
     {
+<<<<<<< Updated upstream
         "merged": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__spinner_ab_disabled_holo_light.9.png",
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__spinner_ab_disabled_holo_light.9.png"
     },
     {
+=======
+>>>>>>> Stashed changes
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__ic_search.png",
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__ic_search.png"
     },
@@ -92,6 +105,7 @@
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__ic_ab_back_holo_light.png"
     },
     {
+<<<<<<< Updated upstream
         "merged": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__ic_cab_done_holo_light.png",
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__ic_cab_done_holo_light.png"
     },
@@ -102,6 +116,10 @@
     {
         "merged": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__ic_go.png",
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__ic_go.png"
+=======
+        "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__spinner_48_outer_holo.png",
+        "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__spinner_48_outer_holo.png"
+>>>>>>> Stashed changes
     },
     {
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__spinner_ab_pressed_holo_light.9.png",
@@ -172,10 +190,13 @@
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__btn_cab_done_focused_holo_dark.9.png"
     },
     {
+<<<<<<< Updated upstream
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__ic_cab_done_holo_dark.png",
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__ic_cab_done_holo_dark.png"
     },
     {
+=======
+>>>>>>> Stashed changes
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__toast_frame.9.png",
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__toast_frame.9.png"
     },
@@ -192,10 +213,13 @@
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__list_focused_holo.9.png"
     },
     {
+<<<<<<< Updated upstream
         "merged": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__textfield_search_right_selected_holo_dark.9.png",
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__textfield_search_right_selected_holo_dark.9.png"
     },
     {
+=======
+>>>>>>> Stashed changes
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__textfield_search_selected_holo_light.9.png",
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__textfield_search_selected_holo_light.9.png"
     },
@@ -252,6 +276,7 @@
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__ab_solid_dark_holo.9.png"
     },
     {
+<<<<<<< Updated upstream
         "merged": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__spinner_ab_default_holo_dark.9.png",
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__spinner_ab_default_holo_dark.9.png"
     },
@@ -260,6 +285,8 @@
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__tab_selected_holo.9.png"
     },
     {
+=======
+>>>>>>> Stashed changes
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__ab_share_pack_holo_light.9.png",
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__ab_share_pack_holo_light.9.png"
     },
@@ -268,10 +295,13 @@
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__tab_selected_holo.9.png"
     },
     {
+<<<<<<< Updated upstream
         "merged": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__textfield_search_default_holo_dark.9.png",
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__textfield_search_default_holo_dark.9.png"
     },
     {
+=======
+>>>>>>> Stashed changes
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__textfield_search_right_default_holo_dark.9.png",
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__textfield_search_right_default_holo_dark.9.png"
     },
@@ -296,10 +326,13 @@
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__ab_stacked_solid_light_holo.9.png"
     },
     {
+<<<<<<< Updated upstream
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__textfield_search_right_selected_holo_dark.9.png",
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__textfield_search_right_selected_holo_dark.9.png"
     },
     {
+=======
+>>>>>>> Stashed changes
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__progress_secondary_holo_light.9.png",
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__progress_secondary_holo_light.9.png"
     },
@@ -384,10 +417,13 @@
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__btn_cab_done_default_holo_light.9.png"
     },
     {
+<<<<<<< Updated upstream
         "merged": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__ic_ab_back_holo_light.png",
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__ic_ab_back_holo_light.png"
     },
     {
+=======
+>>>>>>> Stashed changes
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__ic_commit_search_api_holo_light.png",
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__ic_commit_search_api_holo_light.png"
     },
@@ -396,10 +432,13 @@
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__textfield_search_selected_holo_dark.9.png"
     },
     {
+<<<<<<< Updated upstream
         "merged": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__ab_solid_shadow_holo.9.png",
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__ab_solid_shadow_holo.9.png"
     },
     {
+=======
+>>>>>>> Stashed changes
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__spinner_ab_focused_holo_dark.9.png",
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__spinner_ab_focused_holo_dark.9.png"
     },
@@ -504,6 +543,7 @@
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__tab_selected_pressed_holo.9.png"
     },
     {
+<<<<<<< Updated upstream
         "merged": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__btn_cab_done_default_holo_light.9.png",
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__btn_cab_done_default_holo_light.9.png"
     },
@@ -516,6 +556,8 @@
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__list_longpressed_holo.9.png"
     },
     {
+=======
+>>>>>>> Stashed changes
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__cab_background_top_holo_dark.9.png",
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__cab_background_top_holo_dark.9.png"
     },
@@ -524,8 +566,17 @@
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__ab_stacked_transparent_light_holo.9.png"
     },
     {
+<<<<<<< Updated upstream
         "merged": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__spinner_ab_default_holo_light.9.png",
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__spinner_ab_default_holo_light.9.png"
+=======
+        "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__list_longpressed_holo.9.png",
+        "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__ic_menu_share_holo_light.png",
+        "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__ic_menu_share_holo_light.png"
+>>>>>>> Stashed changes
     },
     {
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__progress_primary_holo_light.9.png",
@@ -544,12 +595,21 @@
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__textfield_search_selected_holo_dark.9.png"
     },
     {
+<<<<<<< Updated upstream
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__list_selector_disabled_holo_light.9.png",
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__list_selector_disabled_holo_light.9.png"
     },
     {
         "merged": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__menu_dropdown_panel_holo_light.9.png",
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__menu_dropdown_panel_holo_light.9.png"
+=======
+        "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__list_divider_holo_light.9.png",
+        "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__list_divider_holo_light.9.png"
+>>>>>>> Stashed changes
+    },
+    {
+        "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__list_selector_disabled_holo_light.9.png",
+        "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__list_selector_disabled_holo_light.9.png"
     },
     {
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__spinner_ab_pressed_holo_dark.9.png",
@@ -640,6 +700,7 @@
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__ab_bottom_solid_dark_holo.9.png"
     },
     {
+<<<<<<< Updated upstream
         "merged": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__ic_voice_search.png",
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__ic_voice_search.png"
     },
@@ -652,6 +713,8 @@
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__ic_clear_normal.png"
     },
     {
+=======
+>>>>>>> Stashed changes
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__spinner_48_inner_holo.png",
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__spinner_48_inner_holo.png"
     },
@@ -660,6 +723,7 @@
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__progress_secondary_holo_dark.9.png"
     },
     {
+<<<<<<< Updated upstream
         "merged": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__progress_primary_holo_dark.9.png",
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__progress_primary_holo_dark.9.png"
     },
@@ -672,6 +736,8 @@
         "source": "E:\\Android_protect\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__ic_clear_search_api_disabled_holo_light.png"
     },
     {
+=======
+>>>>>>> Stashed changes
         "merged": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__ab_stacked_transparent_light_holo.9.png",
         "source": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\exploded-aar\\JingDong\\actionbarsherlock\\unspecified\\res\\drawable-mdpi-v4\\abs__ab_stacked_transparent_light_holo.9.png"
     },

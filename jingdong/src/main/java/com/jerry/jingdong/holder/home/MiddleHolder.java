@@ -1,6 +1,7 @@
 package com.jerry.jingdong.holder.home;
 
 import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import com.jerry.jingdong.R;
 import com.jerry.jingdong.activity.HotProductActivity;
+import com.jerry.jingdong.activity.MainUI;
 import com.jerry.jingdong.base.BaseHolder;
 import com.jerry.jingdong.utils.UIUtils;
 
@@ -27,12 +29,14 @@ import butterknife.ButterKnife;
  */
 public class MiddleHolder<T> extends BaseHolder
         implements AdapterView.OnItemClickListener {
+
+    private FragmentActivity mHomeFragment;
     // 描述
-    private String[] mTitles = new String[] { "热门单品", "新品上架", "限时抢购", "促销快报",
-            "推荐品牌", "商品分类" };
+    private String[]         mTitles = new String[] { "热门单品", "新品上架", "限时抢购",
+            "促销快报", "推荐品牌", "商品分类" };
 
     // 图标
-    private int[]    mIcons  = new int[] {
+    private int[]            mIcons  = new int[] {
             R.drawable.neirong_remendanpin_anniu_tiaozhuan_moren,
             R.drawable.neirong_xinpinshangjia_anniu_tiaozhuan_moren,
             R.drawable.neirong_xianshiqianggou_anniu_tiaozhuan_moren,
@@ -41,7 +45,11 @@ public class MiddleHolder<T> extends BaseHolder
             R.drawable.neirong_shangpinfenlei_anniu_tiaozhuan_moren };
 
     @Bind(R.id.home_middle_gridview)
-    GridView         mHomeMiddleGridview;
+    GridView                 mHomeMiddleGridview;
+
+    public MiddleHolder(FragmentActivity activity) {
+        mHomeFragment = activity;
+    }
 
     @Override
     public View initRootView() {
@@ -62,18 +70,22 @@ public class MiddleHolder<T> extends BaseHolder
      * GridView条目点击事件监听
      */
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+    public void onItemClick(AdapterView<?> parent, View view, int position,
+            long id) {
         Intent intent = null;
         switch (position) {
         case 0:// 热门单品
-            intent = new Intent(UIUtils.getContext(), HotProductActivity.class);
-            intent.putExtra("interfaceKey","hotproduct");
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            UIUtils.getContext().startActivity(intent);
+               // intent = new Intent(UIUtils.getContext(),
+               // HotProductActivity.class);
+               // intent.putExtra("interfaceKey", "hotproduct");
+            // intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            // UIUtils.getContext().startActivity(intent);
+            ((MainUI) mHomeFragment).mMainTitleview.setTvTitle("热门单品");
+
             break;
         case 1:// 新品上架
             intent = new Intent(UIUtils.getContext(), HotProductActivity.class);
-            intent.putExtra("interfaceKey","newproduct");
+            intent.putExtra("interfaceKey", "newproduct");
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             UIUtils.getContext().startActivity(intent);
             break;

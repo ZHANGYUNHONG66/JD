@@ -47,24 +47,21 @@ public class TitleView extends RelativeLayout implements View.OnClickListener {
         } else {
             mLlDaohangSearchcontainer.setVisibility(View.VISIBLE);
             mRlDaohangTitlecontainer.setVisibility(View.GONE);
+
         }
+
     }
 
     /**
      * 链式调用
      */
-    public TitleView setDaohangSearchEdit(EditText daohangSearchEdit) {
-        mDaohangSearchEdit = daohangSearchEdit;
+    public TitleView setBtnLeftText(String mess) {
+        mBtnLeft.setText(mess);
         return this;
     }
 
-    public TitleView setBtnLeft(Button btnLeft) {
-        mBtnLeft = btnLeft;
-        return this;
-    }
-
-    public TitleView setBtnRight(Button btnRight) {
-        mBtnRight = btnRight;
+    public TitleView setBtnRightText(String mess) {
+        mBtnRight.setText(mess);
         return this;
     }
 
@@ -75,8 +72,8 @@ public class TitleView extends RelativeLayout implements View.OnClickListener {
         return mDaohangSearchEdit;
     }
 
-    public TitleView setTvTitle(TextView tvTitle) {
-        mTvTitle = tvTitle;
+    public TitleView setTvTitle(String mess) {
+        mTvTitle.setText(mess);
         return this;
 
     }
@@ -130,26 +127,37 @@ public class TitleView extends RelativeLayout implements View.OnClickListener {
         }
     }
 
+    /**
+     * 当任何一个按钮点击时都会回调给监听者
+     *
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.daohang_btn_left:
-                mListener.onLeftBtnClick();
-                break;
+        case R.id.daohang_btn_left:
+            // 左边按钮
+            mListener.onLeftBtnClick();
+            break;
 
-            case R.id.daohang_btn_right:
-                mListener.onRightBtnClick();
-                break;
+        case R.id.daohang_btn_right:
+            // 右边按钮
+            mListener.onRightBtnClick();
+            break;
 
-            case R.id.daohang_search_btn:
-                mListener.onSearchBtnClick();
-                break;
+        case R.id.daohang_search_btn:
+            // 搜索按钮
+            mListener.onSearchBtnClick();
+            break;
 
-            default:
-                break;
+        default:
+            break;
         }
     }
 
+    /**
+     * 回调按钮点击事件的接口
+     */
     public interface onTitleButtonClickListener {
         void onLeftBtnClick();
 

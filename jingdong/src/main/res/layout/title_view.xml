@@ -20,7 +20,7 @@
             android:orientation="horizontal"
             android:paddingLeft="3dp"
             android:paddingRight="3dp"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <ImageView
                 android:layout_width="0dp"
@@ -62,6 +62,7 @@
             android:id="@+id/rl_daohang_titlecontainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:visibility="gone"
             >
 
             <Button
@@ -82,7 +83,7 @@
             <TextView
                 android:id="@+id/daohang_tv_title"
                 style="@style/MyTitleStyle"
-                android:text="促销快报"
+                android:text="首页"
                 />
         </RelativeLayout>
 

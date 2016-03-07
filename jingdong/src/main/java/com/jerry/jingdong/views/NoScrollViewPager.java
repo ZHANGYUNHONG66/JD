@@ -1,14 +1,10 @@
 package com.jerry.jingdong.views;
-/*
+/**
  * @创建者     Jerry
  * @创建时间   2016/2/12 15:25
  * @描述      自定义一个不可以滚动的ViewPager,这个类最终的处理是只要对onTouchEvent方法进行处理就可以达到让ViewPager不滚动
  * 			  而子孩子中又可以对点击事件进行处理的效果//
  * 			  继承自LazyViewPager,实现ViewPager的懒加载，每次只加载当前显示的界面//
- * 
- * @更新者     $Author$
- * @更新时间   $Date$
- * @更新描述   ${TODO}
  */
 
 import android.content.Context;
