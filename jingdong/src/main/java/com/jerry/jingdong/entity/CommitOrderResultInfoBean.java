@@ -15,8 +15,8 @@ public class CommitOrderResultInfoBean{
     public String response;//	orderSumbit
 
     public class Order  implements Serializable {
-       public String orderId	;//    032096
-       public String paymentType;//	1
-       public String price	    ;//   450
+       public String orderId	;//    032096  订单编号
+       public String paymentType;//	1  支付类型
+       public String price	    ;//   450  总价
     }
 }
