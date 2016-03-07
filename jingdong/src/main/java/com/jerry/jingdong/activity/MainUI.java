@@ -193,4 +193,9 @@ public class MainUI extends FragmentActivity
     public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
         /*super.onSaveInstanceState(outState, outPersistentState);*/
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+       /* super.onSaveInstanceState(outState);*/
+    }
 }
