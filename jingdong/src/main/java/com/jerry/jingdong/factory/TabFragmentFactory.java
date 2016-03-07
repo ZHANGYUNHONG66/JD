@@ -1,7 +1,7 @@
 package com.jerry.jingdong.factory;
 
 import com.jerry.jingdong.base.BaseFragment;
-import com.jerry.jingdong.fragment.tab.CommentFragment;
+import com.jerry.jingdong.fragment.tab.BrandFragment;
 import com.jerry.jingdong.fragment.tab.HomeFragment;
 import com.jerry.jingdong.fragment.tab.MineFragment;
 import com.jerry.jingdong.fragment.tab.SearchFragment;
@@ -47,7 +47,7 @@ public class TabFragmentFactory {
             fragment = new SearchFragment();
             break;
         case FRAGMENT_COMMENT:
-            fragment = new CommentFragment();
+            fragment = new BrandFragment();
             break;
         case FRAGMENT_SHOPPING:
             fragment = new ShoppingFragment();

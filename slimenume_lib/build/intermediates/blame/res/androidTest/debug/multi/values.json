@@ -1,29 +1,5 @@
 [
     {
-        "outputFile": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 961,
-                    "endColumn": 42,
-                    "endOffset": 999
-                },
-                "from": {
-                    "file": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 961,
-                        "endColumn": 42,
-                        "endOffset": 999
-                    }
-                }
-            }
-        ]
-    },
-    {
         "outputFile": "D:\\asWorkSpace\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
         "map": [
             {
@@ -2900,6 +2876,54 @@
                         "endLine": 627,
                         "endColumn": 12,
                         "endOffset": 47984
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 961,
+                    "endColumn": 42,
+                    "endOffset": 999
+                },
+                "from": {
+                    "file": "J:\\AndroidStudioProjects\\JingDong\\slimenume_lib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 961,
+                        "endColumn": 42,
+                        "endOffset": 999
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "E:\\Android\\AndroidStudioProjects_JD\\JingDong\\slimenume_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 961,
+                    "endColumn": 42,
+                    "endOffset": 999
+                },
+                "from": {
+                    "file": "E:\\Android\\AndroidStudioProjects_JD\\JingDong\\slimenume_lib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 961,
+                        "endColumn": 42,
+                        "endOffset": 999
                     }
                 }
             }

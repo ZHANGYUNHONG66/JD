@@ -4,20 +4,42 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
+    <!--      顶部小标题      -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@android:color/black">
 
-    <!--      品牌      -->
-    <!--<ListView-->
-        <!--android:id="@+id/brand_list"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
+        <TextView
+            style="@style/BrandProtectTextStyle"
+            android:drawableLeft="@drawable/brand_protect"
+            android:text="正品保证"/>
 
-    <!--</ListView>-->
+        <TextView
+            style="@style/BrandProtectTextStyle"
+            android:drawableLeft="@drawable/brand_refresh"
+            android:text="官网同步"/>
+
+    </LinearLayout>
 
     <ImageView
-        android:id="@+id/myiamges"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:src="@drawable/brand_head"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"/>
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp">
+
+    <GridView
+        android:id="@+id/brand_grid"
+        android:numColumns="4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </GridView>
+    </LinearLayout>
 
 </LinearLayout>
