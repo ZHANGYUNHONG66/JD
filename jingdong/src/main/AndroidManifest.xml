@@ -36,6 +36,11 @@
 
         <activity android:name=".activity.HotProductActivity">
         </activity>
+        <activity android:name=".activity.AccountCentre"/>
+        <activity android:name=".activity.RegisterAccountView">
+        </activity>
+        <activity android:name=".activity.ForgetPasswordView">
+        </activity>
     </application>
 
 </manifest>

@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context="com.jerry.jingdong.activity.LoginActivity">
 
+<!--    <com.jerry.jingdong.views.TitleView
+        android:id="@+id/title_daohang"
+        android:layout_width="match_parent"
+        android:layout_height="46dp">
+    </com.jerry.jingdong.views.TitleView>-->
+
     <TextView
         android:id="@+id/tv_mystreet"
         android:layout_width="wrap_content"
@@ -19,7 +25,7 @@
     <LinearLayout
         android:id="@+id/ll_input"
         android:layout_width="match_parent"
-        android:layout_height="76dp"
+        android:layout_height="77dp"
         android:layout_below="@+id/tv_mystreet"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
@@ -27,14 +33,15 @@
         android:background="@drawable/shurukuang"
         android:orientation="vertical">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="39dp">
 
             <TextView
+                android:id="@+id/username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
                 android:paddingLeft="8sp"
                 android:text="帐号:"
                 android:textColor="#000000"
@@ -43,27 +50,26 @@
             <EditText
                 android:id="@+id/login_activity_et_username"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_marginBottom="2dp"
-                android:layout_marginLeft="1dp"
-                android:layout_marginRight="1dp"
-                android:layout_marginTop="1dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/username"
                 android:background="@null"
                 android:hint="邮箱手机号昵称"
                 android:paddingLeft="5sp"
                 android:singleLine="true"
-                android:text="13sp"
-                android:textColor="#000000"/>
-        </LinearLayout>
+                android:textColor="#000000"
+                android:textSize="13sp"/>
+        </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="39dp">
 
             <TextView
+                android:id="@+id/password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
                 android:paddingLeft="8sp"
                 android:text="密码:"
                 android:textColor="#000000"
@@ -72,19 +78,17 @@
             <EditText
                 android:id="@+id/login_activity_et_password"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_marginBottom="1dp"
-                android:layout_marginLeft="1dp"
-                android:layout_marginRight="1dp"
-                android:layout_marginTop="1dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/password"
                 android:background="@null"
                 android:hint="个人密码"
                 android:inputType="textPassword"
                 android:paddingLeft="5sp"
                 android:singleLine="true"
-                android:text="13sp"
-                android:textColor="#000000"/>
-        </LinearLayout>
+                android:textColor="#000000"
+                android:textSize="13sp"/>
+        </RelativeLayout>
     </LinearLayout>
 
     <Button
@@ -105,12 +109,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/login_activity_btn_login"
+        android:layout_below="@id/login_activity_btn_login"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="8dp"
         android:clickable="true"
         android:text="忘记密码"
+        android:textColor="#000000"
+        android:textSize="13sp"/>
+
+    <TextView
+        android:id="@+id/login_activity_tv_register_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/login_activity_btn_login"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:text="注册帐号"
         android:textColor="#000000"
         android:textSize="13sp"/>
 </RelativeLayout>

@@ -16,14 +16,7 @@ import com.jerry.jingdong.utils.UIUtils;
 
 import java.util.List;
 
-/**
- * 项目名:    JingDong
- * 包名:      com.jerry.jingdong.views
- * 文件名:    MyDialog
- * 创建者:    任洛仟
- * 创建时间:  2016/03/06 下午 6:15
- * 描述:      TODO
- */
+
 public abstract class MyDialog<T> extends Dialog {
     private Context mContext;
     private View mRootView;

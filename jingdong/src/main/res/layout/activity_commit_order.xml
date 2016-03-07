@@ -4,6 +4,22 @@
               android:layout_height="match_parent"
               android:background="#fff"
               android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/daohang_title">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="提交成功"
+            android:textColor="#000"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            />
+    </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -14,23 +30,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             >
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:background="@drawable/daohang_title">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="48dp"
-                    android:layout_centerInParent="true"
-                    android:gravity="center"
-                    android:text="提交成功"
-                    android:textColor="#000"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
-                    />
-            </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -49,31 +48,33 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/order_num"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="您的订单号:10054258566324"
                     android:textColor="#000"
                     android:textSize="16sp"/>
 
                 <TextView
+                    android:id="@+id/order_result_tv_money"
+                        
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="应付金额:￥150.00"
                     android:textColor="#000"
                     android:textSize="16sp"/>
 
                 <TextView
+                    android:id="@+id/order_result_tv_pay_way"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="支付方式:到付-pos"
                     android:textColor="#000"
                     android:textSize="16sp"/>
 
             </LinearLayout>
 
             <Button
+                android:id="@+id/order_result_btn_keepon_shopping"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -84,6 +85,7 @@
                 android:textSize="16sp"/>
 
             <Button
+                android:id="@+id/order_result_btn_look_orderlist"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
