@@ -44,6 +44,7 @@ public abstract class BaseFragment extends Fragment {
         return mLoadingPager;
     }
 
+
     /**
      * 校验请求网络返回的数据的状态
      *

@@ -11,12 +11,19 @@
         android:layout_height="46dp">
     </com.jerry.jingdong.views.TitleView>
 
-    <com.jerry.jingdong.views.NoScrollViewPager
-        android:id="@+id/main_viewPager"
+    <FrameLayout
+        android:id="@+id/fragement_content_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
-    </com.jerry.jingdong.views.NoScrollViewPager>
+        android:layout_weight="1
+        ">
+        <com.jerry.jingdong.views.NoScrollViewPager
+            android:id="@+id/main_viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        </com.jerry.jingdong.views.NoScrollViewPager>
+    </FrameLayout>
 
     <RadioGroup
         android:id="@+id/main_radiogroup"

@@ -1,5 +1,6 @@
 package com.jerry.jingdong.holder.home;
 
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 
 import com.jerry.jingdong.R;
@@ -14,9 +15,14 @@ import com.jerry.jingdong.utils.UIUtils;
  * @描述: 首页下面部分的Holder
  */
 public class DownHolder extends BaseHolder<String> {
+    public DownHolder(FragmentActivity activity) {
+
+    }
+
     @Override
     public View initRootView() {
-        View view = View.inflate(UIUtils.getContext(), R.layout.home_down_view, null);
+        View view = View.inflate(UIUtils.getContext(), R.layout.home_down_view,
+                null);
         return view;
     }
 
@@ -24,7 +30,5 @@ public class DownHolder extends BaseHolder<String> {
     protected void refreshView(String data) {
 
     }
-
-
 
 }

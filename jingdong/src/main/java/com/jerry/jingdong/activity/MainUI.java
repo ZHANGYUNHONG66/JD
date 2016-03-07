@@ -25,6 +25,8 @@ public class MainUI extends FragmentActivity
 
     public int               mCurrRbIndex = -1;
 
+    public Fragment          mCurrentFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(null);
@@ -46,6 +48,7 @@ public class MainUI extends FragmentActivity
         mContentViewPager = (NoScrollViewPager) findViewById(
                 R.id.main_viewPager);
         mMainTitleview = (TitleView) findViewById(R.id.main_titleview);
+
     }
 
     private void initData() {
@@ -53,8 +56,9 @@ public class MainUI extends FragmentActivity
         mContentViewPager.setOffscreenPageLimit(0);
 
         // 给ViePager设置适配器
-        mContentViewPager
-                .setAdapter(new MyAdapter(getSupportFragmentManager()));
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        mContentViewPager.setAdapter(new MyAdapter(fragmentManager));
 
         // 初始化选中首页
         mContentRg.check(R.id.content_rb_home);
@@ -113,11 +117,10 @@ public class MainUI extends FragmentActivity
 
     @Override
     public void onPageSelected(int position) {
-        BaseFragment fragment = TabFragmentFactory.createFragment(position,
-                MainUI.this);
-        if(fragment instanceof HomeFragment){
+        BaseFragment fragment = TabFragmentFactory.createFragment(position);
+        if (fragment instanceof HomeFragment) {
             mMainTitleview.isTitleDaohang(false);
-        }else{
+        } else {
             mMainTitleview.isTitleDaohang(true);
         }
 
@@ -132,8 +135,11 @@ public class MainUI extends FragmentActivity
     }
 
     private class MyAdapter extends FragmentPagerAdapter {
+        FragmentManager mManager;
+
         public MyAdapter(FragmentManager fm) {
             super(fm);
+            mManager = fm;
         }
 
         @Override
@@ -145,13 +151,10 @@ public class MainUI extends FragmentActivity
         @Override
         public Fragment getItem(int position) {
 
-            BaseFragment fragment = TabFragmentFactory.createFragment(position,
-                    MainUI.this);
-
+            BaseFragment fragment = TabFragmentFactory.createFragment(position);
+            System.out.println(fragment);
 
             return fragment;
         }
-
     }
-
 }

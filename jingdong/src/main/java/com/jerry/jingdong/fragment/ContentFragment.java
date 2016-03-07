@@ -35,6 +35,8 @@ public class ContentFragment extends Fragment implements LazyViewPager.OnPageCha
         View view = View.inflate(UIUtils.getContext(),
                 R.layout.fragment_content, null);
         ButterKnife.bind(this, view);
+
+
         return view;
     }
 
@@ -116,7 +118,7 @@ public class ContentFragment extends Fragment implements LazyViewPager.OnPageCha
 
     @Override
     public void onPageSelected(int position) {
-        BaseFragment fragment = TabFragmentFactory.createFragment(position, getContext());
+        BaseFragment fragment = TabFragmentFactory.createFragment(position);
         if (fragment != null && fragment.mLoadingPager != null) {
             fragment.mLoadingPager.triggerLoadData();
         }
@@ -141,7 +143,7 @@ public class ContentFragment extends Fragment implements LazyViewPager.OnPageCha
         @Override
         public Fragment getItem(int position) {
 
-            BaseFragment fragment = TabFragmentFactory.createFragment(position,getContext());
+            BaseFragment fragment = TabFragmentFactory.createFragment(position);
 
             return fragment;
         }
