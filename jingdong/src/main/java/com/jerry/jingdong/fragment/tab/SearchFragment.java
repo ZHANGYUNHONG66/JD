@@ -17,6 +17,8 @@ public class SearchFragment extends BaseFragment {
     public void initTitle() {
         ((MainUI) getActivity()).mMainTitleview.setTvTitle("搜索");
     }
+
+
     @Override
     public LoadingPager.LoadResultState initData() {
 
@@ -29,5 +31,6 @@ public class SearchFragment extends BaseFragment {
         TextView tv = new TextView(UIUtils.getContext());
         tv.setText(getClass().getSimpleName());
         return tv;
+        //成功视图
     }
 }
