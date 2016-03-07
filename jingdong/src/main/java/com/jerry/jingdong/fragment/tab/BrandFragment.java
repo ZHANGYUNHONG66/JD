@@ -25,11 +25,12 @@ import butterknife.ButterKnife;
 public class BrandFragment extends BaseFragment {
 
 
-    private GridView mBrandGrid;
+    private GridView      mBrandGrid;
+    private GridView mBrandGridSell;
     private BrandListBean mBrandListBean;
 
     // 图标
-    private int[]    mBrand  = new int[] {
+    private int[] mBrand = new int[]{
             R.drawable.brand_1,
             R.drawable.brand_2,
             R.drawable.brand_3,
@@ -39,6 +40,15 @@ public class BrandFragment extends BaseFragment {
             R.drawable.brand_7,
             R.drawable.brand_more
     };
+
+    private int[] mBrandSell = new int[]{
+            R.drawable.brand_sell_1,
+            R.drawable.brand_sell_1,
+            R.drawable.brand_sell_1
+
+    };
+
+
 
     @Override
     public void initTitle() {
@@ -55,18 +65,18 @@ public class BrandFragment extends BaseFragment {
 
 
         SystemClock.sleep(2000);
-//        try {
-//            BrandProtocal brandProtocal = new BrandProtocal();
-//            mBrandListBean = brandProtocal.loadData(HttpRequest.HttpMethod.GET, null);
-//
+        //        try {
+        //            BrandProtocal brandProtocal = new BrandProtocal();
+        //            mBrandListBean = brandProtocal.loadData(HttpRequest.HttpMethod.GET, null);
+        //
 
-           // if (mBrandListBean != null) {
-                return LoadingPager.LoadResultState.SUCCESS;
-            //}
+        // if (mBrandListBean != null) {
+        return LoadingPager.LoadResultState.SUCCESS;
+        //}
 
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            return LoadingPager.LoadResultState.ERROR;
+        //        } catch (Exception e) {
+        //            e.printStackTrace();
+        //            return LoadingPager.LoadResultState.ERROR;
 //        }
 //        return LoadingPager.LoadResultState.EMPTY;
     }
@@ -80,8 +90,10 @@ public class BrandFragment extends BaseFragment {
         View view = View.inflate(UIUtils.getContext(), R.layout.activity_brand_ui, null);
 
         mBrandGrid = (GridView) view.findViewById(R.id.brand_grid);
+        mBrandGridSell = (GridView) view.findViewById(R.id.brand_grid_sell);
 
         mBrandGrid.setAdapter(new BrandGridAdapter());
+        mBrandGridSell.setAdapter(new BrandGridSellAdapter());
         //
         //        //mBrandList = (ListView) view.findViewById(R.id.brand_list);
         //        mImageView = (ImageView) view.findViewById(R.id.myiamges);
@@ -157,5 +169,47 @@ public class BrandFragment extends BaseFragment {
             return convertView;
         }
 
+    }
+
+
+    class BrandGridSellAdapter extends BaseAdapter {
+
+        @Override
+        public int getCount() {
+            if (mBrand != null) {
+                return mBrand.length;
+            }
+            return 0;
+        }
+
+        @Override
+        public Object getItem(int position) {
+            if (mBrand != null) {
+                return mBrand[position];
+            }
+            return null;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+
+            convertView = View.inflate(UIUtils.getContext(), R.layout.items_brandsell_info, null);
+            ImageView brandIvSell = (ImageView) convertView.findViewById(R.id.brand_sell);
+
+            //url+position
+            //String pic = mBrandInfos.get(position).value.get(subject_id).pic;
+
+            brandIvSell.setImageResource(mBrandSell[position]);
+
+            //图片读取
+            // Picasso.with(UIUtils.getContext()).load(url).into(holder.brandIv);
+
+            return convertView;
+        }
     }
 }

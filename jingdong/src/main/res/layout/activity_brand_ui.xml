@@ -4,42 +4,115 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <!--      顶部小标题      -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@android:color/black">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!--      顶部小标题      -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:orientation="horizontal">
 
-        <TextView
-            style="@style/BrandProtectTextStyle"
-            android:drawableLeft="@drawable/brand_protect"
-            android:text="正品保证"/>
+            <TextView
+                style="@style/BrandProtectTextStyle"
+                android:drawableLeft="@drawable/brand_protect"
+                android:text="正品保证"/>
 
+            <TextView
+                style="@style/BrandProtectTextStyle"
+                android:drawableLeft="@drawable/brand_refresh"
+                android:text="官网同步"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/brand_head"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="82dp">
+
+            <GridView
+
+                android:id="@+id/brand_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="4">
+
+            </GridView>
+        </LinearLayout>
+
+        <!--  公告   -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ccc"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="3dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/brand_gonggao_2"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/brand_gonggao_1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="2016年雕炸天品牌正式入驻品牌馆"
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+
+        <!--   特卖区   -->
         <TextView
-            style="@style/BrandProtectTextStyle"
-            android:drawableLeft="@drawable/brand_refresh"
-            android:text="官网同步"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:text="品牌特卖"
+            android:textColor="@android:color/black"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#ccc"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp">
+
+            <GridView
+
+                android:id="@+id/brand_grid_sell"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:numColumns="3">
+
+            </GridView>
+
+        </LinearLayout>
 
     </LinearLayout>
-
-    <ImageView
-        android:src="@drawable/brand_head"
-        android:layout_width="match_parent"
-        android:layout_height="160dp"/>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="140dp">
-
-    <GridView
-        android:id="@+id/brand_grid"
-        android:numColumns="4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </GridView>
-    </LinearLayout>
-
+    </ScrollView>
 </LinearLayout>
