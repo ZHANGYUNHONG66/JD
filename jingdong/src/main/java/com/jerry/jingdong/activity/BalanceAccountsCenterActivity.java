@@ -1,10 +1,11 @@
 package com.jerry.jingdong.activity;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.SystemClock;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +21,7 @@ import com.jerry.jingdong.conf.MyConstants;
 import com.jerry.jingdong.dialog.DelveryDialog;
 import com.jerry.jingdong.dialog.PayWayDialog;
 import com.jerry.jingdong.entity.BalanceAccountCenterInfo;
+import com.jerry.jingdong.entity.CommitOrderResultInfoBean;
 import com.jerry.jingdong.utils.UIUtils;
 import com.jerry.jingdong.views.MyDialog;
 import com.squareup.picasso.Picasso;
@@ -35,11 +37,6 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 /**
- * 项目名:    JingDong
- * 包名:      com.jerry.jingdong.activity
- * 文件名:    BalanceAccountsCenterActivity
- * 创建者:    任洛仟
- * 创建时间:  2016/03/05 上午 8:41
  * 描述:      结算中心
  */
 public class BalanceAccountsCenterActivity extends Activity implements View.OnClickListener, MyDialog.OnMyChangeListener {
@@ -133,6 +130,9 @@ public class BalanceAccountsCenterActivity extends Activity implements View.OnCl
             @Override
             public void run() {
                 List<BalanceAccountCenterInfo.ProductList> productList = mAccountCenterInfo.productList;
+                if (productList == null || productList.size() == 0) {
+                    return;
+                }
                 for (int i = 0; i < productList.size(); i++) {
                     ImageView iv = new ImageView(UIUtils.getContext());
                     LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(80, 80);
@@ -209,15 +209,15 @@ public class BalanceAccountsCenterActivity extends Activity implements View.OnCl
                 //支付方式列表
                 mPaymentList = mAccountCenterInfo.paymentList;
                 PayWayDialog payWayDialog = new PayWayDialog(BalanceAccountsCenterActivity.this, mPaymentList);
-                payWayDialog.setOnChangeListener(this,1);//传递的数值表示当前什么类型对话框，用于后面ui数据的变化
+                payWayDialog.setOnChangeListener(this, 1);//传递的数值表示当前什么类型对话框，用于后面ui数据的变化
                 payWayDialog.show();
                 break;
             case R.id.balance_account_rl_time_way://选择送货方式和送货时间
 //                Toast.makeText(this, "送货方式及送货时间", Toast.LENGTH_SHORT).show();
 //                createDialog2TimeAndWay();
                 mDeliveryList = mAccountCenterInfo.deliveryList;
-                DelveryDialog delveryDialog = new DelveryDialog(BalanceAccountsCenterActivity.this,mDeliveryList);
-                delveryDialog.setOnChangeListener(this,2);
+                DelveryDialog delveryDialog = new DelveryDialog(BalanceAccountsCenterActivity.this, mDeliveryList);
+                delveryDialog.setOnChangeListener(this, 2);
                 delveryDialog.show();
                 break;
             case R.id.balance_account_rl_bill://索要发票
@@ -239,25 +239,32 @@ public class BalanceAccountsCenterActivity extends Activity implements View.OnCl
      * 提交订单
      */
     private void commitData() {
+        final ProgressDialog dialog = new ProgressDialog(this);
+        dialog.setMessage("订单提交中...");
+        dialog.show();
 
         new Thread() {
             @Override
             public void run() {
                 try {
+                    SystemClock.sleep(3000);
                     OkHttpClient client = new OkHttpClient();
                     FormBody formBody = new FormBody.Builder().add("sku", "1:3:1,2,3,4|2:2:2,3").add("addressId", "139").add("paymentType", "1").add("deliveryType", "1")
                             .add("invoiceType", "1").add("invoiceTitle", "传智慧播客教育科技有限公司").add("invoiceContent", "1").build();
-                    Request request = new Request.Builder().url(MyConstants.URL.BASEURL + "/ordersumbit").header("userId", "154636").post(formBody).build();
+                    Request request = new Request.Builder().url(MyConstants.URL.BASEURL + "ordersumbit").post(formBody).header("userId", "154636").build();
                     Response response = client.newCall(request).execute();
                     if (response.isSuccessful()) {
                         String resJson = response.body().string();
-                        Log.d(TAG, resJson);
-//                        parseJson(resJson);
+                        Gson gson = new Gson();
+                        final CommitOrderResultInfoBean commitResult = gson.fromJson(resJson, CommitOrderResultInfoBean.class);
+                        final CommitOrderResultInfoBean.Order orderInfo = commitResult.orderInfo;
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
                                 Toast.makeText(BalanceAccountsCenterActivity.this, "订单提交成功", Toast.LENGTH_SHORT).show();
                                 Intent commitIntent = new Intent(UIUtils.getContext(), CommitOrderActivity.class);
+                                commitIntent.putExtra("commitResult", orderInfo);
+//                                Log.d(TAG, orderInfo.toString());
                                 startActivity(commitIntent);
                             }
                         });
@@ -282,19 +289,26 @@ public class BalanceAccountsCenterActivity extends Activity implements View.OnCl
                     });
 
                 }
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        dialog.dismiss();
+                    }
+                });
+
             }
         }.start();
     }
 
 
     @Override
-    public void onChange(int position,int type) {
+    public void onChange(int position, int type) {
 //        Toast.makeText(this, "...", Toast.LENGTH_SHORT).show();
-        if(type == 1){
+        if (type == 1) {
             mBalanceAccountTvPayWay.setText(mPaymentList.get(position).des);
         }
 
-        if(type == 2){
+        if (type == 2) {
             mBalanceAccountTvTime.setText(mDeliveryList.get(position).des);
         }
     }
