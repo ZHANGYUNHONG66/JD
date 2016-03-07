@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.jerry.jingdong.R;
 import com.jerry.jingdong.activity.BalanceAccountsCenterActivity;
 import com.jerry.jingdong.activity.MainUI;
+import com.jerry.jingdong.activity.ProductListActivity;
 import com.jerry.jingdong.application.MyApplication;
 import com.jerry.jingdong.base.BaseFragment;
 import com.jerry.jingdong.base.LoadingPager;
@@ -137,7 +138,7 @@ public class CartFragment extends BaseFragment implements View.OnTouchListener {
         mProductEntities = new ArrayList<>();
         try {
             HashMap<String, String> map = new HashMap<>();
-            for (int i = 1; i < 2; i++) {
+            for (int i = 1; i < 21; i++) {
                 map.put("pId", i++ + "");
                 mCartNewBean = mProductProtocol.loadData(HttpRequest.HttpMethod.GET, map, null);
                 mProductEntities.add(mCartNewBean.product);
@@ -269,7 +270,8 @@ public class CartFragment extends BaseFragment implements View.OnTouchListener {
     }
 
     private void setGoToHome() {
-        ((MainUI) getActivity()).changeGroupAndView(2,2);//回到首页
+        Intent intent=new Intent(getActivity(), ProductListActivity.class);
+        startActivity(intent);//回到首页
     }
 
     private void setDeleteData() {

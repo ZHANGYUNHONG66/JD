@@ -135,11 +135,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerInParent="true"
                         android:layout_marginRight="5dp">
-
-
                     </LinearLayout>
-
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -421,15 +417,8 @@
                     android:background="@mipmap/phone_bg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
-
-
-
-
-
             </LinearLayout>
-
         </LinearLayout>
-
     </ScrollView>
 
     <LinearLayout

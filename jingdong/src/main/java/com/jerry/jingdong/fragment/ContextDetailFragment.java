@@ -246,8 +246,8 @@ public class ContextDetailFragment extends BaseDetailFragment {
             mTvAddShopCar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    boolean b = ((GoodsDetailUI) mSildContext).getRightSelectFragment().addShopingCar();
-                    if (b) {
+                    boolean addShopCar = ((GoodsDetailUI) mSildContext).getRightSelectFragment().addShopingCar();
+                    if (addShopCar) {
                         Toast.makeText(getContext(), "加入成功", Toast.LENGTH_SHORT).show();
 
                     }

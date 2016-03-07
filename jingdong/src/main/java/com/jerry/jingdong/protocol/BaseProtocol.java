@@ -46,13 +46,13 @@ public abstract class BaseProtocol<T> {
         }
 
         // 2.再磁盘-->存内存,返回
-        /*T t = loadDataFromLocal(key);
+        T t = loadDataFromLocal(key);
         if (t != null) {
             return t;
-        }*/
+        }
 
         // 3.最后网络-->存内存,存磁盘,返回
-        T t = loadDataFromNet(method, params);
+         t = loadDataFromNet(method, params);
 
         return t;
     }

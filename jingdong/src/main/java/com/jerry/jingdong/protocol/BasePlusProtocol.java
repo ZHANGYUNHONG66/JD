@@ -3,6 +3,7 @@ package com.jerry.jingdong.protocol;
 
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.jerry.jingdong.application.MyApplication;
 import com.jerry.jingdong.conf.MyConstants;
@@ -169,6 +170,7 @@ public abstract class BasePlusProtocol<T> {
                 }
             }
             String url = MyConstants.URL.BASEURL + getInterfaceKey();
+            Log.d("BasePlusProtocol", url);
             if (params == null) {
                 if (method == HttpRequest.HttpMethod.GET && header == null) {
                     responseStream = httpUtils.sendSync(HttpRequest.HttpMethod.GET, url);

@@ -9,7 +9,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.animation.Animation;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -23,6 +22,7 @@ import com.jerry.jingdong.base.LoadingPager;
 import com.jerry.jingdong.entity.ProductListBean;
 import com.jerry.jingdong.fragment.ProductListContentFragment;
 import com.jerry.jingdong.fragment.ProductListFilterFragment;
+import com.jerry.jingdong.protocol.BasePlusProtocol;
 import com.jerry.jingdong.protocol.BaseProtocol;
 import com.jerry.jingdong.utils.UIUtils;
 import com.lidroid.xutils.http.client.HttpRequest;
@@ -236,7 +236,7 @@ public class ProductListActivity extends SlidingFragmentActivity implements Radi
         mSlidingMenu.setBehindOffset(150);
 
         mSlidingMenu.setBehindScrollScale(1f);
-        Animation animation = mSlidingMenu.getAnimation();
+        /*Animation animation = mSlidingMenu.getAnimation();*/
         mSlidingMenu.setShadowWidth(10);
         mSlidingMenu.setMode(SlidingMenu.RIGHT);
         mSlidingMenu.setFadeDegree(.5f);
@@ -494,16 +494,16 @@ public class ProductListActivity extends SlidingFragmentActivity implements Radi
                     params.put("filter", getFilterString());
                 }
 
-                return new ProductListProtocol().loadData(HttpRequest.HttpMethod.GET, params);
+                return new ProductListProtocol().loadData(HttpRequest.HttpMethod.GET, params,null);
         }
     }
 
-    class ProductListProtocol extends BaseProtocol<ProductListBean> {
+    class ProductListProtocol extends BasePlusProtocol<ProductListBean> {
         // http://188.188.5.24:8080/market/productlist?page=1&pageNum=10&cId=125&filter=p1-t3-s1
 
         @Override
         public String getInterfaceKey() {
-            return "productlist";
+            return "productlist?page=1&pageNum=10&cId=125&orderby=saleDown&filter=t1-s1-p8";
         }
 
         @Override

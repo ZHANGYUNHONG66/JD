@@ -56,17 +56,17 @@
     </style>
 
 
-        <style name="TabStyle">
-            <item name="android:layout_width">0dp</item>
-            <item name="android:layout_height">wrap_content</item>
-            <item name="android:layout_weight">1</item>
-            <item name="android:layout_gravity">center</item>
-            <item name="android:button">@null</item>
-            <item name="android:background">@android:color/transparent</item>
-            <item name="android:gravity">center</item>
-            <item name="android:layout_marginBottom">3dp</item>
-            <item name="android:textColor">@color/tab_text_selector</item>
-        </style>
+    <style name="TabStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:textColor">@color/tab_text_selector</item>
+    </style>
 
     <!--*********结算中心样式  start*********-->
     <!--LinearLayout样式-->
@@ -81,11 +81,11 @@
 
     <!--字体样式-->
     <style name="BlanceAccountAddressTextStyle">
-        <item name="android:text" >xxx</item>
-        <item name="android:textColor" >#fff</item>
-        <item name="android:textSize" >14sp</item>
-        <item name="android:layout_width" >wrap_content</item>
-        <item name="android:layout_height" >wrap_content</item>
+        <item name="android:text">xxx</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 
     <!--加载内容ImageView样式-->
@@ -98,18 +98,30 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
+    <style name="RushBuyCountDownTimerViewStyle">
+        <item name="android:layout_width">15dp</item>
+        <item name="android:layout_height">15dp</item>
+        <item name="android:background">@mipmap/button_bg</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">0</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
     <!--自定义对话框-->
     <style name="locationstyles" parent="@android:style/Theme.Dialog">
-    <!--    <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowFrame">@null</item>
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowAnimationStyle">@null</item>
-        &lt;!&ndash; 阴影效果 &ndash;&gt;
-        <item name="android:backgroundDimEnabled">true</item>
-        <item name="android:windowIsTranslucent">true</item>-->
+        <!--    <item name="android:windowBackground">@android:color/transparent</item>
+            <item name="android:windowFrame">@null</item>
+            <item name="android:windowContentOverlay">@null</item>
+            <item name="android:windowAnimationStyle">@null</item>
+            &lt;!&ndash; 阴影效果 &ndash;&gt;
+            <item name="android:backgroundDimEnabled">true</item>
+            <item name="android:windowIsTranslucent">true</item>-->
         <item name="android:windowNoTitle">true</item>
         <!-- 对话框外面点击关闭 -->
-       <!-- <item name="android:windowCloseOnTouchOutside">true</item>-->
+        <!-- <item name="android:windowCloseOnTouchOutside">true</item>-->
     </style>
     <!--*********结算中心样式  end*********-->
 
@@ -141,6 +153,20 @@
         <item name="android:layout_marginLeft">10dp</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">30dp</item>
+    </style>
+
+    <!--自定义RadioButton样式--><!---->
+    <style name="productlist_rb_style" parent="android:Widget.CompoundButton.RadioButton">
+        <item name="android:button">@null</item>
+        <item name="android:textColor">@color/selector_rb_text</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:background">@drawable/selector_productlist_tab_indicator</item>
     </style>
 
 </resources>
