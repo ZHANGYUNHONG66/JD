@@ -25,8 +25,6 @@ public class MainUI extends FragmentActivity
 
     public int               mCurrRbIndex = -1;
 
-    public Fragment          mCurrentFragment;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(null);

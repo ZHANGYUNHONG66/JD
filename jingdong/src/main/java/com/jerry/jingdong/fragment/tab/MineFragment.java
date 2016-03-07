@@ -3,6 +3,7 @@ package com.jerry.jingdong.fragment.tab;
 import android.os.SystemClock;
 import android.view.View;
 
+import com.jerry.jingdong.activity.MainUI;
 import com.jerry.jingdong.base.BaseFragment;
 import com.jerry.jingdong.base.LoadingPager;
 import com.jerry.jingdong.holder.mine.AccountCentreHolder;
@@ -13,6 +14,11 @@ import com.jerry.jingdong.holder.mine.AccountCentreHolder;
 
 public class MineFragment extends BaseFragment {
 
+    @Override
+    public void initTitle() {
+        ((MainUI) getActivity()).mMainTitleview.setTvTitle("我的");
+    }
+
     /**
      * 在子线程中加载数据
      *
@@ -20,6 +26,7 @@ public class MineFragment extends BaseFragment {
      */
     @Override
     public LoadingPager.LoadResultState initData() {
+
         SystemClock.sleep(2000);
         return LoadingPager.LoadResultState.SUCCESS;
     }
@@ -32,9 +39,10 @@ public class MineFragment extends BaseFragment {
         /**
          * 临时显示
          */
+
         // LoginHolder holder = new LoginHolder();
         AccountCentreHolder holder = new AccountCentreHolder();
-//        holder.setDataAndRefreshView(null);
+        // holder.setDataAndRefreshView(null);
         return holder.mRootView;
 
     }

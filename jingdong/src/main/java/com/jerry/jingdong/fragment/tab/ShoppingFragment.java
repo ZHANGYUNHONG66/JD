@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.jerry.jingdong.R;
 import com.jerry.jingdong.activity.BalanceAccountsCenterActivity;
+import com.jerry.jingdong.activity.MainUI;
 import com.jerry.jingdong.application.MyApplication;
 import com.jerry.jingdong.base.BaseFragment;
 import com.jerry.jingdong.base.LoadingPager;
@@ -119,6 +120,11 @@ public class ShoppingFragment extends BaseFragment implements View.OnTouchListen
     private int         mUserId;
     private CartNewBean mCartNewBean;
 
+    @Override
+    public void initTitle() {
+        ((MainUI) getActivity()).mMainTitleview.setTvTitle("购物车");
+    }
+
     /**
      * 在子线程中加载数据
      *
@@ -126,6 +132,8 @@ public class ShoppingFragment extends BaseFragment implements View.OnTouchListen
      */
     @Override
     public LoadingPager.LoadResultState initData() {
+
+
         SystemClock.sleep(2000);
 
         mProductProtocol = new ProductProtocol();
