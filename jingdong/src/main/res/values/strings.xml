@@ -10,4 +10,9 @@
         <item>登录</item>
         <item>注册</item>
     </string-array>
+    
+    <!--提交订单成功-->
+    <string name="order_num">订单编号:%1$s</string>
+    <string name="order_pay_money">应付金额￥:%1$s</string>
+    <string name="order_pay_way">支付方式:%1$s</string>
 </resources>

@@ -5,6 +5,35 @@
               android:background="#fff"
               android:orientation="vertical">
 
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/daohang_title">
+
+        <TextView
+            android:id="@+id/balance_account_tv_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="5dp"
+            android:gravity="bottom"
+            android:text="购物车"
+            android:textColor="#000"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="结算中心"
+            android:textColor="#000"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            />
+    </RelativeLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -14,33 +43,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             >
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:background="@drawable/daohang_title">
-                <TextView
-                    android:id="@+id/balance_account_tv_back"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:textColor="#000"
-                    android:textSize="16sp"
-                    android:text="购物车"
-                    android:layout_marginLeft="5dp"
-                    android:gravity="bottom"
-                    android:layout_marginBottom="3dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="48dp"
-                    android:layout_centerInParent="true"
-                    android:gravity="center"
-                    android:text="结算中心"
-                    android:textColor="#000"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
-                    />
-            </RelativeLayout>
-
-
             <!--收货地址-->
             <RelativeLayout
                 android:id="@+id/balance_account_rl_addres"
@@ -57,9 +59,9 @@
                         android:textSize="18sp"/>
 
                     <TextView
+                        android:id="@+id/balance_account_tv_name"
                         style="@style/BlanceAccountAddressTextStyle"
                         android:layout_marginTop="3dp"
-                        android:id="@+id/balance_account_tv_name"
                         />
 
                     <TextView
@@ -104,12 +106,11 @@
                         />
 
                     <TextView
+                        android:id="@+id/balance_account_tv_pay_way"
                         style="@style/BlanceAccountAddressTextStyle"
                         android:layout_marginTop="3dp"
-                        android:text="货到付款-现金支付(货到付款)"
                         android:textColor="#000"
                         android:textSize="14sp"
-                        android:id="@+id/balance_account_tv_pay_way"
                         />
                 </LinearLayout>
 
@@ -145,7 +146,6 @@
                         android:id="@+id/balance_account_tv_time"
                         style="@style/BlanceAccountAddressTextStyle"
                         android:layout_marginTop="3dp"
-                        android:text="送货时间:仅双休日送货"
                         android:textColor="#000"
                         android:textSize="14sp"
                         />
@@ -225,7 +225,6 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:orientation="horizontal">
-
 
 
                 </LinearLayout>
@@ -326,8 +325,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:orientation="vertical"
-                android:background="@drawable/xuanzheyouhuijian_moren"/>
+                android:background="@drawable/xuanzheyouhuijian_moren"
+                android:orientation="vertical"/>
 
 
             <Button
